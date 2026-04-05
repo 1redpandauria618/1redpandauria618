@@ -142,7 +142,16 @@ document.querySelectorAll('.project').forEach(project => {
   });
 });
 </script>
+<script>const overlay = document.getElementById("intro-overlay");
 
+if (sessionStorage.getItem("introShown")) {
+  // ja s'ha mostrat, amaga directament
+  overlay.style.display = "none";
+} else {
+  // primera vegada, mostra l'animació
+  sessionStorage.setItem("introShown", "true");
+  // aquí el teu codi d'animació actual
+}</script>
 
 </body>
 </html>
