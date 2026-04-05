@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Stutchbury's project</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
+  <p style="font-size: 15px">
+   When a garden occupies the ethos of a horre It brings additional life.
+If the future of housing can be alongside the future of survival gardens are mandatory.
+Our ambition is to initiate a park which can be occupied. Communities are interdependent and gardens are the common language those who cannot afford a room in the garden still access to the pleasures and benefits the community garden is not a plot of land on the edge of town-it is the town.
+Our houses bear a fascinating parallel with Mr Cerda's 1860 Urban proposal for Barcelona however they intensify the relationship with garden. The houses are repetitive prefabricated forms constructed efficiently in any one of the countless configurations - to be added to or subtracted from as required.
+</p><p style="font-size: 15px">People must learn to share, the success of the
+community reflects their ability to co-ordinate
+between themselves, gardens represent
+the future. Our scheme is considered not
+in isolation but as a coalescence of natural
+elements (fauna and flora) to form a whole.</p><p style="font-size: 15px">If the future is to survive, food and water are
+responsibilities. Our proposal collects and
+manages water and produces food – land
+is accessible and can be leased from the
+keepers, people congregate and produce
+according to demand, the houses are subtle
+and singular however the garden is in the
+hands of those who care.
+A central tree identifies the occupants, and a
+sophisticated rooftop greenhouse provides
+oxygen & heat or cool to those below.</p>
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Stutchbury's project</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide64.jpg">
+    <img src="images/slide65.jpg">
+    <img src="images/slide66.jpg">
+    <img src="images/slide68.jpg">
+    <img src="images/slide67.jpg">
+    <img src="images/slide69.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide64.jpg">
+    <img src="images/slide65.jpg">
+    <img src="images/slide66.jpg">
+    <img src="images/slide68.jpg">
+    <img src="images/slide67.jpg">
+    <img src="images/slide69.jpg">
+  </div>
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/company/peter-stutchbury-architecture/about/" target="_blank">
+  <img src="images/peter.jpg" alt="PeterStutchbury" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Peter Stutchbury</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Peter Stutchbury Architecture  ·  AUSTRALIA
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Peter Stutchbury graduated from the University of Newcastle in 1978 and established his Sydney studio in 1991. The practice has received over 45 Australian Institute of Architects awards, including 13 national prizes. In 2014, Stutchbury and partner Phoebe Pape received the AIA Gold Medal — the Institute's highest personal honour. His work is defined by deep responsiveness to site, climate, and material culture, with a sustained engagement with Indigenous Australian communities.
+  </div>
+
+  <a href="http://www.peterstutchbury.com.au/" target="_blank">
+    <img src="images/logo9.png" alt="Logo9" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</body>
+
+</html>

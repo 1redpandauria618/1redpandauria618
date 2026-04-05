@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+
+  <h1 class="hover-green" style="margin:0;">Authors</h1>
+  <h3 style="color:#555; margin:0;">Curators & Participating Studios · 14 Countries</h3>
+
+  <p style="font-size: 15px">The following teams represent a global network of expertise, selected for their deep connection to the Mediterranean-type climates showcased within the Barcelona Botanical Garden. All fourteen contemporary teams work within Mediterranean or homoclimatic climate regions — a curatorial principle that connects each designer's proposal to the specific ecology of the Botanical Garden where their model will be situated.</p>
+  <hr>
+  <div class="authors-columns">
+
+  <div class="column">
+    <h2 class="hover-green" style="font-style: italic;">Global Homoclimatic Regions</h2>
+
+    <p style="font-size: 15px">These areas group landscapes that, despite being thousands of miles apart, share a Mediterranean climate. Each studio has been paired with the sector of the garden that mirrors their home region:</p>
+    <hr style="margin-top:77px; border:0; border-top:1px solid #000;">
+
+  <div style="margin:0; padding:0;">
+  <p style="font-style: italic; margin:0;">Australia</p>
+  <p style="font-size: 13px;">South & West Coast</p>
+  </div>
+    <dl>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>McGregor Coxall</strong>(Landscape Architecture & Urban Design)</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Peter Stutchbury Architecture</strong> (Architecture)</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Troppo Architects</strong> (Architecture)</dd>
+    </dl>
+  <div style="margin:0; padding:0;">
+  <p style="font-style: italic; margin:0;">South Africa</p>
+  <p style="font-size: 13px;">The Cape Region</p>
+  </div>
+    <dl>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Gareth Doherty</strong> / Local Community (Landscape & Community Practice)</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Tarna Kilzner</strong> / TK Landscape Architecture (Landscape Architecture)</dd>
+    </dl>
+    <p style="font-style: italic;">California, USA</p>
+    <dl>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>James Corner</strong> / Field Operations (Landscape Architecture)</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Adam Greenspan</strong> / PWP Landscape Architecture (Landscape Architecture)</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Phil Harris / Terremoto</strong> (Landscape Architecture)</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Walter Hood Design</strong> (Landscape Architecture & Public Art)</dd>
+    </dl>
+  </div>
+
+
+  <div class="column">
+    <h2 class="hover-green" style="font-style: italic;">The Mediterranean Basin</h2>
+
+    <p style="font-size: 13px;">The Botanical Garden divides our sea into four distinct phytogeographic sectors. The following authors engage in a dialogue with these specific sub-regions:
+    </p>
+  <hr style="margin-top: 170px;border:0; border-top:1px solid #000;">
+
+
+  <div style="margin:0; padding:0;">
+  <p style="font-style: italic; margin:0;">Northern Mediterranean</p>
+  <p style="font-size: 13px;">Southern Europe</p>
+    <dl>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Catherine Mosbach</strong> (France) — Bringing the vision of the French coastline.</dd>
+    </dl>
+
+  <div style="margin:0; padding:0;">
+  <p style="font-style: italic; margin:0;">Eastern Mediterranean</p>
+  <p style="font-size: 13px;">Italy to the Caucasus and the Levant</p>
+    <dl>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Doxiadis+</strong> (Greece) — Architecture and urban design from Athens.</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Jala Makhzoumi</strong> (Lebanon) — Landscape architecture and ecology from Beirut.</dd>
+    </dl>
+
+  <div style="margin:0; padding:0;">
+  <p style="font-style: italic; margin:0;">Southern Mediterranean</p>
+  <p style="font-size: 13px;">North Africa</p>
+    </div>
+    <dl>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Abdul-Halim Jabr</strong> (Egypt) — Architecture and urban transformation.</dd>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Louafi Landschaftsarchitekten</strong> (Algeria/Berlin) — Representing Algerian heritage and landscape.</dd>
+    </dl>
+
+  <div style="margin:0; padding:0;">
+  <p style="font-style: italic; margin:0;">Western Mediterranean</p>
+  <p style="font-size: 13px;">Iberian Peninsula, Balearic and Tyrrhenian Islands</p>
+    </div>
+
+    <dl>
+      <dd style="font-size: 15px; color:#555; margin:0;"><strong>Rubió i Tudurí, Artigas, and Dufy</strong>and the institutional framework of the UNESCO-UIA World Capital of Architecture.</dd>
+    </dl>
+  </div>
+
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+
+</body>
+</main>

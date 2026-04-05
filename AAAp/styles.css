@@ -1,0 +1,801 @@
+/* FIXED NAVBAR */
+@font-face {
+  font-family: 'Mono';
+  src: url('https://assets.vercel.com/fonts/MonoGeistVF.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+.navbar {
+  height: 100px;              /* fits the image */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;      /* aligns nav links to the bottom */
+  padding: 0 24px;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+.navbar a {
+  margin-left: 15px;/* Width between tabs names */
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+body {
+  font-family: 'Mono', monospace;
+}
+
+
+/* Add padding so content doesn't hide behind navbar */
+main {
+  padding-top: 120px;
+}
+/* PROJECT BANNERS */
+@media (hover: hover) and (pointer: fine) {
+  .project img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1) hue-rotate(-20deg) saturate(1.4);
+  }
+}
+
+
+.project img {
+  width: 600px;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 40px;
+  border-radius: 4px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+
+.navbar a:hover {
+  color: #3a7f3a; /* soft plant green */
+}
+.about-section {
+  max-width: 700px;
+  margin: 0 auto;
+
+  padding-top: 160px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.about-section h1 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  transition: color 0.3s ease;
+}
+
+.about-section h1:hover {
+  color: #3a7f3a;
+}
+
+.about-section p {
+  line-height: 1.7;
+  font-size: 18px;
+  margin-bottom: 20px;
+
+  max-width: 620px;      /* controls the block width */
+  margin-left: auto;
+  margin-right: auto;    /* centers the block */
+  text-align: justify;   /* makes left + right edges straight */
+  text-align-last: center; /* keeps the last line centered */
+}
+
+/* Make the image centered and elegant */
+.about-section img {
+  width: 180px;
+  margin: 20px auto 40px;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.about-section img:hover {
+  opacity: 0.7;
+}
+
+/* INFO SECTION — smaller + at bottom */
+
+.about-info {
+  margin-top: 140px;
+  font-size: 11px;
+  opacity: 0.55;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+
+  display: flex;
+  justify-content: center;
+  gap: 25px;          /* spacing between items */
+  flex-wrap: wrap;    /* allows wrapping on small screens */
+}
+
+.about-info p {
+  margin: 0;
+  white-space: nowrap; /* keeps each item on one line */
+}
+
+
+/* image fade */
+.about-hover-block {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  margin: 20px auto 60px;
+}
+
+/* IMAGE */
+.image-area {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.4s ease;
+}
+
+.about-image {
+  width: 180px;
+  transition: opacity 0.4s ease;
+}
+
+/* TEXT THAT REPLACES THE IMAGE */
+.about-info-reveal {
+  position: absolute;
+  top: 0;                 /* sits exactly where the image is */
+  left: 50%;
+  transform: translateX(-50%); /* centers horizontally */
+  width: 100%;            /* allows long horizontal text */
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  pointer-events: none;   /* prevents hover flicker */
+}
+
+/* HOVER EFFECT */
+.about-hover-block:hover .image-area {
+  opacity: 0;
+}
+
+.about-hover-block:hover .about-info-reveal {
+  opacity: 1;
+}
+.about-section hr {
+  border: none;
+  height: 1px;
+  background: #bbb;      /* slightly darker so it's visible */
+  width: 100%;           /* spans the entire page */
+  max-width: 1400px;     /* prevents it from being TOO long on huge screens */
+  margin: 60px auto;     /* centers it perfectly */
+  opacity: 0.9;          /* more visible but still elegant */
+}
+.logo {
+  display: flex;
+  align-items: flex-end;   /* bottom-align image + text */
+  gap: 8px;                /* small space between image + year */
+}
+
+.logo-small {
+  font-size: 14px;
+  opacity: 0.7;
+  margin-bottom: 5px;      /* nudges text upward to match image bottom */
+}
+
+
+.logo-image {
+  height: 75px;
+  width: auto;
+  margin-bottom: 5px;   /* ← pulls the image UP into the navbar */
+}
+
+.logo-image:hover {
+  filter:
+    brightness(1.1)
+    sepia(0.45)
+    hue-rotate(45deg)   /* ← more green */
+    saturate(0.75)      /* ← still pastel */
+    contrast(0.92);
+}
+.authors-columns {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.column {
+  width: 50%;
+}
+.hover-green {
+  transition: color 0.3s ease;
+}
+
+.hover-green:hover {
+  color: #3a7f3a; /* same green as your navbar + h1 hover */
+}
+.full-banner {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: white; /* clean white banner */
+  padding: 40px 60px;
+  box-sizing: border-box;
+
+  /* same strength as navbar */
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+
+
+
+
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.banner-text {
+  max-width: 620px;      /* same as your paragraph */
+  margin: 0 auto;        /* centers the text block */
+  text-align: center;
+  padding: 0 20px;       /* match .about-section padding */
+}
+
+.hover-green {
+  color: #333;                 /* default gray */
+  transition: color 0.3s ease; /* smooth fade */
+}
+
+.hover-green:hover {
+  color: #3a7f3a;              /* green highlight */
+}
+.logo-small {
+  width: 60px;   /* adjust to your taste */
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sectors-wrapper {
+  display: flex;
+  width: 100%;
+  height: 420px;
+  margin: 60px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.sectors-list {
+  width: 40%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sector-item {
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 0;
+  transition: color 0.3s ease;
+}
+
+.sector-item:hover {
+  color: #5cb27d; /* your green */
+}
+
+.sector-image {
+  width: 60%;
+  overflow: hidden;
+  position: relative;
+}
+
+.sector-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  /* smooth slide-in transition */
+  transform: translateX(100%);
+  opacity: 0;
+
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease;
+}
+
+.sector-image img.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.project {
+  -webkit-tap-highlight-color: transparent;
+}
+.project img {
+  -webkit-tap-highlight-color: rgba(0,0,0,0); /* disable blue flash */
+}
+
+/* MOBILE FIX — applies to all phones */
+@media (max-width: 600px) {
+  #projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* same spacing as desktop */
+  }
+
+  .project img {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important; /* remove auto-centering */
+    border-radius: 0 !important;
+    object-fit: cover;
+  }
+}
+/* HAMBURGER BUTTON (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* MOBILE MENU */
+@media (max-width: 600px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav links by default */
+  nav#nav-links {
+    display: none;
+    position: absolute;
+    top: 100px; /* below navbar */
+    right: 0;
+    background: white;
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* When menu is open */
+  nav#nav-links.open {
+    display: flex;
+  }
+
+  /* Make links bigger + spaced */
+  nav#nav-links a {
+    padding: 12px 0;
+    font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .full-banner {
+    display: flex;
+    flex-direction: column;   /* stack items vertically */
+    align-items: center;      /* center everything */
+    text-align: center;       /* center text */
+    padding: 30px 20px;       /* smaller padding for phones */
+    gap: 20px;                /* space between items */
+  }
+
+  .banner-text {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .full-banner img,
+  .logo-small {
+    max-width: 120px;         /* scale images nicely */
+    height: auto;
+}
+}
+/* Mobile tap effect */
+/* MOBILE FIX — applies to all phones */
+@media (max-width: 600px) {
+  .project img.active {
+    transform: translateY(-4px) scale(1.01);
+    filter:
+      brightness(1.08)
+      sepia(0.55)
+      hue-rotate(-10deg)
+      saturate(0.85)
+      contrast(0.95);
+    transition: all 0.3s ease;
+  }
+}
+/* ultra-premium mobile tap effect */
+/* MOBILE TAP EFFECT — warm, subtle, no blue flash */
+@media (max-width: 600px) {
+
+  /* Kill the native blue tap highlight */
+  .project img {
+    -webkit-tap-highlight-color: transparent;
+    transition: filter 0.28s ease;
+  }
+
+  /* Warm brown “clicked” effect */
+  .project img.clicked {
+    filter:
+      brightness(0.92)
+      sepia(0.12)
+      hue-rotate(-6deg)
+      saturate(0.92)
+      contrast(0.97);
+    transition: filter 0.22s ease; /* faster fade-in */
+  }
+
+  /* Disable desktop hover on mobile */
+  .project img:hover {
+    filter: none !important;
+    transform: none !important;
+  }
+}
+/* Makes the ripple visible + clipped to the image */
+.project {
+  position: relative;
+  display: block;       /* IMPORTANT! */
+  overflow: hidden;     /* clip the ripple */
+}
+
+/* Ripple style */
+.project .ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(0);
+  opacity: 1;
+  pointer-events: none;
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.65s ease-out;
+}
+
+/* Final animation state */
+.project .ripple.active {
+  transform: scale(1);
+  opacity: 0;
+}
+/* AUTO‑SCROLLING SIDEWAYS SLIDER */
+.smooth-slider {
+  width: 173%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+
+
+
+.smooth-slider-track {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+}
+
+.smooth-slider-track img {
+  height: 220px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  border: none;
+  font-size: 32px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.slider-arrow.left { left: 10px; }
+.slider-arrow.right { right: 10px; }
+
+.slider-arrow:hover { opacity: 1; }
+
+.image-protect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: auto; /* THIS is the important part */
+}
+.smooth-slider-track video {
+  transform: translateY(20px); /* try -1px, -2px, -3px */
+}
+
+.smooth-slider-track img,
+.smooth-slider-track video {
+  display: block;
+  height: 220px;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+@media (max-width: 600px) {
+  .smooth-slider {
+    width: 100%;
+    left: 0;
+    transform: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Timeline wrapper */
+.timeline-container {
+  position: relative;
+  width: 100%;
+  margin: 60px 0 140px;
+  height: 200px; /* more vertical space */
+}
+
+/* The main horizontal line */
+.timeline-line {
+  position: absolute;
+  top: 80px; /* moved further down */
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ccc; /* gray line */
+}
+
+/* Arrow at the end of the line */
+.timeline-line::after {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -6px;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid #ccc;
+}
+
+/* Each milestone */
+.timeline-item {
+  position: absolute;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+/* Dot on the line */
+.dot {
+  width: 14px;
+  height: 14px;
+  background: #ccc;
+  border-radius: 50%;
+  position: absolute;
+  top: 73px; /* aligns with the line */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Date BELOW the line */
+.timeline-date {
+  font-size: 13px;
+  color: #555;
+  margin-top: 100px; /* pushes date down */
+}
+
+/* Description BELOW the date */
+.timeline-text {
+  font-size: 14px;
+  color: #111;
+  margin-top: 8px;
+  max-width: 240px;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hover effect */
+.timeline-item:hover .dot {
+  background: #4CAF50;
+}
+
+.timeline-item:hover .timeline-text {
+  color: #4CAF50;
+}
+
+
+
+@media (max-width: 600px) {
+@media (max-width: 600px) {
+
+  /* Make the timeline vertical */
+  .timeline-container {
+    height: auto;
+    margin: 40px 0 60px;
+    padding-left: 20px;
+  }
+
+  /* Hide the horizontal line + arrow */
+  .timeline-line {
+    display: none;
+  }
+
+  /* Each item becomes a vertical block */
+  .timeline-item {
+    position: relative;
+    left: 0 !important;
+    transform: none;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  /* Dot becomes a vertical marker */
+  .dot {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 8px;
+    background: #ccc;
+  }
+
+  /* Date sits right under the dot */
+  .timeline-date {
+    margin-top: 0;
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* Text sits below the date */
+  .timeline-text {
+    max-width: 85%;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 4px;
+  }
+}
+
+}
+.content-block {
+  max-width: 500px;   /* or whatever width your text uses */
+  margin: 0 auto;     /* center it */
+}
+
+.content-block p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.content-image {
+  width: 100%;        /* match the text width */
+  height: auto;
+  display: block;
+  margin-top: 20px;
+}
+.big-img {
+  width: 100%;
+  max-width: 800px; /* increase this number to make it bigger */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centers it */
+}
+.slide87 {
+  width: 100% !important;      /* fill its container */
+  max-width: 900px !important; /* make this as big as you want */
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+/* Fullscreen white overlay */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: none;
+
+  /* smoother, slower fade-out */
+  animation: fadeOut 2.4s ease-in-out forwards;
+  animation-delay: 1.2s; /* logo stays visible longer */
+}
+
+/* Logo styling */
+.intro-logo {
+  width: 200px;
+  height: auto;
+  opacity: 0;
+
+  /* smoother fade-in */
+  animation: fadeIn 1.4s ease-out forwards;
+}
+
+/* Fade in logo */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade out overlay */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}

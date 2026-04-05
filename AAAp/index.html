@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parlour Gardens</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  
+
+
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <div id="intro-overlay">
+      <img src="images/icon6.png" class="intro-logo">
+    </div>
+
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <!-- HAMBURGER BUTTON (only visible on phones) -->
+  <div class="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+  <nav id="nav-links" class="nav-links">
+    <a href="history.html">History</a>
+    <a href="concept.html">Concept</a>
+    <a href="exhibition.html">Exhibition</a>
+    <a href="authors.html">Authors</a>
+    <a href="credits.html">Credits</a>
+  </nav>
+</header>
+
+
+<main id="projects">
+  <a class="project" href="project1.html">
+    <img src="images/project1.jpg" alt="Project 1">
+  </a>
+
+  <a class="project" href="project2.html">
+    <img src="images/project2.jpg" alt="Project 2">
+  </a>
+
+  <a class="project" href="project3.html">
+    <img src="images/project3.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project4.html">
+    <img src="images/project4.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project5.html">
+    <img src="images/project5.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project6.html">
+    <img src="images/project6.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project7.html">
+    <img src="images/project7.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project8.html">
+    <img src="images/project8.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project9.html">
+    <img src="images/project9.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project10.html">
+    <img src="images/project10.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project11.html">
+    <img src="images/project11.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project12.html">
+    <img src="images/project12.jpg" alt="Project 3">
+  </a>
+
+  <a class="project" href="project13.html">
+    <img src="images/project13.jpg" alt="Project 3">
+  </a>
+</main>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+function toggleMenu() {
+  document.getElementById("nav-links").classList.toggle("open");
+}
+</script>
+<script>
+document.querySelectorAll('.project').forEach(project => {
+  project.addEventListener('click', function(e) {
+    e.preventDefault();  // stop instant navigation
+
+    const url = this.getAttribute("href");
+    const rect = this.getBoundingClientRect();
+    const ripple = document.createElement("span");
+
+    const size = Math.max(rect.width, rect.height) * 1.6;
+    ripple.style.width = ripple.style.height = size + "px";
+
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+
+    ripple.style.left = x + "px";
+    ripple.style.top = y + "px";
+
+    ripple.classList.add("ripple");
+    this.appendChild(ripple);
+
+    requestAnimationFrame(() => {
+      ripple.classList.add("active");
+    });
+
+    // ⏳ wait for elegant animation, THEN change page
+    setTimeout(() => {
+      window.location = url;
+    }, 650); // adjust to match your ripple duration
+  });
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Mosbach's project</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;">Insert main ideas</h3>
+  <p style="font-size: 15px">
+    Perforated ceramic box with interior moss spore planting. Aula Mediterrània.</p>
+
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Mosbach's project</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide48.jpg">
+    <img src="images/slide49.jpg">
+    <img src="images/slide50.jpg">
+    <img src="images/slide51.jpg">
+    <img src="images/slide52.jpg">
+    <img src="images/slide53.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide48.jpg">
+    <img src="images/slide49.jpg">
+    <img src="images/slide50.jpg">
+    <img src="images/slide51.jpg">
+    <img src="images/slide52.jpg">
+    <img src="images/slide53.jpg">
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/in/catherinemosbach/" target="_blank">
+  <img src="images/catherine.jpg" alt="CatherineMosbach" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Catherine Mosbach</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Mosbach Paysagistes  ·  FRANCE
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Catherine Mosbach leads Mosbach Paysagistes, a Paris-based practice with extensive experience in urban landscapes of high patrimonial and environmental value. The studio won the Équerre d'Argent alongside SANAA for the Louvre Lens Museum Park and the Iconic Concept Award from the German Design Council. Named Firm of the Year 2021 (Architecture Master Prize, Los Angeles), recent projects include commissions for the Triennale Milano (2023) and Harvard GSD (2024).
+    </p>
+  </div>
+
+  <a href="https://mosbach.fr/" target="_blank">
+    <img src="images/logo2.png" alt="Logo2" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</body>
+
+</html>

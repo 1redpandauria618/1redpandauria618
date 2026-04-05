@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Tunis Roofscapes</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
+  <p style="font-size: 15px">
+   The Medina of Tunis was founded in the 7th century. Its rooftops collectively form a rare
+continuous and expansive open space amidst its low-rise urban density. However each of
+these rooftops are isolated from one another despite their proximity.</p><p style="font-size: 15px">
+This project is a provocation to turn the Medina of Tunis' roofscapes into gardens and
+shared spaces. Focusing on the neighborhood of the restored Dar Ben Gacem hotel as a
+prototype, we envision connecting the Medina's rooftops through stairs, ramps, and
+pedestrian bridges to link humans and animals such as its ubiquitous cats. The connected
+rooftops will turn underused spaces into shared public spaces.
+This roofscape will also act as a connector for plants, pollinators, and birds. Extreme heat
+will also necessitate layers of shade, though canopy planting and shade structures, and the
+collection and movement of water to create spaces of evapotranspiration. Viewed from
+above, Tunis Roofscapes forms a mosaic of planting and paving, inspired by the Medina's
+traditional swallow tiles.
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Tunis Roofscapes</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide26.jpg">
+    <img src="images/slide27.jpg">
+    <img src="images/slide28.jpg">
+    <img src="images/slide29.jpg">
+    <img src="images/slide30.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide26.jpg">
+    <img src="images/slide27.jpg">
+    <img src="images/slide28.jpg">
+    <img src="images/slide29.jpg">
+    <img src="images/slide30.jpg">
+
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/in/garethdoherty/" target="_blank">
+  <img src="images/gareth.jpg" alt="GarethDoherty" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Gareth Doherty</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      NUS · Critical Landscapes Design Lab  ·  SOUTH AFRICA / SINGAPORE
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Gareth Doherty is a landscape architect, educator and researcher, currently Associate Professor at the National University of Singapore. Previously Director of the Master of Landscape Architecture Programme at Harvard GSD, his research integrates ethnographic fieldwork and participatory design to address environmental sustainability and social equity. He is founder of the Critical Landscapes Design Lab and author of Landscape Fieldwork (2025) and Paradoxes of Green (2017).
+
+
+</div>
+  <a href="https://cde.nus.edu.sg/arch/staffs/gareth-gerard-doherty" target="_blank">
+    <img src="images/logo11.png" alt="Logo11" class="banner-logo">
+  </a>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+</body>
+</html>

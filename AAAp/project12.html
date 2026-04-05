@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Doxiadis' project</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
+  <p style="font-size: 15px">
+   Plants do not exist by themselves, but are part of a soil food web comprising multiple interconnected organisms—and indeed, multiple kingdoms. We humans tend to believe the value lies in the plants, when in fact the center of life on land is the soil.
+
+This miniature garden speaks about the soil not as a surface, but as a four‑dimensional living system. The plants, their roots, and the organisms in the soil form a single unit. This living soil system is expressed through the shape of the garden’s container-object, as well as through visible areas of soil that reveal these processes.
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Doxiadis' project</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide74.jpg">
+    <img src="images/slide75.jpg">
+    <img src="images/slide76.jpg">
+    <img src="images/slide77.jpg">
+    <img src="images/slide78.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide74.jpg">
+    <img src="images/slide75.jpg">
+    <img src="images/slide76.jpg">
+    <img src="images/slide77.jpg">
+    <img src="images/slide78.jpg">
+
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/in/thomas-doxiadis/" target="_blank">
+  <img src="images/thomas.jpg" alt="ThomasDoxiadis" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Thomas Doxiadis</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Doxiadis+  ·  GREECE
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Thomas Doxiadis leads Doxiadis+, an Athens-based practice working at the intersection of landscape architecture, ecology, and urban design. The studio focuses on wildfire recovery, coastal environments, and the integration of ecological systems into urban planning. Doxiadis brings a rigorous scientific and poetic sensibility to the Mediterranean landscape, with projects across Greece and the Eastern Mediterranean.
+    </p>
+  </div>
+
+  <a href="https://doxiadisplus.com" target="_blank">
+    <img src="images/logo12.png" alt="Logo12" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+</body>
+
+</html>

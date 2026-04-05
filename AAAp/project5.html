@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Harris' project</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;">Insert main ideas</h3>
+  <p style="font-size: 15px">
+   Square-based piece that refers to a building eaten by roots. AIA Gold Medallist 2014. Associate Professor at Univ. Adelaide. Co-founder of Troppo Architects. Bonsais Space.</p>
+
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Harris' project</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide58.jpg">
+    <img src="images/slide59.jpg">
+    <img src="images/slide60.jpg">
+    <img src="images/slide62.jpg">
+    <img src="images/slide61.jpg">
+    <img src="images/slide63.jpg">
+    <video src="images/vid3.mp4" autoplay muted loop playsinline></video>
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide58.jpg">
+    <img src="images/slide59.jpg">
+    <img src="images/slide60.jpg">
+    <img src="images/slide62.jpg">
+    <img src="images/slide61.jpg">
+    <img src="images/slide63.jpg">
+    <video src="images/vid3.mp4" autoplay muted loop playsinline></video>
+
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/posts/ailanational_latitude-biourbanism-with-adrian-mcgregor-activity-7117236391461212161-C99H/" target="_blank">
+  <img src="images/phil.jpg" alt="PhilHarris" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Phil Harris</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Troppo Architects  ·  AUSTRALIA
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Phil Harris is a founding director of Troppo Architects, whose practice has operated for over three decades across Australia's most remote landscapes — the Northern Territory, the Kimberley, the APY Lands and Cape York. Harris and co-founder Adrian Welke received the 2014 AIA Gold Medal and the Global Sustainable Architecture Award (Paris, 2010), the only Australian practice to receive that honour. The practice has won over 40 Australian Institute of Architects awards.
+    </p>
+  </div>
+
+  <a href="https://troppo.com.au/" target="_blank">
+    <img src="images/logo5.png" alt="Logo5" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</body>
+
+</html>

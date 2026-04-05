@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Parlot Garden</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
+  <p style="font-size: 15px">
+   The chosen stone has not been worked by humans, yet it contains within itself the essence of the material the Incas chose to build their sites. It is an element that supports, frames, and makes possible an architecture deeply integrated with nature.</p><p style="font-size: 15px">Machu Picchu, nestled high in the Peruvian Andes, is a testament to the ingenuity and work ethic of the Incas. With effort, knowledge, and a profound connection to the landscape, they masterfully worked with stone, achieving extraordinary results: terraces, plazas, and temples that blend seamlessly with the mountains, creating a place where engineering, aesthetics, and spirituality coexist in harmony.</p><p style="font-size: 15px">We do not seek to replicate Machu Picchu, but rather to convey an image that deeply captivated me and represents it: a stone that becomes the center of the site, supporting the existence of a solitary tree amidst a landscape filled with magic and tranquility. This is the image I want to take to Barcelona as a symbol of our history in our Latin American architecture, where stone and tree meet, and together form a small garden that celebrates architecture, nature, memory, and the extraordinary ability to create architecture within the landscape.
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Parlot Garden</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide35.jpg">
+    <img src="images/slide36.jpg">
+    <img src="images/slide37.jpg">
+    <img src="images/slide38.jpg">
+    <img src="images/slide39.jpg">
+    <img src="images/slide40.jpg">
+    <img src="images/slide41.jpg">
+    <img src="images/slide42.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide35.jpg">
+    <img src="images/slide36.jpg">
+    <img src="images/slide37.jpg">
+    <img src="images/slide38.jpg">
+    <img src="images/slide39.jpg">
+    <img src="images/slide40.jpg">
+    <img src="images/slide41.jpg">
+    <img src="images/slide42.jpg">
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/in/teresa-moller-b9945824/" target="_blank">
+  <img src="images/teresa.jpg" alt="TeresaMöller" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Teresa Möller</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Teresa Möller Paisajista  ·  CHILE
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Teresa Möller is one of Latin America's most celebrated landscape architects. Her project Punta Pite in Papudo is considered a landmark of contemporary landscape architecture globally, and was included in Blanca Montaña, the definitive selection of the most outstanding Chilean architecture of the past 20 years. She received the 2021 Global Award for Sustainable Architecture, sponsored by UNESCO, and has lectured and exhibited internationally across Europe, Australia, Asia and the Americas.
+  </div>
+
+  <a href="https://teresamoller.cl/" target="_blank">
+    <img src="images/logo8.png" alt="Logo8" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Topographic Garden, Starflower & Garden Mosaic </h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
+  <p style="font-size: 15px">
+   Three models (the 2 extra ones paid directly to BCN3DCERAMICS). Location: Californian area together. Known for being the author of the High Line NY. Sundial square, aggregates.
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Topographic Garden</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide7.jpg">
+    <img src="images/slide11.jpg">
+    <img src="images/slide8.jpg">
+    <img src="images/slide9.jpg">
+    <img src="images/slide10.jpg">
+    <img src="images/slide17.jpg">
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide7.jpg">
+    <img src="images/slide11.jpg">
+    <img src="images/slide8.jpg">
+    <img src="images/slide9.jpg">
+    <img src="images/slide10.jpg">
+    <img src="images/slide17.jpg">
+  </div>
+<button class="slider-arrow right">›</button>
+</div>
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Starflower</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide12.jpg">
+    <img src="images/slide13.jpg">
+    <img src="images/slide14.jpg">
+    <img src="images/slide15.jpg">
+    <img src="images/slide16.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide12.jpg">
+    <img src="images/slide13.jpg">
+    <img src="images/slide14.jpg">
+    <img src="images/slide15.jpg">
+    <img src="images/slide16.jpg">
+  </div>
+<button class="slider-arrow right">›</button>
+</div>
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Garden Mosaic</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide18.jpg">
+    <img src="images/slide19.jpg">
+    <img src="images/slide20.jpg">
+    <img src="images/slide21.jpg">
+    <img src="images/slide22.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide18.jpg">
+    <img src="images/slide19.jpg">
+    <img src="images/slide20.jpg">
+    <img src="images/slide21.jpg">
+    <img src="images/slide22.jpg">
+
+  </div>
+<button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/company/field-operations-landscape-architecture-urban-design/" target="_blank">
+  <img src="images/jim.jpg" alt="JamesCorner" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">James Corner</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Field Operations  ·  USA
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      James Corner is founder and director of Field Operations and Professor Emeritus at the University of Pennsylvania. His projects — including the High Line in New York, Freshkills Park on Staten Island, and Shelby Farms Park in Memphis — have redefined the role of landscape architecture in urban regeneration. He is the recipient of the Cooper-Hewitt National Design Award (2010) and an honorary doctorate from the Technical University of Munich (2018).
+
+
+</div>
+<a href="https://www.fieldoperations.net/" target="_blank">
+    <img src="images/logo10.png" alt="Logo10" class="banner-logo">
+  </a>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+document.querySelectorAll('.smooth-slider').forEach(slider => {
+
+  const track = slider.querySelector('.smooth-slider-track');
+  const leftBtn = slider.querySelector('.slider-arrow.left');
+  const rightBtn = slider.querySelector('.slider-arrow.right');
+
+  let x = 0;
+  let speed = 0.5;
+  let paused = false;
+  let resumeTimer;
+
+  function autoScroll() {
+    if (!paused) {
+      x -= speed;
+      track.style.transform = `translateX(${x}px)`;
+
+      const halfWidth = track.scrollWidth / 2;
+      if (Math.abs(x) >= halfWidth) {
+        x = 0;
+        track.style.transform = `translateX(0)`;
+      }
+    }
+    requestAnimationFrame(autoScroll);
+  }
+  autoScroll();
+
+  function pauseAuto() {
+    paused = true;
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(() => paused = false, 2000);
+  }
+
+  leftBtn.addEventListener('click', () => {
+    pauseAuto();
+    x += 200;
+    track.style.transform = `translateX(${x}px)`;
+  });
+
+  rightBtn.addEventListener('click', () => {
+    pauseAuto();
+    x -= 200;
+    track.style.transform = `translateX(${x}px)`;
+  });
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">The Garden of Arabesques</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;">Heavenly Garden</h3>
+  <p style="font-size: 15px">
+    The heights of a building’s rooftops are perceived as a place close to the sky, the moon, and the sun. I reinterpret these elements
+in an abstract way in the composition of my arabesque on the rooftops of Barcelona.
+Viewed from above, my arabesque is perceived as the Medusa where the various curves of the form express movement, while the
+plants convey rest and calm.</p><p style="font-size: 15px">The central part, composed with a star, symbolizes the planet and the sun (in Barcelona blue).
+The raised oval shapes are (white) contemplative light fixtures with engraved (blue) stars that symbolize the movement of the moon
+around the imagined planet. The shapes around the light fixtures (towards the outside) are benches/armchairs covered with blue
+ceramic, referencing Gaudí’s art in Barcelona and allowing for peaceful contemplation of the garden.
+The star is a modulation of blue colour, surrounded by thyme plants (Thymus serpyllum “Coccineus”). Planting in the areas along
+the outer lines of the square is composed of scab plant (Raoulia australis).</p>
+<p style="font-size: 15px">The arabesque expresses diversity, harmony, and above all the small paradise that all parks and gardens of the world seek to reflect.
+Thanks to its proximity to the sky, our arabesque expresses this paradise by inspiring all cultures.
+
+</p>
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of The Garden of Arabasques</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide1.jpg">
+    <img src="images/slide2.jpg">
+    <img src="images/slide3.jpg">
+    <img src="images/slide4.jpg">
+    <img src="images/slide5.jpg">
+    <img src="images/slide6.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide1.jpg">
+    <img src="images/slide2.jpg">
+    <img src="images/slide3.jpg">
+    <img src="images/slide4.jpg">
+    <img src="images/slide5.jpg">
+    <img src="images/slide6.jpg">
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/in/kamel-louafi-484286305/" target="_blank">
+  <img src="images/kamel.jpg" alt="KamelLouafi" class="banner-photo">
+</a>
+
+
+<div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Kamel Louafi</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Landscape Artist  ·  ALGERIA / GERMANY
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Kamel Louafi was born in Batna, Algeria, and studied landscape planning at the Technical University of West Berlin. He founded his Berlin studio in 1994, having previously managed the gardens of Daniel Libeskind's Jewish Museum. His work brings together arabesque geometry, public space, and sculpture across Germany, Algeria, and the Gulf. He received the Federal Cross of Merit from the President of Germany (2023) and the Grand Prize Le Geste d'Or, Paris (2023).
+  </div>
+
+  <a href="http://www.landschaftsarchitektur-louafi.de/8/" target="_blank">
+    <img src="images/logo3.png" alt="Logo3" class="banner-logo logo-small">
+
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+
+</body>
+
+</html>

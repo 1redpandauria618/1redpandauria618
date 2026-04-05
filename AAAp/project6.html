@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Hoods' project</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;">Insert main ideas</h3>
+  <p style="font-size: 15px">
+   Volume with low plant reliefs on each facade and upper porch. Pergola space and Cercis siliquastrum.</p>
+
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Hood's project</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide54.jpg">
+    <img src="images/slide55.jpg">
+    <img src="images/slide56.jpg">
+    <img src="images/slide57.jpg">
+    <video src="images/vid2.mp4" autoplay muted loop playsinline></video>
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide54.jpg">
+    <img src="images/slide55.jpg">
+    <img src="images/slide56.jpg">
+    <img src="images/slide57.jpg">
+    <video src="images/vid2.mp4" autoplay muted loop playsinline></video>
+
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/in/walter-hood-a3a344207" target="_blank">
+  <img src="images/walter.jpg" alt="WalterHood" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Walter Hood</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      Hood Design Studio  ·  USA
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Walter Hood is founder and creative director of Hood Design Studio in Oakland. His tripartite practice — Everyday, Lifeways, and Commemoration — grounds each project in the social and ecological specificity of its place. Landmark projects include the Oakland Museum of California garden, the International African American Museum in Charleston, and the Lift Ev'ry Voice and Sing park in Jacksonville. Hood is a MacArthur Fellow (2019) and 2025 Thomas Jefferson Foundation Medalist in Architecture.
+  </div>
+
+  <a href="https://www.hooddesignstudio.com/" target="_blank">
+    <img src="images/logo6.png" alt="Logo6" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+</body>
+
+</html>

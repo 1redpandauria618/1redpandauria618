@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Parlour Gardens</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <a href="concept.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Klitzner's project</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;">Insert main ideas</h3>
+  <p style="font-size: 15px">
+    If these gaps are here
+on the final – we can
+fill them with soil or a
+fine sand material.
+Would be nice to fill it
+with a sand material
+and stoneware grog –
+similar to the colour
+of the clay body
+
+Don’t worry about
+them.
+
+W e like the colour
+and feel of the
+sculptural forms,
+Thank you it is looking
+very exciting
+
+If you do glaze it could
+you use a very thin
+layer of a mat
+transparent glaze.</p>
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Klitzner's project</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide43.jpg">
+    <img src="images/slide44.jpg">
+    <img src="images/slide45.jpg">
+    <img src="images/slide46.jpg">
+    <img src="images/slide47.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide43.jpg">
+    <img src="images/slide44.jpg">
+    <img src="images/slide45.jpg">
+    <img src="images/slide46.jpg">
+    <img src="images/slide47.jpg">
+
+  </div>
+
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <a href="https://www.linkedin.com/in/tarna-klitzner-0b18ab233/" target="_blank">
+  <img src="images/tarna.jpg" alt="TarnaKlitzner" class="banner-photo">
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Tarna Klitzner</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;">
+      TKLA — Tarna Klitzner Landscape Architects · SOUTH AFRICA
+    </p>
+
+    <p style="font-size: 15px; color:#555;">
+      Tarna Klitzner founded TKLA in Cape Town in 1995, following an architecture degree at the University of Cape Town and a master's in landscape architecture at the University of Pennsylvania. Her practice spans public and private commissions across southern Africa, with an emphasis on human-centred design, community engagement, and the interplay between urban and natural environments. She is a full-time professor in the Department of Landscape Architecture at UCT.
+    </p>
+  </div>
+
+  <a href="https://www.tk-la.co.za/" target="_blank">
+    <img src="images/logo1.png" alt="Logo1" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</body>
+
+</html>
