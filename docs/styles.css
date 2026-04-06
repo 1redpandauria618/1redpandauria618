@@ -1304,4 +1304,29 @@ main,
     text-align: center !important;
   }
 }
+/* FIX SPACING BETWEEN CONTINENTS IN AUTHORS PAGE */
+.authors-columns .column > div {
+  margin-top: 32px !important;   /* space before each continent block */
+}
+
+.authors-columns .column p {
+  margin: 0 !important;          /* remove random paragraph spacing */
+}
+
+.authors-columns .column dl {
+  margin: 8px 0 0 0 !important;  /* small space between header + list */
+}
+
+.authors-columns .column dl dd {
+  margin: 4px 0 !important;      /* tighten list items */
+}
+
+.authors-columns hr {
+  margin: 40px 0 !important;     /* normalize all HR spacing */
+}
+
+/* SPECIAL FIX: remove the huge weird gap before the second column */
+.authors-columns .column:nth-child(2) > hr:first-of-type {
+  margin-top: 40px !important;
+}
 
