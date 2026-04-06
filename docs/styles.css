@@ -1100,4 +1100,15 @@ main,
 .about-section {
   overflow: visible !important;
 }
+@media (max-width: 700px) {
+  .fade-container,
+  main,
+  .about-section,
+  .authors-columns,
+  .column,
+  p, h1, h2, h3, dd, dl {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
 
