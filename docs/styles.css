@@ -1043,3 +1043,61 @@ html, body {
     margin: 40px 0;
   }
 }
+/* FINAL HARD OVERRIDE FOR MOBILE SPACING */
+@media (max-width: 700px) {
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+  }
+
+  /* Force equal padding on the entire content container */
+  .fade-container,
+  main,
+  .about-section,
+  .authors-columns,
+  .column {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Force all text elements to wrap and stay inside */
+  p, h1, h2, h3, dd, dl {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* Kill ANY rogue element that tries to be wider */
+  * {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+/* FORCE MENU + BURGER TO ALWAYS BE ON TOP — WITHOUT CHANGING POSITION */
+#nav-menutwo,
+#nav-menutwo *,
+#hamburgertwo,
+.hamburgertwo,
+.icon-two {
+  z-index: 999999 !important;   /* top of the universe */
+}
+/* Allow dropdown to extend downward */
+header,
+.fade-container,
+main,
+.about-section {
+  overflow: visible !important;
+}
+
