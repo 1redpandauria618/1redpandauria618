@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <div class="fade-container">
 
 <header class="navbar">
   <div class="logo">
@@ -29,10 +30,74 @@
   <h1 class="hover-green" style="margin:0;">The curational concept</h1>
   <p style="font-size: 15px">The first Jardins de Saló were presented at the Bernheim-Jeune galleries in Paris in 1927, receiving immediate international recognition. The exhibition included the three collaborators' garden models alongside seven tapestries by Dufy printed at the Bianchini Férier factory. The following year the works travelled to London and Belgium; by 1929 they had reached New York.</p>
 <p style="font-size: 15px">The pieces were celebrated for establishing a new language in garden design — one that reconciled the decorative traditions of Art Nouveau with the chromatic liberation of Fauvism, and placed the Mediterranean garden at the centre of international avant-garde discourse.</p>
-<hr>
-<p style="font-size: 15px; font-style: italic;">"To give the imaginative the pleasures of the garden, something real on which to rest their dreams, I imagined tiny ceramic gardens, decorated by Raoul Dufy and fired by Josep Llorens Artigas."
- — NICOLAU M. RUBIÓ I TUDURÍ</p>
-<hr>
+<p style="font-size: 15px; font-style: italic;"><strong>"To give the imaginative the pleasures of the garden, something real on which to rest their dreams, I imagined tiny ceramic gardens, decorated by Raoul Dufy and fired by Josep Llorens Artigas."</strong></p>
+<p style="font-size: 15px; font-style: italic;">NICOLAU M. RUBIÓ I TUDURÍ</p>
+
+
+<div class="timeline-container longer-line">
+
+  <div class="timeline-line"></div>
+
+
+  <div class="timeline-item" style="left: 20%;top: -50%">
+    <div class="dot"></div>
+    <div class="timeline-date">Curatorial Framework</div>
+    <div class="timeline-text"style="font-size:9px;">
+      Transitioning the parlor garden idea into a contemporary landscape art context
+    </div>
+  </div>
+
+  <div class="timeline-item" style="left:30%;top: 30%">
+    <div class="dot"></div>
+    <div class="timeline-date">Author Selection</div>
+    <div class="timeline-text"style="font-size:9px;">
+      Identifying leading landscape architects within the Mediterranean homoclimatic zone
+    </div>
+  </div>
+
+  <div class="timeline-item" style="left: 40%;top: -50%">
+    <div class="dot"></div>
+    <div class="timeline-date">Artist Onboarding & Briefing</div>
+    <div class="timeline-text"style="font-size:9px;">
+      Conceptual alignment, exhibition framework, and technical requirements
+    </div>
+  </div>
+
+  <div class="timeline-item" style="left: 50%;top: 30%">
+    <div class="dot"></div>
+    <div class="timeline-date">STL File Submission</div>
+    <div class="timeline-text"style="font-size:9px;">
+      Digital 3D model delivered by the artist for production
+    </div>
+  </div>
+
+  <div class="timeline-item" style="left: 60%;top: -50%">
+    <div class="dot"></div>
+    <div class="timeline-date">3D Ceramic Printing</div>
+    <div class="timeline-text"style="font-size:9px;">
+      Fabrication of the garden model using advanced ceramic printing technology
+    </div>
+  </div>
+
+  <div class="timeline-item" style="left: 70%;top: 30%">
+    <div class="dot"></div>
+    <div class="timeline-date">Enamelling & Hand Finishing</div>
+    <div class="timeline-text"style="font-size:9px;">
+      Artisan glazing and surface treatment applied by craft specialists
+    </div>
+  </div>
+
+  <div class="timeline-item" style="left:80%; top: -50%">
+    <div class="dot"></div>
+    <div class="timeline-date">Plantation</div>
+    <div class="timeline-text"style="font-size:9px;">
+      Planting carried out according to each artist's agreed botanical scheme
+    </div>
+  </div>
+
+</div>
+
+
   <p style="font-size: 15px">
     The exhibition establishes a dialogue across a century: fifteen ceramic garden models — one original from 1927, fourteen new works by internationally recognised architects and landscape architects — installed throughout the Barcelona Botanical Garden on Montjuïc mountain. Together they trace the evolution of the garden as a form of urban thought: from the intimate jardinet de saló of 1926 to the contested rooftop as ecological infrastructure in 2025.</p>
 <p style="font-size: 15px">Each contemporary participant was invited to contribute a 45 × 45 × 25 cm ceramic model — directly echoing the dimensions of the original pieces — representing their own vision for the urban rooftop garden. Models are produced using jet clay 3D printing from digital BIM and mesh files, then planted with living vegetation specified by each designer and maintained by the Botanical Garden team throughout the four-month exhibition.</p>
@@ -72,6 +137,29 @@
 
   requestAnimationFrame(raf);
 </script>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".fade-container");
+    container.classList.add("fade-in");
 
+    // Fade out on link click
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        const url = link.getAttribute("href");
+
+        // Ignore external links
+        if (url.startsWith("http")) return;
+
+        e.preventDefault();
+        container.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 500); // match CSS transition
+      });
+    });
+  });
+</script>
 </body>
 </html>

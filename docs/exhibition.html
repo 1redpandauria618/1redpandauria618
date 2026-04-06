@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <div class="fade-container">
 
 <header class="navbar">
   <div class="logo">
@@ -30,14 +31,14 @@
   <h3 style="font-size: 15px; color:#555; margin:0;">Dreams from the Rooftop · Barcelona Botanical Garden · June – September 2026</h3>
   <p style="font-size: 15px">
     Barcelona has been designated UNESCO–UIA World Capital of Architecture for 2026 — the first city to hold this title in the congress's modern form. The designation is both recognition and responsibility: an invitation to make the case, before an international professional audience, that architecture is not a specialist concern but a shared civic language. That space is political. That design is democracy made material.</p>
-<p style="font-size: 15px">The Capital's programme unfolds across ten months and ten districts, structured around three axes: architectural and urban quality; the transformation of the urban model; and the strengthening of the local architecture ecosystem. Parlour Gardens: Dreams from the Rooftop is part of this official programme — selected through open call, fully funded by Barcelona City Council.</p>
 <p style="font-size: 15px">Selected through an open call and fully funded by the Barcelona City Council, Parlour Gardens: Dreams from the Rooftop serves as a core component of the UNESCO–UIA World Capital of Architecture 2026 official programme. This exhibition is designed to fit within a city-wide framework focused on architectural quality, the transformation of urban models, and the strengthening of the local architecture ecosystem. Hosted at the Barcelona Botanical Garden from June to September 2026, the project creates a unique multidisciplinary intersection by integrating art, technology, architecture, and landscape design. It bridges a century of innovation—pairing a historic 1927 ceramic model with contemporary visions produced through jet clay 3D printing and living vegetation—to redefine the urban rooftop as a vital space of ecological and social possibility.
 
 
 <img src="images/slide87.jpg" class="slide87">
 
 
-
+<p style="font-size: 15px">The exhibition finds its home in a venue that is itself a triumph of ecological transformation: the Barcelona Botanical Garden. Designed by architects Carlos Ferrater and Josep Lluís Canosa alongside landscape architect Beth Figueras for the 1992 Olympics, this 14-hectare site on Montjuïc was reclaimed from a former landfill to become a world-class ecological showcase. Its unique triangular mesh structure fractalizes the Mediterranean landscape, organizing flora into specific homoclimatic zones: California, Chile, South Africa, Australia, and the Mediterranean.
+</p>
   <hr>
 <h1 class="hover-green" style="font-size: 20px; font-style: italic;">Key Dates</h1>
 
@@ -89,7 +90,6 @@
 
 
 
-
   <p>
 </div>
 </div>
@@ -108,6 +108,29 @@
 
   requestAnimationFrame(raf);
 </script>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".fade-container");
+    container.classList.add("fade-in");
 
+    // Fade out on link click
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        const url = link.getAttribute("href");
+
+        // Ignore external links
+        if (url.startsWith("http")) return;
+
+        e.preventDefault();
+        container.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 500); // match CSS transition
+      });
+    });
+  });
+</script>
 </body>
 </html>

@@ -12,6 +12,8 @@
 </head>
 
 <body>
+  <div class="fade-container">
+
 
 <header class="navbar">
   <div class="logo">
@@ -74,10 +76,14 @@
   <h3 style="font-size: 15px; color:#555; margin:0;">Maó, 1891 — 1981</h3>
   <p style="font-size: 15px">Architect, landscape designer, and director of Parks and Gardens for Barcelona City Council, Rubió conceived the garden as an imaginative vessel — a container for dreams rather than mere cultivation. His parks still define Barcelona's green infrastructure today.
 </p>
-</div>
+<img src="images/slide88.jpg"
+     alt="OriginalAuthors"
+     style="width:600px; display:block; margin:20px auto;">
+
 
 </div>
 
+</div>
 </main>
 <script>
   const lenis = new Lenis({
@@ -148,5 +154,30 @@ rightBtn.addEventListener('click', () => {
 // protect against image downloads
 document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".fade-container");
+    container.classList.add("fade-in");
+
+    // Fade out on link click
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        const url = link.getAttribute("href");
+
+        // Ignore external links
+        if (url.startsWith("http")) return;
+
+        e.preventDefault();
+        container.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 500); // match CSS transition
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

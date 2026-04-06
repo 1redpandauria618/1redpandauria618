@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <div class="fade-container">
 
 <header class="navbar">
   <div class="logo">
@@ -124,6 +125,43 @@
 
   requestAnimationFrame(raf);
 </script>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
 
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".fade-container");
+    container.classList.add("fade-in");
+
+    // Fade out on link click
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        const url = link.getAttribute("href");
+
+        // Ignore external links
+        if (url.startsWith("http")) return;
+
+        e.preventDefault();
+        container.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 500); // match CSS transition
+      });
+    });
+  });
+</script>
 </body>
 </main>

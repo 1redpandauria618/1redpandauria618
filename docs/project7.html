@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <div class="fade-container">
 
 <header class="navbar">
   <div class="logo">
@@ -143,6 +144,33 @@ rightBtn.addEventListener('click', () => {
 // protect against image downloads
 document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
-</body>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".fade-container");
+    container.classList.add("fade-in");
 
+    // Fade out on link click
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        const url = link.getAttribute("href");
+
+        // Ignore external links
+        if (url.startsWith("http")) return;
+
+        e.preventDefault();
+        container.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 500); // match CSS transition
+      });
+    });
+  });
+</script>
+</body>
 </html>
