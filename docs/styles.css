@@ -1112,3 +1112,10 @@ main,
   }
 }
 
+/* FIX: smooth-slider images being cut off */
+.smooth-slider,
+.smooth-slider *,
+.smooth-slider img {
+  max-width: none !important;
+  overflow: visible !important;
+}
