@@ -824,3 +824,180 @@ hr {
 .fade-container.fade-out {
   opacity: 0;
 }
+/* Mobile layout fix */
+@media (max-width: 600px) {
+  .timeline-text,
+  .timeline-date {
+    transform: translateX(20px) !important;
+  }
+  .timeline-container {
+    margin-left:107px !important;
+  }
+  .timeline-text {
+    max-width: 120px !important;
+    line-height: 1.2;
+  }
+}
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .center-this-mobile {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------- */
+/* HAMBURGERTWO — original icon (☰)                   */
+/* -------------------------------------------------- */
+
+.hamburgertwo {
+  position: relative;
+  cursor: pointer;
+  font-size: 32px;
+  user-select: none;
+  z-index: 9999;
+  margin-right: 14px;
+  margin-top: 4px;
+  transition: opacity 0.3s ease;
+}
+
+/* fade out the ☰ when active */
+.hamburgertwo.active {
+  opacity: 0;
+}
+
+
+/* -------------------------------------------------- */
+/* CUSTOM ICON — fades in when menu opens             */
+/* -------------------------------------------------- */
+
+.icon-two {
+  position: absolute;
+  right: 14px;     /* aligns with hamburger */
+  top: 4px;
+  width: 28px;
+  height: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 9998;
+}
+
+/* fade in icon when active */
+.icon-two.active {
+  opacity: 1;
+}
+
+
+/* -------------------------------------------------- */
+/* NAV-MENUTWO — premium dropdown                     */
+/* -------------------------------------------------- */
+
+.nav-menutwo {
+  position: absolute;
+  top: 48px;
+  right: 20px;
+
+  background: white;
+  padding: 22px;
+  width: 240px;
+
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 9998;
+}
+
+.nav-menutwo.open-two {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-menutwo a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-menutwo a:hover {
+  color: #4CAF50;
+  transform: translateX(3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Wrap the map so hotspots can sit on top */
+.map-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* The red squares */
+.hotspot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 0, 0, 0);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+/* Hover effect (optional) */
+.hotspot:hover {
+  transform: scale(1.3);
+  background: #ff444400;
+}
+
+/* The text box */
+.map-info {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #333;
+  min-height: 24px;
+  transition: opacity 0.3s ease;
+}

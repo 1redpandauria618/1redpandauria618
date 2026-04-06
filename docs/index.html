@@ -25,17 +25,18 @@
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
   </div>
-  <!-- HAMBURGER BUTTON (only visible on phones) -->
-  <div class="hamburger" onclick="toggleMenu()">
-    ☰
-  </div>
-  <nav id="nav-links" class="nav-links">
-    <a href="history.html">History</a>
-    <a href="concept.html">Concept</a>
-    <a href="exhibition.html">Exhibition</a>
-    <a href="authors.html">Authors</a>
-    <a href="credits.html">Credits</a>
-  </nav>
+<div class="hamburgertwo" id="hamburgertwo">
+  ☰
+</div>
+<img src="images/icon.png" class="icon-two" id="iconTwo">
+<nav id="nav-menutwo" class="nav-menutwo">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="concept.html">Concept</a>
+  <a href="exhibition.html">Exhibition</a>
+  <a href="authors.html">Authors</a>
+  <a href="credits.html">Credits</a>
+</nav>
 </header>
 
 
@@ -175,5 +176,11 @@ if (sessionStorage.getItem("introShown")) {
     });
   });
 </script>
+<script>
+document.getElementById("hamburgertwo").addEventListener("click", () => {
+  document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
+</script>
+
 </body>
 </html>

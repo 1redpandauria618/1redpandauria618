@@ -21,9 +21,18 @@
     </a>
   </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
+<div class="hamburgertwo" id="hamburgertwo">
+  ☰
+</div>
+
+<nav id="nav-menutwo" class="nav-menutwo">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="concept.html">Concept</a>
+  <a href="exhibition.html">Exhibition</a>
+  <a href="authors.html">Authors</a>
+  <a href="credits.html">Credits</a>
+</nav>
 </header>
 
 <main class="about-section">
@@ -161,5 +170,11 @@
     });
   });
 </script>
+<script>
+document.getElementById("hamburgertwo").addEventListener("click", () => {
+  document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
+</script>
+
 </body>
 </html>

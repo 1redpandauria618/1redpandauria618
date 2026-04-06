@@ -21,9 +21,18 @@
     </a>
   </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
+<div class="hamburgertwo" id="hamburgertwo">
+  ☰
+</div>
+
+<nav id="nav-menutwo" class="nav-menutwo">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="concept.html">Concept</a>
+  <a href="exhibition.html">Exhibition</a>
+  <a href="authors.html">Authors</a>
+  <a href="credits.html">Credits</a>
+</nav>
 </header>
 
 <main class="about-section">
@@ -34,7 +43,33 @@
 <p style="font-size: 15px">Selected through an open call and fully funded by the Barcelona City Council, Parlour Gardens: Dreams from the Rooftop serves as a core component of the UNESCO–UIA World Capital of Architecture 2026 official programme. This exhibition is designed to fit within a city-wide framework focused on architectural quality, the transformation of urban models, and the strengthening of the local architecture ecosystem. Hosted at the Barcelona Botanical Garden from June to September 2026, the project creates a unique multidisciplinary intersection by integrating art, technology, architecture, and landscape design. It bridges a century of innovation—pairing a historic 1927 ceramic model with contemporary visions produced through jet clay 3D printing and living vegetation—to redefine the urban rooftop as a vital space of ecological and social possibility.
 
 
-<img src="images/slide87.jpg" class="slide87">
+<div class="map-wrapper">
+  <img src="images/slide87.jpg" class="slide87">
+
+  <!-- hotspot squares -->
+  <div class="hotspot" data-text="Catherine Mosbach" style="top: 50%; left: 51%;"></div>
+  <div class="hotspot" data-text="Adrian McGregor" style="top: 50%; left: 53.5%;"></div>
+  <div class="hotspot" data-text="Gareth Doherty" style="top: 51.5%; left: 48%;"></div>
+  <div class="hotspot" data-text="Kamel Louafi" style="top: 47%; left: 78.15%;"></div>
+  <div class="hotspot" data-text="Tarna Klitzner" style="top: 58%; left: 47.25%;"></div>
+  <div class="hotspot" data-text="Thomas Doxiadis" style="top: 65%; left: 54.55%;"></div>
+  <div class="hotspot" data-text="Jala Makhzoumi & Abdul-HalimJabr" style="top: 65%; left: 57%;"></div>
+  <div class="hotspot" data-text="Teresa Möller" style="top: 65%; left: 23%;"></div>
+  <div class="hotspot" data-text="James Corner-project I" style="top: 68%; left: 24%;"></div>
+  <div class="hotspot" data-text="James Corner-project II" style="top: 68%; left: 26%;"></div>
+  <div class="hotspot" data-text="James Corner-project III" style="top: 68%; left: 28%;"></div>
+
+  <div class="hotspot" data-text="Peter Stutchbury" style="top: 33%; left: 89.55%;"></div>
+  <div class="hotspot" data-text="Phil Harris" style="top: 33%; left: 92.35%;"></div>
+  <div class="hotspot" data-text="" style="top: 33%; left: 95%;"></div>
+  <div class="hotspot" data-text="Walter Hood" style="top: 72.5%; left: 43.25%;"></div>
+  <div class="hotspot" data-text="Adam Greenspan" style="top: 72.5%; left: 46%;"></div>
+</div>
+
+<!-- updates -->
+<div id="map-info" class="map-info">
+  Hover a number to learn more
+</div>
 
 
 <p style="font-size: 15px">The exhibition finds its home in a venue that is itself a triumph of ecological transformation: the Barcelona Botanical Garden. Designed by architects Carlos Ferrater and Josep Lluís Canosa alongside landscape architect Beth Figueras for the 1992 Olympics, this 14-hectare site on Montjuïc was reclaimed from a former landfill to become a world-class ecological showcase. Its unique triangular mesh structure fractalizes the Mediterranean landscape, organizing flora into specific homoclimatic zones: California, Chile, South Africa, Australia, and the Mediterranean.
@@ -132,5 +167,25 @@
     });
   });
 </script>
+<script>
+document.getElementById("hamburgertwo").addEventListener("click", () => {
+  document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
+</script>
+<script>
+const hotspots = document.querySelectorAll('.hotspot');
+const infoBox = document.getElementById('map-info');
+
+hotspots.forEach(h => {
+  h.addEventListener('mouseenter', () => {
+    infoBox.style.opacity = 0;
+    setTimeout(() => {
+      infoBox.textContent = h.dataset.text;
+      infoBox.style.opacity = 1;
+    }, 150);
+  });
+});
+</script>
+
 </body>
 </html>

@@ -21,9 +21,19 @@
     </a>
   </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
+<div class="hamburgertwo" id="hamburgertwo">
+  ☰
+</div>
+
+<nav id="nav-menutwo" class="nav-menutwo">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="concept.html">Concept</a>
+  <a href="exhibition.html">Exhibition</a>
+  <a href="authors.html">Authors</a>
+  <a href="credits.html">Credits</a>
+</nav>
+
 </header>
 
 <main class="about-section">
@@ -126,20 +136,6 @@
   requestAnimationFrame(raf);
 </script>
 <script>
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-</script>
-<script>
   // Fade in on page load
   document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".fade-container");
@@ -163,5 +159,12 @@
     });
   });
 </script>
-</body>
+<script>
+document.getElementById("hamburgertwo").addEventListener("click", () => {
+  document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
+</script>
+
 </main>
+</body>
+

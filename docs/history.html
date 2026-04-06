@@ -22,9 +22,18 @@
     </a>
   </div>
 
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
+<div class="hamburgertwo" id="hamburgertwo">
+  ☰
+</div>
+
+<nav id="nav-menutwo" class="nav-menutwo">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="concept.html">Concept</a>
+  <a href="exhibition.html">Exhibition</a>
+  <a href="authors.html">Authors</a>
+  <a href="credits.html">Credits</a>
+</nav>
 </header>
 
 <main class="about-section">
@@ -76,7 +85,7 @@
   <h3 style="font-size: 15px; color:#555; margin:0;">Maó, 1891 — 1981</h3>
   <p style="font-size: 15px">Architect, landscape designer, and director of Parks and Gardens for Barcelona City Council, Rubió conceived the garden as an imaginative vessel — a container for dreams rather than mere cultivation. His parks still define Barcelona's green infrastructure today.
 </p>
-<img src="images/slide88.jpg"
+<img src="images/slide88.jpg "class="center-this-mobile"
      alt="OriginalAuthors"
      style="width:600px; display:block; margin:20px auto;">
 
@@ -177,6 +186,11 @@ document.addEventListener('contextmenu', event => event.preventDefault());
       });
     });
   });
+</script>
+<script>
+document.getElementById("hamburgertwo").addEventListener("click", () => {
+  document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
 </script>
 
 </body>
