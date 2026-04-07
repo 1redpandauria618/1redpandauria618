@@ -42,57 +42,53 @@
 
 
 <main id="projects">
+  <a class="project" href="project10.html">
+    <img src="images/JAMESCORNER.jpg" alt="Project 3">
+  </a>
+  <a class="project" href="project12.html">
+    <img src="images/DOXIADIS.jpg" alt="Project 3">
+  </a>
+  <a class="project" href="project11.html">
+    <img src="images/0K_GARETH.jpg" alt="Project 3">
+  </a>
+  <a class="project" href="project7.html">
+    <img src="images/ADAMGREENSPAN.jpg" alt="Project 3">
+  </a>
+  <a class="project" href="project5.html">
+    <img src="images/HARRIS.jpg" alt="Project 3">
+  </a>
+    <a class="project" href="project6.html">
+    <img src="images/WALTERHOOD.jpg" alt="Project 3">
+  </a>
   <a class="project" href="project1.html">
     <img src="images/0A_TARNA.jpg" alt="Project 1">
   </a>
-
-  <a class="project" href="project2.html">
-    <img src="images/0B_MOSBACH.jpg" alt="Project 2">
-  </a>
-
   <a class="project" href="project3.html">
     <img src="images/0C_LOUAFI.jpg" alt="Project 3">
+  </a>
+  
+  <a class="project" href="project13.html">
+    <img src="images/JALA (1).jpg" alt="Project 3">
   </a>
 
   <a class="project" href="project4.html">
     <img src="images/MCGREGOR.jpg" alt="Project 3">
   </a>
-
-  <a class="project" href="project5.html">
-    <img src="images/HARRIS.jpg" alt="Project 3">
-  </a>
-
-  <a class="project" href="project6.html">
-    <img src="images/WALTERHOOD.jpg" alt="Project 3">
-  </a>
-
-  <a class="project" href="project7.html">
-    <img src="images/ADAMGREENSPAN.jpg" alt="Project 3">
-  </a>
-
   <a class="project" href="project8.html">
     <img src="images/TERESAMOLLER.jpg" alt="Project 3">
   </a>
 
+  <a class="project" href="project2.html">
+    <img src="images/0B_MOSBACH.jpg" alt="Project 2">
+  </a>
   <a class="project" href="project9.html">
     <img src="images/PETER (1).jpg" alt="Project 3">
   </a>
 
-  <a class="project" href="project10.html">
-    <img src="images/JAMESCORNER.jpg" alt="Project 3">
-  </a>
 
-  <a class="project" href="project11.html">
-    <img src="images/0K_GARETH.jpg" alt="Project 3">
-  </a>
 
-  <a class="project" href="project12.html">
-    <img src="images/DOXIADIS.jpg" alt="Project 3">
-  </a>
 
-  <a class="project" href="project13.html">
-    <img src="images/JALA (1).jpg" alt="Project 3">
-  </a>
+
 </main>
 <script>
   const lenis = new Lenis({
@@ -180,6 +176,15 @@ if (sessionStorage.getItem("introShown")) {
 <script>
 document.getElementById("hamburgertwo").addEventListener("click", () => {
   document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
+</script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
 });
 </script>
 

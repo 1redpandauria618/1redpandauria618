@@ -1,0 +1,175 @@
+<style>
+   * {
+    box-sizing: border-box;
+   }
+   body{
+    background-color: black;
+   }
+   h1{
+    color: white;
+   }
+   h3{
+    color: white;
+   }
+   li{
+    color: white;
+   }
+   .bottom{
+     color: white;
+     margin:0 auto;
+     text-align: center;
+     z-index: 1000;
+     position: fixed;
+     bottom: 25px;
+   }
+   a:hover{
+     color: orange;
+   }
+   li:hover{
+     color: orange;
+   }
+@media screen and (min-width: 300px) {
+  .center{
+     width: 200px;
+     color: white;
+     z-index: 1000;
+     position: fixed;
+     right: 25px;
+     padding: 10px 15px;
+     top: 13%
+   }
+  div {
+    font-size: 10px;
+  }
+  p {
+    width: 300px;
+    margin-left: 25px;
+  }
+  h3 {
+    width: 200px;
+    margin-left: 75px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .center {
+    color:red;
+    font-size: 700px
+    width: 1000000px;
+    margin: 0 auto;
+  }
+  h3{
+    color: white;
+   }
+  
+  
+
+}
+/* -------------------------------------------------- */
+/* HAMBURGERTWO — original icon (☰)                   */
+/* -------------------------------------------------- */
+
+.hamburgertwo {
+  position: relative;
+  cursor: pointer;
+  font-size: 32px;
+  user-select: none;
+  z-index: 9999;
+  margin-right: 14px;
+  margin-top: 4px;
+  transition: opacity 0.3s ease;
+}
+
+/* fade out the ☰ when active */
+.hamburgertwo.active {
+  opacity: 0;
+}
+
+
+/* -------------------------------------------------- */
+/* CUSTOM ICON — fades in when menu opens             */
+/* -------------------------------------------------- */
+
+.icon-two {
+  position: absolute;
+  right: 14px;     /* aligns with hamburger */
+  top: 4px;
+  width: 28px;
+  height: 28px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 9998;
+}
+
+/* fade in icon when active */
+.icon-two.active {
+  opacity: 1;
+}
+
+
+/* -------------------------------------------------- */
+/* NAV-MENUTWO — premium dropdown                     */
+/* -------------------------------------------------- */
+
+.nav-menutwo {
+  position: absolute;
+  top: 48px;
+  right: 20px;
+
+  background: white;
+  padding: 22px;
+  width: 240px;
+
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  opacity: 0;
+  transform: translateY(-12px);
+  pointer-events: none;
+
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 9998;
+}
+
+.nav-menutwo.open-two {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-menutwo a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-menutwo a:hover {
+  color: #4CAF50;
+  transform: translateX(3px);
+}
+/* General rule: all images smaller by default */
+img {
+  max-width: 80px;
+  height: auto;
+}
+
+/* Specific sizes */
+.logo {
+  width: 80px;   /* adjust as you like */
+}
+
+.icon {
+  width: 40px;
+}
+
+.icon-small {
+  width: 30px;
+}
+
+</style>

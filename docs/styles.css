@@ -1336,3 +1336,79 @@ main,
   margin-top: 40px !important;
 }
 
+.full-banner {
+  display: flex;
+  align-items: flex-start; /* forces all items to align at the top */
+  gap: 20px;               /* optional spacing */
+  margin-top: 30px;        /* optional */
+}
+
+.banner-photo {
+  width: 200px;            /* or whatever size you want */
+  height: auto;
+  object-fit: cover;
+}
+
+.banner-text {
+  flex: 1;                 /* text takes remaining space */
+}
+
+.banner-logo {
+  width: 120px;            /* adjust as needed */
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start;  /* ensures logo stays at top */
+}
+.banner-photo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centers caption under image */
+  gap: 6px;                /* small spacing between image and text */
+  align-self: flex-start;  /* keeps it pinned to the top of the banner */
+}
+
+.banner-photo {
+  width: 200px;            /* adjust as needed */
+  height: auto;
+  object-fit: cover;
+}
+
+.banner-photo-block p.banner-photo-caption {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  color: #555 !important;   /* restores the gray */
+  font-size: 19px;          /* same size as before */
+  text-align: center;
+}
+
+
+.banner-photo-block p.banner-photo-caption.hover-green:hover {
+  color: #3a7f3a !important;
+  text-decoration: underline !important;
+  text-underline-offset: 2px; /* optional: makes it look nicer */
+}
+.linked-sentence a {
+  color: #555;                 /* same gray as your captions */
+  text-decoration: none;
+  transition: color .25s ease, text-decoration .25s ease;
+  margin-right: 6px;           /* spacing between words */
+}
+
+.linked-sentence a:hover {
+  color: #3a7f3a;              /* your green highlight */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.banner-photo-caption a {
+  color: inherit !important;          /* use the same gray as the <p> */
+  text-decoration: none !important;   /* remove default underline */
+  font: inherit;                      /* keep your font + size */
+}
+
+.banner-photo-caption a:hover {
+  color: #3a7f3a !important;          /* your green hover */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

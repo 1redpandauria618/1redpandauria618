@@ -58,14 +58,14 @@
   <button class="slider-arrow right">›</button>
 </div>
 <div class="full-banner">
-
-  <a href="https://www.linkedin.com/in/abdul-halim-jabr-a790a85?originalSubdomain=lb" target="_blank">
-  <img src="images/jabr.jpg" alt="Abdul-HalimJabr" class="banner-photo">
+  <a href="https://www.linkedin.com/in/jala-makhzoumi-5641a225/" target="_blank">
+  <img src="images/jala.jpg" alt="JalaMakhzoumi" class="banner-photo">
 </a>
 
 
+
   <div class="banner-text">
-    <h2 class="hover-green" style="margin:0;">Abdul-Halim Jabr & Jala Makhzoumi</h2>
+    <h2 class="hover-green" style="margin:0;">Jala Makhzoumi & Abdul-Halim Jabr</h2>
 
 
     <p style="font-size: 15px; color:#555; margin:0;">
@@ -77,8 +77,8 @@
     </p>
   </div>
 
-  <a href="https://www.linkedin.com/in/jala-makhzoumi-5641a225/" target="_blank">
-  <img src="images/jala.jpg" alt="JalaMakhzoumi" class="banner-photo">
+  <a href="https://www.linkedin.com/in/abdul-halim-jabr-a790a85?originalSubdomain=lb" target="_blank">
+  <img src="images/jabr.jpg" alt="Abdul-HalimJabr" class="banner-photo">
 </a>
 </div>
 <script>
@@ -192,5 +192,15 @@ document.addEventListener('contextmenu', event => event.preventDefault());
     });
   });
 </script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
+});
+</script>
+
 </body>
 </html>

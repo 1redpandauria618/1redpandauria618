@@ -180,6 +180,15 @@ document.getElementById("hamburgertwo").addEventListener("click", () => {
   document.getElementById("nav-menutwo").classList.toggle("open-two");
 });
 </script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
+});
+</script>
 
 </main>
 </body>

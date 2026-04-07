@@ -29,7 +29,7 @@
   <h1 class="hover-green" style="margin:0;">Tectonic Garden</h1>
 
 
-  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
+  <h3 style="font-size: 15px; color:#555; margin:0;">McGregor Coxall Studio</h3>
   <p style="font-size: 15px">
     One hundred years after the 1927 Parlor Gardens exhibition, TECTONIC Garden reinterprets the dialogue between nature and the built environment for our post-industrial age. Where Rubió i Tudurí, Dufy, and Artigas created miniature sanctuaries that brought the garden into domestic space, this work invites reflection on how cities themselves have become a new form of nature—brutal, elemental, and perpetually transforming.
 The installation comprises nine ceramic flutes rising from a circular base, their industrial forms echoing the cooling towers, smokestacks, and infrastructural monuments that define our urban horizons. These structures, once symbols of fossil fuel dependency and private industrial power, stand reimagined as vessels for ecological renewal.</p><p style="font-size: 15px">In this transformation lies the work's central proposition: that the tectonic landscapes of decline—vacant lots, abandoned infrastructure, post-industrial sites—are not voids but fertile ground for cultural and ecological rebirth.
@@ -180,5 +180,15 @@ document.addEventListener('contextmenu', event => event.preventDefault());
     });
   });
 </script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
+});
+</script>
+
 </body>
 </html>

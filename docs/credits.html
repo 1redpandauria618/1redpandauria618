@@ -39,7 +39,33 @@
 
 <h1 class="hover-green" style="margin:0;">Credits</h1>
 <hr style="margin:5px 0 0 0;">
+<h1 class="hover-green" style="font-size: 20px; margin:3;">
+  <a href="https://www.masiamuseuserra.com/"
+     style="color:inherit; text-decoration:none;"
+     onmouseover="this.style.color='#3a7f3a'"
+     onmouseout="this.style.color='inherit'"
+     target="_blank">
+    Special Thank you
+  </a>
+</h1>
+<p class="linked-sentence">
+  Parlor Gardens — Dreams from the Rooftop brings together thirteen of the world's most visionary landscape architects and architects, whose generosity of time and talent, and whose faith in this shared endeavour, have made this exhibition possible:
+  <a href="project10.html">James Corner</a> —
+  <a href="project12.html">Thomas Doxiadis</a> —
+  <a href="project11.html">Gareth Doherty</a> —
+  <a href="project7.html">Adam Greenspan</a> —
+  <a href="project5.html">Phil Harris</a> —
+  <a href="project6.html">Walter Hood</a> —
+  <a href="project1.html">Tarna Klitzner</a> —
+  <a href="project3.html">Kamel Louafi</a> —
+  <a href="project13.html">Jala Makhzoumi & Abdul-Halim Jabr</a> —
+  <a href="project4.html">Adrian McGregor</a> —
+  <a href="project8.html">Teresa Moller</a> —
+  <a href="project2.html">Catherine Mosbach</a> —
+  <a href="project9.html">Peter Stutchbury</a>
+</p>
 
+<hr style="margin:5px 0 0 0;">
 <h1 class="hover-green" style="font-size: 20px; font-style: italic; margin:3;">The curational team</h1>
 
 <h1 class="hover-green" style="font-size: 20px; margin:0;">
@@ -159,6 +185,20 @@
 <h3 style="font-size: 15px; color:#555; margin:0;">Installation, Dismantling & Transport</h3>
   <p style="font-size: 15px">Lotema Montatges specialises in the conception and execution of exhibitions and events, offering tailored solutions for each project from initial idea through to final installation. Their expertise ensures that every element of Parlour Gardens is assembled and presented with precision, care and lasting impact.
   </p>
+
+<h1 class="hover-green" style="font-size: 20px; margin:0;">
+  <a href="https://github.com/1redpandauria618"
+     style="color:inherit; text-decoration:none;"
+     onmouseover="this.style.color='#3a7f3a'"
+     onmouseout="this.style.color='inherit'"
+     target="_blank">
+    Àuria Mercadé
+  </a>
+</h1>
+
+<h3 style="font-size: 15px; color:#555; margin:0;">web developper· 1redpandauria618 on github </h3>
+  <p style="font-size: 15px">
+  </p>
 <hr style="margin:5px 0 0 0;">
 <h1 class="hover-green" style="font-size: 20px; margin:3;">
   <a href="https://www.masiamuseuserra.com/"
@@ -171,6 +211,8 @@
 </h1>
 <p style="font-size: 15px">The photographs of the jardí de saló painted by Nicolau M. Rubió i Tudurí and produced by Ceràmiques Serra are reproduced with the kind permission of the Serra family. This piece — completed by Rubió i Tudurí in the final months of his life, at the request of the 1980 Fundació Joan Miró exhibition — stands as his last creative work.
 </p>
+
+
 <script>
   const lenis = new Lenis({
     duration: 1.2,
@@ -212,6 +254,15 @@
 <script>
 document.getElementById("hamburgertwo").addEventListener("click", () => {
   document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
+</script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
 });
 </script>
 

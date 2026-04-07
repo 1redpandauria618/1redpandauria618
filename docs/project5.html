@@ -29,7 +29,7 @@
   <h1 class="hover-green" style="margin:0;">Harris' project</h1>
 
 
-  <h3 style="font-size: 15px; color:#555; margin:0;">Insert main ideas</h3>
+  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
   <p style="font-size: 15px">
    Square-based piece that refers to a building eaten by roots. AIA Gold Medallist 2014. Associate Professor at Univ. Adelaide. Co-founder of Troppo Architects. Bonsais Space.</p>
 
@@ -192,5 +192,15 @@ document.addEventListener('contextmenu', event => event.preventDefault());
     });
   });
 </script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
+});
+</script>
+
 </body>
 </html>

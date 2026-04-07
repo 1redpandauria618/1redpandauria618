@@ -29,7 +29,7 @@
   <h1 class="hover-green" style="margin:0;">Mosbach's project</h1>
 
 
-  <h3 style="font-size: 15px; color:#555; margin:0;">Insert main ideas</h3>
+  <h3 style="font-size: 15px; color:#555; margin:0;"></h3>
   <p style="font-size: 15px">
     Perforated ceramic box with interior moss spore planting. Aula Mediterrània.</p>
 
@@ -177,5 +177,15 @@ document.addEventListener('contextmenu', event => event.preventDefault());
     });
   });
 </script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
+});
+</script>
+
 </body>
 </html>
