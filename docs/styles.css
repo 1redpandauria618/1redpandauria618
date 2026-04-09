@@ -1582,3 +1582,11 @@ a, p, img, div {
     width: 100%;
   }
 }
+.banner-logo-coxall {
+  height: 25px !important;   /* or 200px, 240px — whatever size you want */
+  width: auto !important;
+  max-height: none !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+}
