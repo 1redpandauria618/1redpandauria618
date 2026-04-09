@@ -1590,3 +1590,53 @@ a, p, img, div {
   object-fit: contain !important;
   flex-shrink: 0 !important;
 }
+
+.team-bio {
+  display: block;        /* stays normal, not a flex item */
+  max-height: 0;         /* takes no vertical space */
+  overflow: hidden;      /* hides the text */
+  opacity: 0;            /* invisible */
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  margin: 0;             /* prevents pushing layout */
+  padding: 0;            /* prevents pushing layout */
+}
+
+.team-bio.open {
+  max-height: 300px;     /* enough space for the text */
+  opacity: 1;
+  padding: 5px 0;        /* only appears when open */
+}
+.banner-photo-block {
+  position: relative;
+}
+
+.team-entry {
+  position: relative;
+}
+
+.team-name {
+  cursor: pointer;
+  position: relative;
+  z-index: 20; /* ensures the name stays clickable */
+}
+
+.team-bio {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background: white;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+  z-index: 10;
+}
+
+.team-bio.open {
+  max-height: 300px;
+  opacity: 1;
+  padding: 10px 0;
+}
