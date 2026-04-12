@@ -1614,29 +1614,77 @@ a, p, img, div {
   position: relative;
 }
 
-.team-name {
-  cursor: pointer;
-  position: relative;
-  z-index: 20; /* ensures the name stays clickable */
+/* Make sure the parent doesn't clip the popup */
+.full-banner,
+.banner-photo-block {
+  overflow: visible !important;
 }
 
+/* Base state: hidden notification bubble */
 .team-bio {
   position: absolute;
-  left: 0;
-  top: 100%;
-  width: 100%;
+  top: -22.5%;                 /* place it BELOW the name */
+  left: 430%;
+  transform: translateX(-50%); /* center horizontally */
+
+  width: 1000px;              /* adjust as needed */
+  max-width: 90vw;
+  max-height: none;
+
   background: white;
-  padding: 0;
-  margin: 0;
-  max-height: 0;
-  overflow: hidden;
+  color: #444;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
   opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease;
-  z-index: 10;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 999;
 }
 
-.team-bio.open {
-  max-height: 300px;
+/* Show on hover */
+.team-name:hover + .team-bio {
   opacity: 1;
-  padding: 10px 0;
 }
+@media (max-width: 600px) {
+
+  /* Make each entry a focus container */
+  .team-entry {
+    position: relative;
+  }
+
+  /* Make the name focusable on mobile */
+  .team-name {
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+
+  /* Remove ugly focus ring */
+  .team-name:focus {
+    outline: none;
+  }
+
+  /* Tooltip styling */
+  .team-bio {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 90vw;
+    padding: 12px 16px;
+    border-radius: 10px;
+    max-height: none;
+    overflow: visible;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  /* MAGIC:
+     When a team-entry has focus, show its tooltip */
+  .team-entry:focus-within .team-bio {
+    opacity: 1;
+  }
+}
+
