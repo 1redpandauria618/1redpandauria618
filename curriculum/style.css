@@ -1,72 +1,60 @@
-<style>
-   * {
-    box-sizing: border-box;
-   }
-   body{
-    background-color: black;
-   }
-   h1{
-    color: white;
-   }
-   h3{
-    color: white;
-   }
-   li{
-    color: white;
-   }
-   .bottom{
-     color: white;
-     margin:0 auto;
-     text-align: center;
-     z-index: 1000;
-     position: fixed;
-     bottom: 25px;
-   }
-   a:hover{
-     color: orange;
-   }
-   li:hover{
-     color: orange;
-   }
-@media screen and (min-width: 300px) {
-  .center{
-     width: 200px;
-     color: white;
-     z-index: 1000;
-     position: fixed;
-     right: 25px;
-     padding: 10px 15px;
-     top: 13%
-   }
-  div {
-    font-size: 10px;
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffffff, #e6e6e6, #dfdfdf);
+}
+
+h1, h3, li {
+  color: rgb(0, 0, 0);
+}
+
+.bottom {
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 1000;
+  position: fixed;
+  bottom: 25px;
+}
+
+a:hover, li:hover {
+  color: orange;
+}
+
+/* ------------------------------ */
+/* RESPONSIVE RULES               */
+/* ------------------------------ */
+
+/* Small screens */
+@media screen and (max-width: 600px) {
+  .center {
+    width: 90%;
+    margin: 40px auto;
+    padding: 15px;
+    position: static; /* no fixed positioning */
   }
-  p {
-    width: 300px;
-    margin-left: 25px;
-  }
-  h3 {
-    width: 200px;
-    margin-left: 75px;
+
+  .center p {
+    width: 100%;
+    margin-left: 0;
+    font-size: 16px;
   }
 }
+
+/* Large screens */
 @media screen and (min-width: 1000px) {
   .center {
-    color:red;
-    font-size: 700px
-    width: 1000000px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 60px auto;
+    font-size: 18px;
   }
-  h3{
-    color: white;
-   }
-  
-  
-
 }
-/* -------------------------------------------------- */
-/* HAMBURGERTWO — original icon (☰)                   */
-/* -------------------------------------------------- */
+
+/* ------------------------------ */
+/* HAMBURGER ICON                 */
+/* ------------------------------ */
 
 .hamburgertwo {
   position: relative;
@@ -76,22 +64,22 @@
   z-index: 9999;
   margin-right: 14px;
   margin-top: 4px;
+  color: white;
   transition: opacity 0.3s ease;
 }
 
-/* fade out the ☰ when active */
+/* fade out ☰ when menu opens */
 .hamburgertwo.active {
   opacity: 0;
 }
 
-
-/* -------------------------------------------------- */
-/* CUSTOM ICON — fades in when menu opens             */
-/* -------------------------------------------------- */
+/* ------------------------------ */
+/* OPTIONAL SECOND ICON (if used) */
+/* ------------------------------ */
 
 .icon-two {
   position: absolute;
-  right: 14px;     /* aligns with hamburger */
+  right: 14px;
   top: 4px;
   width: 28px;
   height: 28px;
@@ -101,40 +89,42 @@
   z-index: 9998;
 }
 
-/* fade in icon when active */
 .icon-two.active {
   opacity: 1;
 }
 
-
-/* -------------------------------------------------- */
-/* NAV-MENUTWO — premium dropdown                     */
-/* -------------------------------------------------- */
+/* ------------------------------ */
+/* DROPDOWN MENU                  */
+/* ------------------------------ */
 
 .nav-menutwo {
-  position: absolute;
-  top: 48px;
-  right: 20px;
+  position: fixed; /* instead of absolute */
+  top: 80px;       /* adjust depending on header height */
+  right: 30px;
 
-  background: white;
-  padding: 22px;
-  width: 240px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
 
+  padding: 20px;
+  width: 220px;
   border-radius: 14px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
 
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
 
   opacity: 0;
-  transform: translateY(-12px);
+  transform: translateY(-10px);
   pointer-events: none;
 
   transition: opacity 0.35s ease, transform 0.35s ease;
-  z-index: 9998;
+
+  z-index: 999999; /* always on top */
 }
 
+
+/* menu visible */
 .nav-menutwo.open-two {
   opacity: 1;
   transform: translateY(0);
@@ -153,15 +143,18 @@
   color: #4CAF50;
   transform: translateX(3px);
 }
-/* General rule: all images smaller by default */
+
+/* ------------------------------ */
+/* IMAGE SIZES                    */
+/* ------------------------------ */
+
 img {
   max-width: 80px;
   height: auto;
 }
 
-/* Specific sizes */
 .logo {
-  width: 80px;   /* adjust as you like */
+  width: 80px;
 }
 
 .icon {
@@ -169,7 +162,391 @@ img {
 }
 
 .icon-small {
-  width: 30px;
+  width: 16px;
 }
 
-</style>
+
+
+.hamburgertwo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  z-index: 9999;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.header-content img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+}
+.social-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+}
+
+.social-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #111;
+  padding: 14px 18px;
+  border-radius: 12px;
+  transition: transform 0.25s ease, background 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.social-card:hover {
+  transform: translateX(6px);
+  background: #1a1a1a;
+}
+
+.social-card img {
+  width: 40px;
+  height: 40px;
+}
+
+.social-card a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+.icon-small {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+h1:hover {
+  color:orange !important;
+}
+
+a:hover {
+  color:rgba(255, 255, 255, 0.637) !important;
+}
+.social-card {
+  background: #111;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+p {
+  color: rgb(0, 0, 0);
+}
+.parallax {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.parallax-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.header-content {
+  position: relative;
+  z-index: 2;
+}
+/* PARALLAX VIDEO BACKGROUND */
+.parallax {
+  position: relative;
+  height: 115px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Video fills the background */
+.parallax-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Dark overlay for readability */
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* HEADER CONTENT LAYOUT */
+.header-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 20px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Left side: image + name */
+.left-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.left-header img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.left-header h1 {
+  margin: 0;
+  font-size: 26px;
+  color: white;
+}
+
+/* Hamburger on the right */
+.hamburgertwo {
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+}
+
+.hamburgertwo.active {
+  opacity: 0;
+}
+
+/* Dropdown menu */
+.nav-menutwo {
+  position: absolute;
+  top: 70px;
+  right: 30px;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+
+  padding: 20px;
+  width: 220px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  z-index: 3;
+}
+
+.nav-menutwo.open-two {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.nav-menutwo a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.25s ease;
+}
+
+.nav-menutwo a:hover {
+  color: orange;
+}
+.hamburgertwo {
+  position: relative;
+  z-index: 99999; /* puts it on top of EVERYTHING */
+}
+.nav-menutwo {
+  position: absolute;
+  z-index: 999998; /* just under burger */
+}
+hr {
+  position: relative;
+  z-index: 1; /* very low */
+}
+.parallax {
+  overflow: hidden; /* NOT visible */
+}
+.nav-menutwo {
+  position: fixed;
+  z-index: 999999999; /* highest on the page */
+}
+.container,
+.left-box,
+.right-box,
+.social-card,
+hr {
+  position: relative;
+  z-index: 1; /* low */
+}
+.right-box {
+  flex: 1;
+  padding: 30px 40px;
+  max-width: 700px;
+  margin: 0 auto; /* centers it */
+}
+.right-box p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ddd;
+}
+.right-box h6 {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+.right-box {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 14px;
+  padding: 30px 40px;
+  margin-top: 20px;
+}
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+.site-footer {
+  margin-top: 60px;
+  padding: 30px 20px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(255,255,255,0.15);
+
+  color: #ccc;
+}
+
+.site-footer h6 {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.center {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.center h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.center p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+body {
+  color: white;
+}
+.center {
+  display: block;          /* stops flex squeezing */
+  max-width: 800px;        /* readable width */
+  width: 90%;              /* responsive */
+  margin: 60px auto;       /* centers it */
+  padding: 20px 30px;      /* breathing room */
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.center {
+  flex: none;       /* opt out of flex sizing */
+}
+.center {
+  display: block !important;   /* stops flex squeezing */
+  flex: none !important;       /* opt out of flex parent */
+  width: 100%;                 /* full width inside page */
+  max-width: 800px;            /* readable text width */
+  margin: 60px auto;           /* center horizontally */
+  padding: 20px 30px;          /* breathing room */
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+.center h1 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 32px;
+  color: white;
+}
+
+.center p {
+  margin-top: 20px;
+  color: #e5e5e5;
+}
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999;
+
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
+
+#intro-screen img {
+  width: 260px;
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.25));
+  animation: popIn 1.2s ease forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; filter: blur(10px); }
+  100% { transform: scale(1); opacity: 1; filter: blur(0); }
+}
+
+#intro-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

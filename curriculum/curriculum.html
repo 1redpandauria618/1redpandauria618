@@ -5,58 +5,118 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infos</title>
+
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="143723184.png" sizes="32x32">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+<div id="intro-screen">
+  <img src="143723184.png" alt="Intro Logo">
+</div>
+
+  <!-- =============================== -->
+  <!-- PREMIUM PARALLAX VIDEO HEADER   -->
+  <!-- =============================== -->
   <div class="parallax">
-    <div>
-    <a href="https://github.com/1redpandauria618?tab=overview&from=2025-12-01&to=2025-12-31">
-      <img src="143723184.png" class="icon-small">
-    </a>
-    <h1>Àuria Mercadé Cervera</h1>
+
+    <!-- Background video -->
+    <video class="parallax-video" src="a.mp4" autoplay muted loop playsinline></video>
+
+    <!-- Dark overlay for readability -->
+    <div class="header-overlay"></div>
+
+    <!-- Header content -->
+    <div class="header-content">
+
+      <!-- Left side: profile + name -->
+      <div class="left-header">
+        <img src="143723184.png" alt="Logo" class="icon-small">
+        <h1>Àuria Mercadé Cervera</h1>
+      </div>
+
+      <!-- Right side: hamburger -->
+      <div class="hamburgertwo" id="hamburgertwo">☰</div>
+
+      <!-- Dropdown menu -->
+      <nav id="nav-menutwo" class="nav-menutwo">
+        <a href="moocs.html">MOOCs</a>
+        <a href="parcours.html">Parcours</a>
+      </nav>
+
     </div>
   </div>
 
   <hr>
 
+  <!-- =============================== -->
+  <!-- MAIN CONTENT                    -->
+  <!-- =============================== -->
   <div class="container">
 
+    <!-- LEFT SIDE: SOCIAL LINKS -->
     <div class="left-box">
-      <h3>Retrouvez-moi sur</h3>
+      <div class="social-section">
 
-      <h6>
-        <img src="https://media.tenor.com/F_aIpdp3hEwAAAAi/git-github.gif" class="icon">
-        <a href="https://github.com/1redpandauria618?tab=overview&from=2025-12-01&to=2025-12-31">Mon compte GitHub</a>
-      </h6>
+        <div class="social-card">
+          <img src="https://media.tenor.com/F_aIpdp3hEwAAAAi/git-github.gif" alt="GitHub" class="icon-small">
+          <a href="https://github.com/1redpandauria618">Mon compte GitHub</a>
+        </div>
 
-      <h6>
-        <img src="6.png" class="icon-small">
-        <a href="https://scratch.mit.edu/users/redpandauria/">Mon compte Scratch</a>
-      </h6>
+        <div class="social-card">
+          <img src="6.png" alt="Scratch" class="icon-small">
+          <a href="https://scratch.mit.edu/users/redpandauria/">Mon compte Scratch</a>
+        </div>
+        <footer class="site-footer">
+  <h6>
+    Àuria Mercadé — +34 685 58 34 48  
+    <br>auria.mercade@eleve.lfb.es  
+    <br>Lycée Français de Barcelone, Espagne  
+    <br>Stage seconde : 15–26 juin 2026
+  </h6>
+</footer>
 
-      <hr>
+      </div>
     </div>
 
+    <!-- RIGHT SIDE: INFO -->
     <div class="right-box">
-      <h6>
-        Àuria Mercadé — +34 685 58 34 48  
-        <br>auria.mercade@eleve.lfb.es  
-        <br>Lycée Français de Barcelone, Espagne  
-        <br>Stage seconde : 15–26 juin 2026
-      </h6>
 
-      <h3>Bonjour !</h3>
       <p>
-        Je suis élève de seconde au LFB passionnée par les mathématiques, la programmation et la physique.
+        Je suis une élève de seconde au LFB passionnée par les mathématiques, la programmation et la physique.
         Plus de détails sur les MOOCs que j'ai suivis et mon parcours sur l’Index.
         Vous pouvez aussi visiter mon code GitHub actif pour jeter un coup d'œil à mes productions.
       </p>
     </div>
 
   </div>
+
+  <!-- =============================== -->
+  <!-- JAVASCRIPT                      -->
+  <!-- =============================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburgertwo");
+      const navMenu = document.getElementById("nav-menutwo");
+
+      hamburger.addEventListener("click", function () {
+        navMenu.classList.toggle("open-two");
+        hamburger.classList.toggle("active");
+      });
+    });
+  </script>
+<script>
+  if (!sessionStorage.getItem("visited")) {
+    setTimeout(() => {
+      document.getElementById("intro-screen").classList.add("hidden");
+    }, 1800); // how long the intro stays visible
+
+    sessionStorage.setItem("visited", "true");
+  } else {
+    document.getElementById("intro-screen").style.display = "none";
+  }
+</script>
 
 </body>
 </html>
