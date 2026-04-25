@@ -1690,4 +1690,22 @@ a, p, img, div {
 .smooth-slider-track img {
   margin-right: 45px; /* adjust this number to increase/decrease spacing */
 }
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Position the translate dropdown next to the hamburger */
+.translate-box {
+  margin-left: 1000px;   /* space between hamburger and dropdown */
+  margin-top: 10px; 
+}
+
+/* Keep hamburger + translate grouped */
+.hamburgertwo, 
+.translate-box {
+  display: flex;
+  align-items: center;
+}
 
