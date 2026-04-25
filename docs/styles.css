@@ -951,7 +951,8 @@ html, body {
 }
 
 .nav-menutwo a:hover {
-  color: #4CAF50;
+  /*color: #4CAF50;*/
+  color: #1B5E38;
   transform: translateX(3px);
 }
 
