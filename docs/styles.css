@@ -1687,4 +1687,7 @@ a, p, img, div {
     opacity: 1;
   }
 }
+.smooth-slider-track img {
+  margin-right: 45px; /* adjust this number to increase/decrease spacing */
+}
 
