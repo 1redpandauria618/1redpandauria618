@@ -62,7 +62,7 @@ main {
 
 
 .navbar a:hover {
-  color: #3a7f3a; /* soft plant green */
+  color: #1B5E38; /* soft plant green */
 }
 .about-section {
   max-width: 700px;
@@ -81,7 +81,7 @@ main {
 }
 
 .about-section h1:hover {
-  color: #3a7f3a;
+  color: #1B5E38;
 }
 
 .about-section p {
@@ -227,7 +227,7 @@ main {
 }
 
 .hover-green:hover {
-  color: #3a7f3a; /* same green as your navbar + h1 hover */
+  color: #1B5E38; /* same green as your navbar + h1 hover */
 }
 .full-banner {
   width: 100vw;
@@ -262,7 +262,7 @@ main {
 }
 
 .hover-green:hover {
-  color: #3a7f3a;              /* green highlight */
+  color: #1B5E38;              /* green highlight */
 }
 .logo-small {
   width: 60px;   /* adjust to your taste */
