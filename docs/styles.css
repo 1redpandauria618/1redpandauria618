@@ -1710,3 +1710,77 @@ a, p, img, div {
   align-items: center;
 }
 
+.translate-box {
+  margin-left: auto;
+  padding: 2px 4px;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px !important;  /* TINY */
+  border: 1px solid rgba(200,200,200,0.4);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 28px !important;  /* COMPACT */
+  font-size: 12px !important;
+}
+
+.lang-icon {
+  width: 16px !important;  /* SMALL ICON */
+  height: 16px !important;
+  border-radius: 2px;
+}
+
+#langLabel {
+  font-size: 11px !important;
+  font-weight: 500;
+  min-width: 22px;
+}
+
+.lang-toggle:hover {
+  background: rgba(16,185,129,0.1) !important;
+  border-color: #10b981 !important;
+}
+/* FORCE CUSTOM ICON - Hide Google default */
+.translate-box {
+  position: relative;
+  margin-left: auto;
+  padding: 4px;
+}
+
+#google_translate_element,
+.goog-te-combo,
+.goog-logo-link {
+  display: none !important;  /* KILL DEFAULT */
+}
+
+.lang-toggle {
+  display: flex !important;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid rgba(200,200,200,0.4);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.9);
+  cursor: pointer;
+  height: 28px;
+  font-size: 12px;
+}
+
+.lang-icon {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+#langLabel {
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Kill Google banners */
+.goog-te-banner-frame.skiptranslate { display: none !important; }
+body { top: 0 !important; }
