@@ -1825,3 +1825,11 @@ body { top: 0 !important; }
     margin: 0 auto;
   }
 }
+.timeline-item a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.timeline-item a:hover {
+  text-decoration: none;
+}
