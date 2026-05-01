@@ -671,11 +671,11 @@ main {
 
 /* Hover effect */
 .timeline-item:hover .dot {
-  background: #4CAF50;
+  background: #1B5E38;
 }
 
 .timeline-item:hover .timeline-text {
-  color: #4CAF50;
+  color: #1B5E38;
 }
 
 
@@ -1386,7 +1386,7 @@ main,
 
 
 .banner-photo-block p.banner-photo-caption.hover-green:hover {
-  color: #3a7f3a !important;
+  color: #1B5E38 !important;
   text-decoration: underline !important;
   text-underline-offset: 2px; /* optional: makes it look nicer */
 }
@@ -1398,7 +1398,7 @@ main,
 }
 
 .linked-sentence a:hover {
-  color: #3a7f3a;              /* your green highlight */
+  color: #1B5E38;              /* your green highlight */
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -1409,7 +1409,7 @@ main,
 }
 
 .banner-photo-caption a:hover {
-  color: #3a7f3a !important;          /* your green hover */
+  color: #1B5E38 !important;          /* your green hover */
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -1743,7 +1743,7 @@ a, p, img, div {
 
 .lang-toggle:hover {
   background: rgba(16,185,129,0.1) !important;
-  border-color: #10b981 !important;
+  border-color: #1B5E38 !important;
 }
 /* FORCE CUSTOM ICON - Hide Google default */
 .translate-box {
@@ -1784,3 +1784,44 @@ a, p, img, div {
 /* Kill Google banners */
 .goog-te-banner-frame.skiptranslate { display: none !important; }
 body { top: 0 !important; }
+.timeline-number {
+  font-size: 40px;
+  font-weight: 600;
+  color: #1B5E38;
+  margin-bottom: -100px;   /* ← bring it closer */
+  line-height: 1;       /* ← removes extra vertical padding */
+}
+@media (max-width: 768px) {
+  .timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px; /* spacing between items */
+    position: relative;
+  }
+
+  .timeline-item {
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 80%; /* or 90% if you want wider */
+    text-align: center;
+  }
+
+  .timeline-number {
+    font-size: 28px;
+    margin-bottom: 4px;
+  }
+
+  .timeline-date {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-text {
+    font-size: 15px;
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+}
