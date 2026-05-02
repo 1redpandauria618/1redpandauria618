@@ -1877,3 +1877,19 @@ body { top: 0 !important; }
   width: 300px;
   transform: translateX(-50%);
 }
+.person-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;          /* space between image and text */
+  margin-top: 20px;
+}
+
+.person-photo {
+  width: 120px;       /* adjust as you like */
+  height: auto;
+  border-radius: 4px;
+}
+
+.person-text {
+  max-width: 500px;   /* optional */
+}
