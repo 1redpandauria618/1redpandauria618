@@ -1893,3 +1893,40 @@ body { top: 0 !important; }
 .person-text {
   max-width: 500px;   /* optional */
 }
+/* MOBILE FIX — make person blocks stack and images normal size */
+@media (max-width: 600px) {
+  .person-block {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .person-photo {
+    width: 100%;
+    max-width: 300px; /* adjust if you want bigger */
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .person-text {
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .person-block {
+    flex-direction: column;
+    align-items: center;   /* centers the image + text block */
+    text-align: center;    /* centers text too */
+  }
+
+  .person-photo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .person-text {
+    max-width: 100%;
+    text-align: center;     /* centers titles + paragraphs */
+  }
+}
