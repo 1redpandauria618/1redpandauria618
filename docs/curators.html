@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Credits</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon9.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <meta name="google" content="notranslate">
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+  <div class="fade-container">
+
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+  </div>
+    <div id="google_translate_element" class="translate-box"></div>
+    <meta name="google" content="notranslate">
+<div class="hamburgertwo" id="hamburgertwo">
+  ☰
+</div>
+
+<nav id="nav-menutwo" class="nav-menutwo">
+  <a href="index.html">Home</a>
+  <a href="history.html">History</a>
+  <a href="concept.html">Concept</a>
+  <a href="exhibition.html">Exhibition</a>
+  <a href="curators.html">Curators</a>
+  <a href="dreamers.html">Dreamers</a>
+  <a href="credits.html">Credits</a>
+</nav>
+</header>
+
+<main class="about-section">
+
+<h1 class="hover-green" style="margin:0;">Curators</h1>
+<hr class="tight-hr">
+<h1 class="hover-green" style="font-size: 20px; margin:3;">
+  <a href=""
+     style="color:inherit; text-decoration:none;"
+     onmouseover="this.style.color='#3a7f3a'"
+     onmouseout="this.style.color='inherit'"
+     target="_blank">
+    Original Concept
+  </a>
+  <p style="font-size: 15px">The idea — to create a dialogue between a historic 1927 ceramic garden model and new visions by contemporary landscape architects — began with Marina Cervera Alonso de Medina. She led the process from concept to realisation, selecting two strategic partners as curators and coordinating the participating designers — the project's Dreamers — within a homoclimatic framework that connects each proposal to the ecology of the Barcelona Botanical Garden. She worked directly alongside the Barcelona 2026 World Capital of Architecture team, the Botanical Garden and the ceramic studio to translate each designer's vision into a produced piece, and coordinated the planting scheme proposed by each team with a local nursery and maintenance crew. Each piece has been a team effort — a unique work of art bringing the Dreams from the Rooftop to life.</p>
+</h1>
+<hr class="tight-hr">
+<h1 class="hover-green" style="font-size: 30px; margin:0;">
+    Curatorial Team
+  </a>
+<h1 class="hover-green" style="font-size: 20px; margin:0;">
+  <a href="https://www.linkedin.com/in/marina-cervera-alonsodemedina/"
+     style="color:inherit; text-decoration:none;"
+     onmouseover="this.style.color='#3a7f3a'"
+     onmouseout="this.style.color='inherit'"
+     target="_blank">
+    Marina Cervera
+  </a>
+</h1>
+<h3 style="font-size: 15px; color:#555; margin:0;">Parlour Gardens Project Director/h3>
+</h3>
+  <p style="font-size: 15px">CEO of NablaBCN and director of the Barcelona International Landscape Biennial, Cervera brings extensive experience in curating large-scale international landscape and architecture events, with a focus on interdisciplinary practice and civic engagement.
+  </p>
+
+
+</h3>
+  <p style="font-size: 15px">CEO of NablaBCN and director of the Barcelona International Landscape Biennial. Cervera brings experience in curating large-scale international landscape and architecture events, with a focus on interdisciplinary practice and civic engagement.
+  </p>
+<h1 class="hover-green" style="font-size: 20px; margin:0;">
+  <a href="https://www.linkedin.com/in/james-hayter-0a34a660/"
+     style="color:inherit; text-decoration:none;"
+     onmouseover="this.style.color='#3a7f3a'"
+     onmouseout="this.style.color='inherit'"
+     target="_blank">
+    James Hayter
+  </a>
+</h1>
+<h3 style="font-size: 15px; color:#555; margin:0;">IFLA Past President</h3>
+</h3>
+  <p style="font-size: 15px">Past President of the International Federation of Landscape Architects and founding partner of Oxigen. Hayter connects Parlour Gardens to the global landscape architecture community, bringing decades of experience in cross-cultural practice and professional leadership.
+  </p>
+<h1 class="hover-green" style="font-size: 20px; margin:0;">
+  <a href="https://www.linkedin.com/in/james-hayter-0a34a660/"
+     style="color:inherit; text-decoration:none;"
+     onmouseover="this.style.color='#3a7f3a'"
+     onmouseout="this.style.color='inherit'"
+     target="_blank">
+    José Luis Cortés
+  </a>
+</h1>
+<p style="font-size: 15px">Past President of the International Union of Architects. Cortés anchors Parlour Gardens within the architectural ecosystem mobilised by the UIA congress and the official Barcelona 2026 World Capital of Architecture programme.
+  </p>
+
+
+
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".fade-container");
+    container.classList.add("fade-in");
+
+    // Fade out on link click
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        const url = link.getAttribute("href");
+
+        // Ignore external links
+        if (url.startsWith("http")) return;
+
+        e.preventDefault();
+        container.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 500); // match CSS transition
+      });
+    });
+  });
+</script>
+<script>
+document.getElementById("hamburgertwo").addEventListener("click", () => {
+  document.getElementById("nav-menutwo").classList.toggle("open-two");
+});
+</script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
+});
+</script>
+</main>
