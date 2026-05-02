@@ -241,6 +241,20 @@ document.querySelectorAll('.team-name').forEach(name => {
   });
 });
 </script>
+<script>
+document.addEventListener('click', (e) => {
+  // If you clicked a team name, do nothing
+  if (e.target.classList.contains('team-name')) return;
+
+  // If you clicked inside an open bio, do nothing
+  if (e.target.closest('.team-bio')) return;
+
+  // Otherwise close all bios
+  document.querySelectorAll('.team-bio.open').forEach(bio => {
+    bio.classList.remove('open');
+  });
+});
+</script>
 
 </body>
 </html>
