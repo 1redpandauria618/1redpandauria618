@@ -1867,5 +1867,13 @@ body { top: 0 !important; }
 
 .timeline-container {
   position: relative;
+  width: 100%;
+  margin-top: 40px;
 }
 
+.timeline-item {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  transform: translateX(-50%);
+}
