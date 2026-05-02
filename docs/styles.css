@@ -1833,3 +1833,36 @@ body { top: 0 !important; }
 .timeline-item a:hover {
   text-decoration: none;
 }
+.poem {
+  white-space: pre-line;   /* keeps your line breaks */
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+  margin: 20px 0;
+  font-family: inherit;    /* keeps your site’s font */
+}
+.poem {
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+  margin: 20px 0;
+  font-family: inherit;
+}
+.tight-hr {
+  margin: 6px 0;
+}
+
+.about-section hr {
+  margin: 25px 0 !important;
+  border: none;
+  height: 1px;
+  background: #ccc;
+  transform: scaleY(0.5); /* makes it half as thick */
+  transform-origin: center;
+}
+
+
+
+
+
