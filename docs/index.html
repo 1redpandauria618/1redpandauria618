@@ -28,13 +28,8 @@
     </a>
   </div>
   <!-- TEST123 -->
-<div class="translate-box">
-  <div id="google_translate_element"></div> <!-- VISIBLE for scanning -->
-  <div class="lang-toggle" id="langToggle" style="display:none;">
-    <img src="images/lang-icon.png" alt="🌐" id="langIcon" class="lang-icon">
-    <span id="langLabel">EN</span>
-  </div>
-</div>
+<div class="translate-box placeholder-box"></div>
+
 <div class="hamburgertwo" id="hamburgertwo">
   ☰
 </div>
@@ -101,6 +96,7 @@
 
 </main>
 <script>
+  /* Smooth scrolling (Lenis) */
   const lenis = new Lenis({
     duration: 1.2,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -111,66 +107,63 @@
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
-
   requestAnimationFrame(raf);
 </script>
+
 <script>
-function toggleMenu() {
-  document.getElementById("nav-links").classList.toggle("open");
-}
-</script>
-<script>
-document.querySelectorAll('.project').forEach(project => {
-  project.addEventListener('click', function(e) {
-    e.preventDefault();  // stop instant navigation
+  /* Ripple click animation for project thumbnails */
+  document.querySelectorAll('.project').forEach(project => {
+    project.addEventListener('click', function(e) {
+      e.preventDefault();
 
-    const url = this.getAttribute("href");
-    const rect = this.getBoundingClientRect();
-    const ripple = document.createElement("span");
+      const url = this.getAttribute("href");
+      const rect = this.getBoundingClientRect();
+      const ripple = document.createElement("span");
 
-    const size = Math.max(rect.width, rect.height) * 1.6;
-    ripple.style.width = ripple.style.height = size + "px";
+      const size = Math.max(rect.width, rect.height) * 1.6;
+      ripple.style.width = ripple.style.height = size + "px";
 
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
 
-    ripple.style.left = x + "px";
-    ripple.style.top = y + "px";
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
 
-    ripple.classList.add("ripple");
-    this.appendChild(ripple);
+      ripple.classList.add("ripple");
+      this.appendChild(ripple);
 
-    requestAnimationFrame(() => {
-      ripple.classList.add("active");
+      requestAnimationFrame(() => {
+        ripple.classList.add("active");
+      });
+
+      setTimeout(() => {
+        window.location = url;
+      }, 650);
     });
-
-    // ⏳ wait for elegant animation, THEN change page
-    setTimeout(() => {
-      window.location = url;
-    }, 650); // adjust to match your ripple duration
   });
-});
 </script>
-<script>const overlay = document.getElementById("intro-overlay");
 
-if (sessionStorage.getItem("introShown")) {
-  overlay.style.display = "none";
-} else {
-  sessionStorage.setItem("introShown", "true");
-}
-</script>
 <script>
-  // Fade in on page load
+  /* Intro overlay — only shows once per session */
+  const overlay = document.getElementById("intro-overlay");
+
+  if (sessionStorage.getItem("introShown")) {
+    overlay.style.display = "none";
+  } else {
+    sessionStorage.setItem("introShown", "true");
+  }
+</script>
+
+<script>
+  /* Fade in on page load + fade out on navigation */
   document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".fade-container");
     container.classList.add("fade-in");
 
-    // Fade out on link click
     document.querySelectorAll("a[href]").forEach(link => {
       link.addEventListener("click", e => {
         const url = link.getAttribute("href");
 
-        // Ignore external links
         if (url.startsWith("http")) return;
 
         e.preventDefault();
@@ -178,91 +171,28 @@ if (sessionStorage.getItem("introShown")) {
 
         setTimeout(() => {
           window.location = url;
-        }, 500); // match CSS transition
+        }, 500);
       });
     });
   });
 </script>
+
 <script>
-document.getElementById("hamburgertwo").addEventListener("click", () => {
-  document.getElementById("nav-menutwo").classList.toggle("open-two");
-});
-</script>
-<script>
-window.addEventListener("pageshow", (event) => {
-  if (event.persisted) {
-    const container = document.querySelector(".fade-container");
-    container.classList.remove("fade-out");
-    container.classList.add("fade-in");
-  }
-});
-</script>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,es,ca',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-
-// Wait for DOM + Google Translate
-document.addEventListener('DOMContentLoaded', function() {
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,es,ca',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-
-  // Load Google Translate FIRST
-  const script = document.createElement('script');
-  script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-  document.head.appendChild(script);
-
-  // After 2 seconds - setup toggle
-  setTimeout(() => {
-    // Hide Google dropdown
-    const combo = document.querySelector('.goog-te-combo');
-    if (combo) combo.style.display = 'none';
-
-    // Show + activate YOUR button
-    const toggle = document.getElementById('langToggle');
-    const label = document.getElementById('langLabel');
-    
-    if (!toggle || !label) return; // Safety check
-    
-    toggle.style.display = 'flex';
-    
-    let currentLang = localStorage.getItem('preferredLanguage') || 'en';
-    
-    function changeLanguage(lang) {
-      currentLang = lang;
-      label.textContent = lang === 'en' ? 'EN' : lang === 'es' ? 'ES' : 'CA';
-      localStorage.setItem('preferredLanguage', lang);
-      
-      const select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = lang;
-        select.dispatchEvent(new Event('change', {bubbles: true}));
-      }
+  /* Fix fade-in when navigating back */
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      const container = document.querySelector(".fade-container");
+      container.classList.remove("fade-out");
+      container.classList.add("fade-in");
     }
-    
-    // Set initial language
-    changeLanguage(currentLang);
-    
-    // **CLICK WORKS 100%**
-    toggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      const languages = ['en', 'es', 'ca'];
-      const currentIndex = languages.indexOf(currentLang);
-      const nextLang = languages[(currentIndex + 1) % 3];
-      changeLanguage(nextLang);
-    });
-  }, 2000);
-});
+  });
+</script>
+
+<script>
+  /* Hamburger menu */
+  document.getElementById("hamburgertwo").addEventListener("click", () => {
+    document.getElementById("nav-menutwo").classList.toggle("open-two");
+  });
 </script>
 
 </body>
