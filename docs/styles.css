@@ -1939,3 +1939,126 @@ h1 {
     white-space: nowrap;
   }
 }
+/* EVENTS CONTAINER */
+.events {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ONE EVENT BLOCK */
+.event {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* IMAGE */
+.event-poster {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.event-poster:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+}
+
+/* RIGHT SIDE */
+.event-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.event-number {
+  font-size: 40px;
+  font-weight: 600;
+  color: #1B5E38;
+}
+/* DATE AS GREEN TITLE */
+.event-date {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1B5E38;
+  margin-bottom: 12px;
+}
+
+/* TEXT */
+.event-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #444;
+  max-width: 600px;
+}
+
+/* MOBILE STACKING */
+@media (max-width: 700px) {
+  .event {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .event-poster {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto; /* ← THIS NOW WORKS */
+    display: block; /* ← ensures centering */
+  }
+
+  .event-right {
+    text-align: center;
+  }
+
+  .event-date {
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .event-text {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .event-number {
+    font-size: 40px;
+    font-weight: 600;
+    color: #1B5E38;
+  }
+}
+@media (max-width: 700px) {
+
+  /* Force the entire event block to center */
+  .event {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  /* Force the image to center */
+  .event-poster {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float: none !important;
+    align-self: center !important;
+  }
+
+  /* Force the right side to center */
+  .event-right {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    align-items: center !important;
+  }
+}
