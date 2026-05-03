@@ -1877,6 +1877,17 @@ body { top: 0 !important; }
   width: 300px;
   transform: translateX(-50%);
 }
+
+
+
+
+
+
+
+
+
+
+
 .person-block {
   display: flex;
   align-items: flex-start;
@@ -1890,9 +1901,16 @@ body { top: 0 !important; }
   border-radius: 4px;
 }
 
-.person-text {
-  max-width: 500px;   /* optional */
+/* FINAL HARD FIX FOR PERSON TEXT WRAPPING */
+.person-text,
+.person-text * {
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
 }
+
 /* MOBILE FIX — make person blocks stack and images normal size */
 @media (max-width: 600px) {
   .person-block {
@@ -1930,6 +1948,29 @@ body { top: 0 !important; }
     text-align: center;     /* centers titles + paragraphs */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 h1 {
   white-space: nowrap;
 }
