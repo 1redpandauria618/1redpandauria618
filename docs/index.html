@@ -14,19 +14,26 @@
 
 </head>
 
-
 <body>
-  <div class="fade-container">
+
+<div id="intro-overlay">
+  <img src="images/icon6.png" class="intro-logo">
+
+  <div class="intro-text">
+  <div class="line">An exhibition you walk through, scattered across the Jardí Botànic de Barcelona — waiting to be found.</div>
+</div>
+</div>
+
+<div class="fade-container">
 
 <header class="navbar">
   <div class="logo">
-    <div id="intro-overlay">
-      <img src="images/icon6.png" class="intro-logo">
-    </div>
     <a href="index.html">
-     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
   </div>
+
+  
   <!-- TEST123 -->
 <div class="translate-box placeholder-box"></div>
 
@@ -93,8 +100,8 @@
 
 
 
-
 </main>
+
 <script>
   /* Smooth scrolling (Lenis) */
   const lenis = new Lenis({
@@ -142,18 +149,36 @@
     });
   });
 </script>
-
 <script>
-  /* Intro overlay — only shows once per session */
+window.addEventListener("load", () => {
   const overlay = document.getElementById("intro-overlay");
+  const lines = document.querySelectorAll(".intro-text .line");
 
-  if (sessionStorage.getItem("introShown")) {
-    overlay.style.display = "none";
-  } else {
-    sessionStorage.setItem("introShown", "true");
-  }
+  const delay = 1800; // time between lines
+  const fadeAfterLast = 2000; // how long last line stays
+
+  lines.forEach((line, i) => {
+    setTimeout(() => {
+      line.classList.add("show");
+    }, i * delay);
+  });
+
+  // 🧠 IMPORTANT FIX:
+  const lastLineIndex = lines.length - 1;
+
+  const fadeTime =
+    (lastLineIndex * delay) + fadeAfterLast;
+
+  setTimeout(() => {
+    overlay.classList.add("fade-out");
+
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 1200);
+
+  }, fadeTime);
+});
 </script>
-
 <script>
   /* Fade in on page load + fade out on navigation */
   document.addEventListener("DOMContentLoaded", () => {
@@ -193,6 +218,31 @@
   document.getElementById("hamburgertwo").addEventListener("click", () => {
     document.getElementById("nav-menutwo").classList.toggle("open-two");
   });
+window.addEventListener("load", () => {
+  const lines = document.querySelectorAll(".intro-text .line");
+
+  console.log("LINES FOUND:", lines.length);
+
+  lines.forEach((l, i) => {
+    console.log("LINE", i, l.textContent);
+  });
+});
+window.addEventListener("load", () => {
+  const overlay = document.getElementById("intro-overlay");
+  const lines = document.querySelectorAll(".intro-text .line");
+
+  lines.forEach((line, i) => {
+    setTimeout(() => {
+      console.log("SHOW", i);
+      line.classList.add("show");
+    }, i * 1500);
+  });
+
+  setTimeout(() => {
+    console.log("FADE OUT FIRED");
+    overlay.classList.add("fade-out");
+  }, 2500); // TEMP FIXED SHORT TIME
+});
 </script>
 
 </body>
