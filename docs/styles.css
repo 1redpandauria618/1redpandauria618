@@ -2165,3 +2165,24 @@ h1 {
   opacity: 1;
   transition: opacity 0.8s ease;
 }
+img[src="images/slide172.jpg"],
+img[src="images/slide173.jpg"],
+img[src="images/slide174.jpg"],
+img[src="images/slide175.jpg"],
+img[src="images/slide176.jpg"] {
+  width: 750px !important;
+  height: auto !important;
+
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+
+  float: none !important;
+  text-align: center !important;
+
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+
