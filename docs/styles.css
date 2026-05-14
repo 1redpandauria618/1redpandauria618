@@ -2185,4 +2185,40 @@ img[src="images/slide176.jpg"] {
   transform: translateX(-50%) !important;
 }
 
+.notif {
+  position: relative;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  font-size: 15px;
+  line-height: 1.4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
 
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.notif.hide {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.notif-close {
+  cursor: pointer;
+  font-size: 18px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+.notif-close:hover {
+  opacity: 1;
+}
+
+.notif {
+  z-index: 10000;
+}

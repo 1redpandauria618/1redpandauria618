@@ -16,11 +16,16 @@
 
 <body>
 
+
 <div id="intro-overlay">
   <img src="images/icon6.png" class="intro-logo">
 
-
 </div>
+<div class="notif" id="notifBox">
+  <span class="notif-text">13 landscape architects. One ancient format. Infinite interpretations.
+In 1926, architect Nicolau M. Rubió i Tudurí, ceramicist Llorenç Artigas and painter Raoul Dufy created the jardinets de saló — miniature ceramic worlds small enough to rest on a table, big enough to hold a landscape. A century later, thirteen of the world's leading landscape architects were invited to reinvent them. An exhibition you walk through, scattered across the Jardí Botànic de Barcelona — waiting to be found.
+Parlour Gardens · Barcelona, June to October 2026</span>
+  <span class="notif-close" onclick="closeNotif()">✕</span>
 </div>
 
 <div class="fade-container">
@@ -243,6 +248,29 @@ window.addEventListener("load", () => {
   }, 2500); // TEMP FIXED SHORT TIME
 });
 </script>
+<script>
+function closeNotif() {
+  const box = document.getElementById("notifBox");
+  if (!box) return;
+
+  box.classList.add("hide");
+
+  setTimeout(() => {
+    box.remove();
+  }, 350);
+}
+
+// Close when clicking anywhere except inside the notif
+document.addEventListener("click", (e) => {
+  const box = document.getElementById("notifBox");
+  if (!box) return;
+
+  if (!box.contains(e.target)) {
+    closeNotif();
+  }
+});
+</script>
+
 
 </body>
 </html>
