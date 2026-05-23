@@ -2359,3 +2359,16 @@ img[src="images/yellow.jpg"] {
     margin: 12px 0 !important;
   }
 }
+/* PROJECT IMAGE — EXAGGERATED HOVER EFFECT */
+.project img {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+  transform-origin: center center;
+}
+
+/* BIGGER, STRONGER HOVER */
+.project:hover img {
+  transform: scale(1.25); /* ← make it as big as you want */
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+}
