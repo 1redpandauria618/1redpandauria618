@@ -2222,3 +2222,20 @@ img[src="images/slide176.jpg"] {
 .notif {
   z-index: 10000;
 }
+@media (max-width: 600px) {
+  .notif {
+    flex-direction: column;        /* stack text + close button */
+    align-items: flex-start;       /* left-align for readability */
+    padding: 18px 20px;            /* more breathing room */
+    gap: 16px;                     /* space between text + close */
+    font-size: 16px;               /* slightly larger text */
+  }
+
+  .notif-close {
+    font-size: 28px;               /* bigger, obvious close button */
+    opacity: 1;                    /* always visible on mobile */
+    padding: 12px;                 /* large tap target */
+    align-self: flex-end;          /* move ✕ to top-right */
+    flex-shrink: 0;                /* prevent disappearing */
+  }
+}
