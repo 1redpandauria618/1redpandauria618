@@ -2290,3 +2290,72 @@ img[src="images/slide176.jpg"] {
   box-shadow: 0 10px 28px rgba(27, 94, 56, 0.35);
   transform: translateY(-2px);         /* subtle lift */
 }
+img[src="images/yellow.jpg"] {
+  width: 623px;     /* make it bigger */
+  height: auto;     /* keep proportions */
+  display: block;
+  margin: 0 auto;   /* center it */
+}
+
+
+/* REMOVE .column FROM LAYOUT */
+.authors-columns .column {
+  display: contents !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  float: none !important;
+}
+
+/* FLEX WRAP GRID */
+.authors-columns {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+}
+
+/* REGION CARD — AUTO-SHRINKING TWO-PER-ROW */
+.region-card {
+  background: white !important;
+  border: 2px solid #e5f85b !important;
+  border-radius: 12px !important;
+
+  /* THE MAGIC: auto-shrink until two fit */
+  flex: 1 1 300px !important;   /* can grow, can shrink, prefers 300px */
+  min-width: 250px !important;  /* smallest allowed */
+  max-width: 100% !important;
+
+  padding: 18px 22px !important;
+  margin: 12px !important;
+  box-sizing: border-box !important;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important;
+  transition: transform .25s ease, box-shadow .25s ease !important;
+}
+
+.region-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18) !important;
+}
+
+/* TYPOGRAPHY */
+.region-card p {
+  margin: 0 0 6px 0 !important;
+}
+
+.region-card dl dd {
+  margin: 4px 0 !important;
+  color: #555 !important;
+  font-size: 15px !important;
+}
+
+/* MOBILE — STACK */
+@media (max-width: 700px) {
+  .region-card {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+    margin: 12px 0 !important;
+  }
+}
