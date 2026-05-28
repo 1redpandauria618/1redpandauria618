@@ -21,6 +21,11 @@
     </a>
   </div>
 <div class="translate-box placeholder-box"></div>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
 <a href="https://www.instagram.com/parlour.gardens"
    target="_blank"
    class="instagram-link">
@@ -42,11 +47,32 @@
 </header>
 
 <main class="about-section">
-  <h1 class="hover-green" style="margin:0;">The Exhibition</h1>
-  <h3 style="font-size: 15px; color:#555; margin:0;">Dreams from the Rooftop · Barcelona Botanical Garden · June – September 2026</h3>
-  <p style="font-size: 15px">
-    Barcelona has been designated UNESCO–UIA World Capital of Architecture for 2026 — the first city to hold this title in the congress's modern form. The designation is both recognition and responsibility: an invitation to make the case, before an international professional audience, that architecture is not a specialist concern but a shared civic language. That space is political. That design is democracy made material.</p>
-<p style="font-size: 15px">Selected through an open call and fully funded by the Barcelona City Council, Parlour Gardens: Dreams from the Rooftop serves as a core component of the UNESCO–UIA World Capital of Architecture 2026 official programme. This exhibition is designed to fit within a city-wide framework focused on architectural quality, the transformation of urban models, and the strengthening of the local architecture ecosystem. Hosted at the Barcelona Botanical Garden from June to September 2026, the project creates a unique multidisciplinary intersection by integrating art, technology, architecture, and landscape design. It bridges a century of innovation—pairing a historic 1927 ceramic model with contemporary visions produced thanks to the latest ceramic 3D printing techniques and living vegetation—to redefine the urban rooftop as a vital space of ecological and social possibility.
+  <h1 class="hover-green" style="margin:0;"
+data-en="The Exhibition"
+data-es="La Exposición"
+data-ca="L’Exposició"></h1>
+
+<h3 style="font-size: 15px; color:#555; margin:0;"
+data-en="Dreams from the Rooftop · Barcelona Botanical Garden · June – September 2026"
+data-es="Sueños desde la azotea · Jardín Botánico de Barcelona · junio – septiembre de 2026"
+data-ca="Somnis des del terrat · Jardí Botànic de Barcelona · juny – setembre de 2026"></h3>
+<p style="font-size: 15px"
+data-en="Barcelona has been designated UNESCO–UIA World Capital of Architecture for 2026 — the first city to hold this title in the congress's modern form. The designation is both recognition and responsibility: an invitation to make the case, before an international professional audience, that architecture is not a specialist concern but a shared civic language. That space is political. That design is democracy made material."
+data-es="Barcelona ha sido designada Capital Mundial de la Arquitectura UNESCO–UIA para 2026 — la primera ciudad que acoge el congreso en su formato moderno. La designación es a la vez reconocimiento y responsabilidad: una invitación a demostrar, ante un público profesional internacional, que la arquitectura no es una cuestión para especialistas, sino un lenguaje cívico compartido. Que el espacio es político. Que el diseño es democracia materializada."
+data-ca="Barcelona ha estat designada Capital Mundial de l’Arquitectura UNESCO–UIA 2026 — la primera ciutat que acull el congrés en el seu format modern. La designació és alhora reconeixement i responsabilitat: una invitació a demostrar, davant d’un públic professional internacional, que l’arquitectura no és només una disciplina per a especialistes, sinó un llenguatge cívic compartit. Que l’espai és polític. Que el disseny és democràcia materialitzada.">
+</p>
+
+<p style="font-size: 15px"
+data-en="Selected through an open call and fully funded by the Barcelona City Council, Parlour Gardens: Dreams from the Rooftop serves as a core component of the UNESCO–UIA World Capital of Architecture 2026 official programme. This exhibition is designed to fit within a city-wide framework focused on architectural quality, the transformation of urban models, and the strengthening of the local architecture ecosystem."
+data-es="Seleccionada mediante convocatoria abierta y financiada íntegramente por el Ayuntamiento de Barcelona, Jardines de Salón: sueños desde la azotea es un componente central del programa oficial de la Capital Mundial de la Arquitectura UNESCO–UIA 2026. La exposición se desarrolla dentro de un marco urbano centrado en la calidad arquitectónica, la transformación de los modelos urbanos y el fortalecimiento del ecosistema arquitectónico local."
+data-ca="Seleccionada mitjançant convocatòria oberta i finançada íntegrament per l’Ajuntament de Barcelona, Jardins de Saló: somnis des del terrat forma part del programa oficial de la Capital Mundial de l’Arquitectura UNESCO–UIA 2026. L’exposició s’inscriu en un marc urbà centrat en la qualitat arquitectònica, la transformació dels models urbans i l’enfortiment de l’ecosistema arquitectònic local.">
+</p>
+
+<p style="font-size: 15px"
+data-en="Hosted at the Barcelona Botanical Garden from June to September 2026, the project creates a unique multidisciplinary intersection by integrating art, technology, architecture, and landscape design. It bridges a century of innovation — pairing a historic 1927 ceramic model with contemporary visions produced thanks to the latest ceramic 3D printing techniques and living vegetation — to redefine the urban rooftop as a vital space of ecological and social possibility."
+data-es="Celebrada en el Jardín Botánico de Barcelona de junio a septiembre de 2026, la muestra crea una intersección multidisciplinar única al integrar arte, tecnología, arquitectura y paisaje. Tiende un puente sobre un siglo de innovación —combinando un modelo cerámico histórico de 1927 con visiones contemporáneas producidas mediante impresión cerámica 3D y vegetación viva— para redefinir la azotea urbana como un espacio de posibilidad ecológica y social."
+data-ca="Celebrada al Jardí Botànic de Barcelona de juny a setembre de 2026, la mostra crea una intersecció multidisciplinària única en integrar art, tecnologia, arquitectura i paisatge. Estén un pont sobre un segle d’innovació —combinant una maqueta ceràmica històrica de 1927 amb visions contemporànies produïdes amb impressió ceràmica 3D i vegetació viva— per redefinir el terrat urbà com un espai de possibilitat ecològica i social.">
+</p>
 
 
 <div class="map-wrapper">
@@ -73,14 +99,27 @@
 </div>
 
 <!-- updates -->
-<div id="map-info" class="map-info">
-  Hover a number to learn more
+<div id="map-info" class="map-info"
+data-en="Hover a number to learn more"
+data-es="Pasa el cursor sobre un número para saber más"
+data-ca="Passa el cursor sobre un número per saber-ne més">
+Hover a number to learn more
 </div>
 
 
-<p style="font-size: 15px">The exhibition finds its home in a venue that is itself a triumph of ecological transformation: the Barcelona Botanical Garden. Designed by architects Carlos Ferrater and Josep Lluís Canosa alongside landscape architect Beth Figueras for the 1992 Olympics, this 14-hectare site on Montjuïc was reclaimed from a former landfill to become a world-class ecological showcase. Its unique triangular mesh structure fractalizes the Mediterranean landscape, organizing flora into specific homoclimatic zones: California, Chile, South Africa, Australia, and the Mediterranean.
+<p style="font-size: 15px"
+data-en="The exhibition finds its home in a venue that is itself a triumph of ecological transformation: the Barcelona Botanical Garden. Designed by architects Carlos Ferrater and Josep Lluís Canosa alongside landscape architect Beth Figueras for the 1992 Olympics, this 14-hectare site on Montjuïc was reclaimed from a former landfill to become a world-class ecological showcase. Its unique triangular mesh structure fractalizes the Mediterranean landscape, organizing flora into specific homoclimatic zones: California, Chile, South Africa, Australia, and the Mediterranean."
+data-es="La exposición se celebra en un espacio que es en sí mismo un triunfo de la transformación ecológica: el Jardín Botánico de Barcelona. Diseñado por los arquitectos Carlos Ferrater y Josep Lluís Canosa junto con la paisajista Beth Figueras para los Juegos Olímpicos de 1992, este recinto de 14 hectáreas en Montjuïc fue recuperado de un antiguo vertedero para convertirse en un escaparate ecológico de referencia mundial. Su estructura de malla triangular fractaliza el paisaje mediterráneo, organizando la flora en zonas homoclimáticas: California, Chile, Sudáfrica, Australia y el Mediterráneo."
+data-ca="L’exposició té lloc en un espai que és en si mateix un triomf de la transformació ecològica: el Jardí Botànic de Barcelona. Dissenyat pels arquitectes Carlos Ferrater i Josep Lluís Canosa juntament amb la paisatgista Beth Figueras per als Jocs Olímpics de 1992, aquest recinte de 14 hectàrees a Montjuïc va ser recuperat d’un antic abocador per convertir-se en un aparador ecològic de referència mundial. La seva estructura de malla triangular fractalitza el paisatge mediterrani, organitzant la flora en zones homoclimàtiques: Califòrnia, Xile, Sud-àfrica, Austràlia i el Mediterrani.">
+</p>
 <hr>
-  <h1 class="hover-green" style="font-size: 20px; font-style: italic;">Our press release!</h1>
+  <h1 class="hover-green"
+style="font-size: 20px; font-style: italic;"
+data-en="Our press release!"
+data-es="¡Nuestro comunicado de prensa!"
+data-ca="El nostre comunicat de premsa!">
+Our press release!
+</h1>
   <a href="images/pressrelease.pdf" download class="download-btn">
   Download PDF
 </a>
@@ -104,10 +143,18 @@
       </a>
       <div>
       <div class="event-number">01</div>
-      <div class="event-date">5 June · 6 PM</div>
-    <p class="event-text">
-      Round table with James Corner (USA), Tarna Klitzner (South Africa), Thomas Doxiadis (Greece) and Peter Stutchbury (Australia), moderated by curators Marina Cervera and James Hayter. One hundred years after Rubió, Artigas and Dufy's salon gardens: art, nature and their contemporary expressions.
-    </p>
+      <div class="event-date"
+data-en="5 June · 6 PM"
+data-es="5 de junio · 18:00 h"
+data-ca="5 de juny · 18.00 h">
+5 June · 6 PM
+</div>
+    <p class="event-text"
+data-en="Round table with James Corner (USA), Tarna Klitzner (South Africa), Thomas Doxiadis (Greece) and Peter Stutchbury (Australia), moderated by curators Marina Cervera and James Hayter. One hundred years after Rubió, Artigas and Dufy’s salon gardens: art, nature and contemporary expression."
+data-es="Mesa redonda con James Corner (EE. UU.), Tarna Klitzner (Sudáfrica), Thomas Doxiadis (Grecia) y Peter Stutchbury (Australia), moderada por los comisarios Marina Cervera y James Hayter. Cien años después de los jardines de salón de Rubió, Artigas y Dufy: arte, naturaleza y expresión contemporánea."
+data-ca="Taula rodona amb James Corner (EUA), Tarna Klitzner (Sud-àfrica), Thomas Doxiadis (Grècia) i Peter Stutchbury (Austràlia), moderada pels comissaris Marina Cervera i James Hayter. Cent anys després dels jardins de saló de Rubió, Artigas i Dufy: art, natura i expressió contemporània.">
+Round table...
+</p>
     </div>
   </div>
 
@@ -121,10 +168,18 @@
       </a>
       <div>
       <div class="event-number">02</div>
-      <div class="event-date">27 June · 6 PM</div>
-    <p class="event-text">
-      Round table with Kamel Louafi (Algeria/Germany), Adam Greenspan (USA), Phil Harris (Australia), Catherine Mosbach (France) and Jala Makhzoumi (Lebanon), moderated by curators Marina Cervera and José Luis Cortés. On the eve of the UIA World Congress of Architects: architecture, landscape and urban resilience as interdisciplinary practice.
-    </p>
+      <div class="event-date"
+data-en="27 June · 6 PM"
+data-es="27 de junio · 18:00 h"
+data-ca="27 de juny · 18.00 h">
+27 June · 6 PM
+</div>
+    <p class="event-text"
+data-en="Round table with Kamel Louafi (Algeria/Germany), Adam Greenspan (USA), Phil Harris (Australia), Catherine Mosbach (France) and Jala Makhzoumi (Lebanon), moderated by Marina Cervera and José Luis Cortés. On the eve of the UIA World Congress: architecture, landscape and urban resilience as interdisciplinary practice."
+data-es="Mesa redonda con Kamel Louafi (Argelia/Alemania), Adam Greenspan (EE. UU.), Phil Harris (Australia), Catherine Mosbach (Francia) y Jala Makhzoumi (Líbano), moderada por Marina Cervera y José Luis Cortés. En la víspera del Congreso Mundial de Arquitectos UIA: arquitectura, paisaje y resiliencia urbana como práctica interdisciplinar."
+data-ca="Taula rodona amb Kamel Louafi (Algèria/Alemanya), Adam Greenspan (EUA), Phil Harris (Austràlia), Catherine Mosbach (França) i Jala Makhzoumi (Líban), moderada per Marina Cervera i José Luis Cortés. A la vigília del Congrés UIA: arquitectura, paisatge i resiliència urbana.">
+Round table...
+</p>
     </div>
   </div>
 
@@ -138,10 +193,18 @@
       </a>
       <div>
       <div class="event-number">03</div>
-      <div class="event-date">4 October · 11 AM</div>
-    <p class="event-text">
-      Round table with Adrian McGregor (Australia), Walter Hood (USA), Teresa Moller (Chile) and Gareth Doherty (Ireland/USA), moderated by curator Marina Cervera. Review of the exhibition and a look to the future: current technologies, climate adaptation and botanical research applied to garden design.
-    </p>
+      <div class="event-date"
+data-en="4 October · 11 AM"
+data-es="4 de octubre · 11:00 h"
+data-ca="4 d’octubre · 11.00 h">
+4 October · 11 AM
+</div>
+    <p class="event-text"
+data-en="Round table with Adrian McGregor (Australia), Walter Hood (USA), Teresa Moller (Chile) and Gareth Doherty (Ireland/USA), moderated by Marina Cervera. Review of the exhibition and future perspectives: climate adaptation and botanical research in garden design."
+data-es="Mesa redonda con Adrian McGregor (Australia), Walter Hood (EE. UU.), Teresa Moller (Chile) y Gareth Doherty (Irlanda/EE. UU.), moderada por Marina Cervera. Revisión de la exposición y perspectivas futuras: adaptación climática e investigación botánica en el diseño de jardines."
+data-ca="Taula rodona amb Adrian McGregor (Austràlia), Walter Hood (EUA), Teresa Moller (Xile) i Gareth Doherty (Irlanda/EUA), moderada per Marina Cervera. Balanç de l’exposició i futur: adaptació climàtica i recerca botànica.">
+Round table...
+</p>
     </div>
   </div>
 
@@ -216,6 +279,33 @@ window.addEventListener("pageshow", (event) => {
     const container = document.querySelector(".fade-container");
     container.classList.remove("fade-out");
     container.classList.add("fade-in");
+  }
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
   }
 });
 </script>
