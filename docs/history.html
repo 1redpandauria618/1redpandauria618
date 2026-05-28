@@ -22,6 +22,11 @@
     </a>
   </div>
 <div class="translate-box placeholder-box"></div>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
 <a href="https://www.instagram.com/parlour.gardens"
    target="_blank"
    class="instagram-link">
@@ -43,12 +48,32 @@
 </header>
 
 <main class="about-section">
-  <h1 class="hover-green" style="margin:0;">History</h1>
-  <h3 style="font-size: 15px; color:#555; margin:0;">Origins of the Parlour Garden · 1926</h3>
-  <p style="font-size: 15px">
-    The spring of 1926 marked the beginning of an unlikely collaboration at the intersection of three disciplines. Architect and landscape designer Nicolau M. Rubió i Tudurí, ceramicist Josep Llorens i Artigas, and French painter Raoul Dufy joined forces to create a series of jardinets de saló — parlour gardens — miniature ceramic worlds that compressed the spirit of the natural landscape into vessels small enough to rest on a table.</p>
-<p style="font-size: 15px">Drawing from the tradition of miniature gardens reaching back to ancient Egypt, and deeply inflected by the Japonist sensibility that had captivated European art since the late nineteenth century, these works proposed something new: the garden not as a place to inhabit, but as an image to contemplate. Evocation over reproduction. Essence over extent.
-</p><p style="font-size: 15px">Each piece was made of glazed ceramic of approximately 45 × 45 × 25 cm — a format that merged the architectural model, the decorative object, and the living planter into a single form. The aesthetic moved fluidly between Art Nouveau and Fauvism, anchored always in a Mediterranean sensibility shared by all three creators.
+  <h1 class="hover-green"
+    data-en="History"
+    data-ca="Història"
+    data-es="Historia">
+</h1>
+
+<h3 style="font-size: 15px; color:#555; margin:0;"
+    data-en="Origins of the Parlour Garden · 1926"
+    data-ca="Orígens del jardí de saló · 1926"
+    data-es="Orígenes del jardín de salón · 1926">
+</h3>
+
+<p data-en="The spring of 1926 marked the beginning of an unlikely collaboration at the intersection of three disciplines. The architect and landscape designer Nicolau M. Rubió i Tudurí, ceramicist Josep Llorens i Artigas, and French painter Raoul Dufy joined forces to create a series of parlour gardens: miniature ceramic worlds that condensed the spirit of the natural landscape into vessels small enough to rest on a table."
+   data-ca="La primavera de 1926 va marcar l’inici d’una col·laboració improbable en la intersecció de tres disciplines. L’arquitecte i paisatgista Nicolau M. Rubió i Tudurí, el ceramista Josep Llorens i Artigas i el pintor francès Raoul Dufy van unir forces per crear una sèrie de jardinets de saló: mons ceràmics en miniatura que condensaven l’esperit del paisatge natural en recipients prou petits per reposar sobre una taula."
+   data-es="La primavera de 1926 marcó el inicio de una colaboración improbable en la intersección de tres disciplinas. El arquitecto y paisajista Nicolau M. Rubió i Tudurí, el ceramista Josep Llorens i Artigas y el pintor francés Raoul Dufy unieron fuerzas para crear una serie de jardines de salón: mundos cerámicos en miniatura que condensaban el espíritu del paisaje natural en recipientes lo bastante pequeños como para reposar sobre una mesa.">
+</p>
+
+<p data-en="Drawing from the tradition of miniature gardens reaching back to ancient Egypt, and deeply influenced by Japonism, these works proposed something new: the garden not as a place to inhabit, but as an image to contemplate."
+   data-ca="Inspirades en la tradició dels jardins en miniatura, que es remunta a l’antic Egipte, i profundament marcades per la sensibilitat japonista, aquestes obres proposaven una cosa nova: el jardí no com un lloc per habitar, sinó com una imatge per contemplar."
+   data-es="Inspiradas en la tradición de los jardines en miniatura, que se remonta al antiguo Egipto, y profundamente marcadas por la sensibilidad japonista, estas obras proponían algo nuevo: el jardín no como un lugar para habitar, sino como una imagen para contemplar.">
+</p>
+
+<p data-en="Each piece was made of glazed ceramic measuring approximately 45 × 45 × 25 cm, merging architectural model, decorative object, and living planter."
+   data-ca="Cada peça estava feta de ceràmica vidrada d’aproximadament 45 × 45 × 25 cm, fusionant maqueta arquitectònica, objecte decoratiu i jardinera viva."
+   data-es="Cada pieza estaba realizada en cerámica vidriada de aproximadamente 45 × 45 × 25 cm, fusionando maqueta arquitectónica, objeto decorativo y jardinera viva.">
+</p>
 <h3 style="font-size: 15px; color:#555; margin:0;">Original Models</h3>
 <div class="smooth-slider">
   <button class="slider-arrow left">‹</button>
@@ -85,19 +110,71 @@
 
   <button class="slider-arrow right">›</button>
 </div>
-<h1 class="hover-green" style="font-size: 20px; font-style: italic; margin:0;">The Three Creators</h1>
+<h1 class="hover-green"
+    style="font-size: 20px; font-style: italic; margin:0;"
+    data-en="The Three Creators"
+    data-es="Los tres creadores"
+    data-ca="Els tres creadors">
+</h1>
 
-  <h1 class="hover-green" style="font-size: 20px">Raoul Dufy</h1>
-  <h3 style="font-size: 15px; color:#555; margin:0;">Le Havre, 1877 — Forcalquier, 1953</h3>
-  <p style="font-size: 15px">Painter, ceramicist and designer, Dufy brought his vibrant Fauvist sensibility to the ceramic surfaces — vivid colour, quotidian Mediterranean life, a charged intimacy between decoration and structure. His contribution transformed the vessel into a painted landscape.
-  </p>
-  <h1 class="hover-green" style="font-size: 20px">Llorenç Artigas</h1>
-  <h3 style="font-size: 15px; color:#555; margin:0;">Barcelona, 1892 — 1980</h3>
-  <p style="font-size: 15px">Ceramicist and central figure of the Noucentisme, Artigas gave physical form to the collaboration — mastering the interplay between natural materials and a modernist aesthetic rooted in the Mediterranean. He later worked closely with Joan Miró on monumental ceramic murals.
+<!-- RAOUL DUFY -->
+<h1 class="hover-green"
+    style="font-size: 20px"
+    data-en="Raoul Dufy"
+    data-es="Raoul Dufy"
+    data-ca="Raoul Dufy">
+</h1>
+
+<h3 style="font-size: 15px; color:#555; margin:0;"
+    data-en="Le Havre, 1877 — Forcalquier, 1953"
+    data-es="Le Havre, 1877 — Forcalquier, 1953"
+    data-ca="Le Havre, 1877 — Forcalquier, 1953">
+</h3>
+
+<p style="font-size: 15px"
+   data-en="Painter, ceramicist and designer, Dufy brought his vibrant Fauvist sensibility to the ceramic surfaces — vivid colour, quotidian Mediterranean life, a charged intimacy between decoration and structure. His contribution transformed the vessel into a painted landscape."
+   data-es="Pintor, ceramista y diseñador, Dufy aportó a las superficies cerámicas su vibrante sensibilidad fauvista: color vivo, vida cotidiana mediterránea y una intimidad intensa entre decoración y estructura. Su contribución transformó el recipiente en un paisaje pintado."
+   data-ca="Pintor, ceramista i dissenyador, Dufy va aportar a les superfícies ceràmiques la seva vibrant sensibilitat fauvista: color viu, vida quotidiana mediterrània i una intimitat carregada entre decoració i estructura. La seva contribució va transformar el recipient en un paisatge pintat.">
 </p>
-  <h1 class="hover-green" style="font-size: 20px">Nicolau M. Rubió i Tudurí</h1>
-  <h3 style="font-size: 15px; color:#555; margin:0;">Maó, 1891 — 1981</h3>
-  <p style="font-size: 15px">Architect, landscape designer, and director of Parks and Gardens for Barcelona City Council, Rubió conceived the garden as an imaginative vessel — a container for dreams rather than mere cultivation. His parks still define Barcelona's green infrastructure today.
+
+<!-- LLORENÇ ARTIGAS -->
+<h1 class="hover-green"
+    style="font-size: 20px"
+    data-en="Llorenç Artigas"
+    data-es="Llorenç Artigas"
+    data-ca="Llorenç Artigas">
+</h1>
+
+<h3 style="font-size: 15px; color:#555; margin:0;"
+    data-en="Barcelona, 1892 — 1980"
+    data-es="Barcelona, 1892 — 1980"
+    data-ca="Barcelona, 1892 — 1980">
+</h3>
+
+<p style="font-size: 15px"
+   data-en="Ceramicist and central figure of the Noucentisme, Artigas gave physical form to the collaboration — mastering the interplay between natural materials and a modernist aesthetic rooted in the Mediterranean. He later worked closely with Joan Miró on monumental ceramic murals."
+   data-es="Ceramista y figura central del Noucentisme, Artigas dio forma física a la colaboración, dominando la interacción entre los materiales naturales y una estética moderna enraizada en el Mediterráneo. Más adelante trabajó estrechamente con Joan Miró en murales cerámicos monumentales."
+   data-ca="Ceramista i figura central del Noucentisme, Artigas va donar forma física a la col·laboració, dominant la interacció entre els materials naturals i una estètica moderna arrelada al Mediterrani. Més endavant va treballar estretament amb Joan Miró en murals ceràmics monumentals.">
+</p>
+
+<!-- RUBIÓ I TUDURÍ -->
+<h1 class="hover-green"
+    style="font-size: 20px"
+    data-en="Nicolau M. Rubió i Tudurí"
+    data-es="Nicolau M. Rubió i Tudurí"
+    data-ca="Nicolau M. Rubió i Tudurí">
+</h1>
+
+<h3 style="font-size: 15px; color:#555; margin:0;"
+    data-en="Maó, 1891 — 1981"
+    data-es="Maó, 1891 — 1981"
+    data-ca="Maó, 1891 — 1981">
+</h3>
+
+<p style="font-size: 15px"
+   data-en="Architect, landscape designer, and director of Parks and Gardens for Barcelona City Council, Rubió conceived the garden as an imaginative vessel — a container for dreams rather than mere cultivation. His parks still define Barcelona's green infrastructure today."
+   data-es="Arquitecto, paisajista y director de Parques y Jardines del Ayuntamiento de Barcelona, Rubió concibió el jardín como un recipiente imaginativo: un contenedor de sueños más que un simple lugar de cultivo. Sus parques siguen definiendo hoy la infraestructura verde de Barcelona."
+   data-ca="Arquitecte, paisatgista i director de Parcs i Jardins de l’Ajuntament de Barcelona, Rubió va concebre el jardí com un recipient imaginatiu: un contenidor de somnis més que no pas un simple espai de cultiu. Els seus parcs encara defineixen avui la infraestructura verda de Barcelona.">
 </p>
 <img src="images/slide88.jpg "class="center-this-mobile"
      alt="OriginalAuthors"
@@ -212,6 +289,33 @@ window.addEventListener("pageshow", (event) => {
     const container = document.querySelector(".fade-container");
     container.classList.remove("fade-out");
     container.classList.add("fade-in");
+  }
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
   }
 });
 </script>
