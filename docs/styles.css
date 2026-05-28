@@ -2449,3 +2449,77 @@ img[src="images/yellow.jpg"] {
     z-index: 9999;
   }
 }
+.parallax-strip-wrap {
+  position: relative;
+  height: 30vh;   /* much smaller */
+  margin: 0;
+  overflow: visible;
+}
+
+.parallax-strip {
+  position: sticky;
+  top: 10vh;
+
+  width: 100vw;     /* full browser width */
+  height: 300px;
+
+  margin-left: calc(50% - 50vw); /* true edge-to-edge */
+  overflow: hidden;
+
+  border-radius: 0; /* optional: cinematic full bleed */
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.parallax-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.15);
+  will-change: transform;
+}
+.instagram-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.instagram-icon {
+  margin-right: 45px;
+  transform: translateY(5px); /* up */
+}
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.translate-box {
+  flex: 1; /* pushes stuff apart */
+}
+
+.instagram-link,
+.hamburgertwo {
+  flex-shrink: 0;
+}
+
+.nav-menutwo {
+  flex-shrink: 0;
+}
+.notif {
+  position: fixed;
+  top: 7px; /* push it lower */
+  right: 0px;
+  z-index: 9999;
+}
