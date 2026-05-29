@@ -2548,5 +2548,6 @@ img[src="images/yellow.jpg"] {
     transform: translateY(0);
     padding: 4px 8px;
     font-size: 10px;
+    z-index: 9999;
   }
 }
