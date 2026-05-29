@@ -2542,3 +2542,11 @@ img[src="images/yellow.jpg"] {
   margin-right: 30px;
   transform: translateY(15px);
 }
+@media screen and (max-width: 768px) {
+  .lang-switch button {
+    margin-right: 8px;
+    transform: translateY(0);
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
