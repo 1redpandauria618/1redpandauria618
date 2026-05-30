@@ -127,56 +127,35 @@ Parlour Gardens · Barcelona, June to October 2026</span>
 
 <script>
   /* Ripple click animation for project thumbnails */
-document.querySelectorAll('.project').forEach(project => {
-  project.addEventListener('click', function(e) {
-    e.preventDefault();
+  document.querySelectorAll('.project').forEach(project => {
+    project.addEventListener('click', function(e) {
+      e.preventDefault();
 
-    const url = this.getAttribute("href");
-    const rect = this.getBoundingClientRect();
+      const url = this.getAttribute("href");
+      const rect = this.getBoundingClientRect();
+      const ripple = document.createElement("span");
 
-    this.classList.add("clicked");
+      const size = Math.max(rect.width, rect.height) * 1.6;
+      ripple.style.width = ripple.style.height = size + "px";
 
-    const size =
-      Math.max(rect.width, rect.height) * 0.9;
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
 
-    const x =
-      e.clientX - rect.left - size / 2;
+      ripple.style.left = x + "px";
+      ripple.style.top = y + "px";
 
-    const y =
-      e.clientY - rect.top - size / 2;
-
-    // create 3 ripple rings
-    for (let i = 1; i <= 3; i++) {
-      const ring = document.createElement("span");
-
-      ring.classList.add(
-        "ripple-ring",
-        `r${i}`
-      );
-
-      ring.style.width = `${size}px`;
-      ring.style.height = `${size}px`;
-
-      ring.style.left = `${x}px`;
-      ring.style.top = `${y}px`;
-
-      project.appendChild(ring);
+      ripple.classList.add("ripple");
+      this.appendChild(ripple);
 
       requestAnimationFrame(() => {
-        ring.classList.add("animate");
+        ripple.classList.add("active");
       });
 
       setTimeout(() => {
-        ring.remove();
-      }, 1800);
-    }
-
-    // smooth transition timing
-    setTimeout(() => {
-      window.location = url;
-    }, 1800);
+        window.location = url;
+      }, 650);
+    });
   });
-});
 </script>
 <script>
 window.addEventListener("load", () => {
