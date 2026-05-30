@@ -2542,12 +2542,49 @@ img[src="images/yellow.jpg"] {
   margin-right: 30px;
   transform: translateY(15px);
 }
+/* Hide scrollbar globally (keeps scrolling working) */
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html, body, .navbar, .instagram-link {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Make sure the Instagram link and its container don't create overflow */
+.instagram-link,
+.instagram-icon,
+.navbar {
+  overflow: hidden;          /* prevent any scrolling from these elements */
+}
+
+/* Ensure no horizontal overflow on the whole page */
+html, body {
+  overflow-x: hidden;
+}
 @media screen and (max-width: 768px) {
+  .lang-switch {
+    position: fixed;
+    top: 80px;          /* adjust vertical position */
+    right: 12px;        /* place near burger/instagram */
+    z-index: 999999;    /* stays above EVERYTHING */
+
+    display: flex;
+    gap: 6px;
+
+    /* optional glass effect */
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    padding: 4px;
+    border-radius: 999px;
+  }
+
   .lang-switch button {
-    margin-right: 8px;
-    transform: translateY(0);
+    margin: 0 !important;
+    transform: none !important;
     padding: 4px 8px;
     font-size: 10px;
-    z-index: 9999;
   }
 }
