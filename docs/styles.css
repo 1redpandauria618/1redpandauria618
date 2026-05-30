@@ -2588,3 +2588,68 @@ html, body {
     font-size: 10px;
   }
 }
+@media screen and (max-width: 768px) {
+
+  .project {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .project img {
+    transition:
+      transform 1.8s cubic-bezier(.16,1,.3,1);
+  }
+
+  .project.clicked img {
+    transform: scale(1.03);
+  }
+
+  /* SINGLE luxury ripple */
+  .ripple-ring {
+    position: absolute;
+    border-radius: 999px;
+    pointer-events: none;
+
+    border: 2.5px solid rgba(95,95,95,0.22);
+
+    box-shadow:
+      0 0 30px rgba(80,80,80,0.16),
+      0 0 80px rgba(120,120,120,0.06);
+
+    filter: blur(5px);
+
+    transform: scale(0.08);
+    opacity: 0;
+
+    mix-blend-mode: multiply;
+    backdrop-filter: blur(10px);
+  }
+
+  .ripple-ring.animate {
+    animation: mobileLuxuryRipple 2.6s
+      cubic-bezier(.16,1,.3,1) forwards;
+  }
+
+  @keyframes mobileLuxuryRipple {
+    0% {
+      transform: scale(0.08);
+      opacity: 0;
+      filter: blur(2px);
+    }
+
+    12% {
+      opacity: 0.55;
+    }
+
+    45% {
+      opacity: 0.35;
+    }
+
+    100% {
+      transform: scale(8);
+      opacity: 0;
+      filter: blur(14px);
+    }
+  }
+}
