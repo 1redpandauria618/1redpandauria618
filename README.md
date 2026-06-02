@@ -4,23 +4,13 @@
   <img src="https://i.imgur.com/VB2Jekp.gif" alt="image"/>
   
 
-I am currently a student and full-stack developer who started coding with Python at nine years old. I build 100% custom websites completely from scratch. Beyond coding, my absolute greatest passion is **Mathematics**. Logic fields like calculus, theorems, and probability are my favourite.
-
----
-
-### What I'm Up To
-- 🔭 **Currently working on:** Custom web development projects upon request.
+- 💡 **Passionate about** Probabilities, Cryptography, Feedforward neural networks...
 - 🌱 **Learning:** Mastering Haskell.
-- 💬 **Ask me about:** Currently open; 100% custom-built websites requests.
 - ⚡ **Fun Fact:** Python s my favourite coding language.
 
 ---
 
-## Tech Stack
-
-I am fluent in a wide range of frontend, backend, and system languages:
-
-
+## Languages
 
 | Category | Technologies |
 | :--- | :--- |
@@ -30,12 +20,6 @@ I am fluent in a wide range of frontend, backend, and system languages:
 
 ---
 
-### Featured Production Work
-I build sleek, responsive, and professional web platforms. Check out my latest work:
-*   **[Parlour Gardens](https://parlourgardens.nablabcn.com)** - A custom-built website showcasing architectural and landscape designs for an international Architecture event.
-
----
-
 ### ◇ Hire Me ◇ Get In Touch ◇
-*   **Need a website?** I accept freelance contracts and commissions for custom web builds! All websites are made from scratch and modified progressively upon request.
+*   **Need a website?** I accept freelance contracts and commissions for custom web builds. All websites are made from scratch and modified progressively upon request.
 *   **Questions?** Reach out directly via GitHub.
