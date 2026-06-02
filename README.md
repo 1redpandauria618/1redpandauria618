@@ -20,6 +20,6 @@
 
 ---
 
-### ◇ Hire Me ◇ Get In Touch ◇
+### Get In Touch
 *   **Need a website?** I accept freelance contracts and commissions for custom web builds. All websites are made from scratch and modified progressively upon request.
 *   **Questions?** Reach out directly via GitHub.
