@@ -1,7 +1,7 @@
 # Hi there, I'm Red618! 👋
 
 <p align="left">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Fractal_tree.gif/250px-Fractal_tree.gif" alt="image"/>
+  <img src="https://giphy.com/gifs/fractal-qoJ9sZu2Xui9a" alt="image"/>
   
 
 I am currently a student and full-stack developer who started coding with Python at nine years old. I build 100% custom websites completely from scratch. Beyond coding, my absolute greatest passion is **Mathematics**. Deep logic fields like calculus, theorems, and probability are my favourite.
