@@ -31,7 +31,7 @@ I am fluent in a wide range of frontend, backend, and system languages:
 ---
 
 ### Featured Production Work
-I build sleek, responsive, and professional web platforms. Check out my published production site:
+I build sleek, responsive, and professional web platforms. Check out my latest work:
 *   **[Parlour Gardens](https://parlourgardens.nablabcn.com)** - My latest custom-built website showcasing architectural and landscape designs for an international Architecture event.
 
 ---
