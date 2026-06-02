@@ -12,7 +12,7 @@ I am currently a student and full-stack developer who started coding with Python
 - 🔭 **Currently working on:** Custom web development projects upon request.
 - 🌱 **Learning:** Mastering responsive design.
 - 💬 **Ask me about:** Currently open; 100% custom-built websites requests.
-- ⚡ **Fun Fact:** While I am fluent in many coding languages and Python is by far my favourite nothing beats pure mathematical logic. 
+- ⚡ **Fun Fact:** While I am fluent in many coding languages and Python is by far my favourite nothing beats math.
 
 ---
 
