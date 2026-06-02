@@ -2,8 +2,7 @@
 
 <p align="left">
   <img src="https://static.wikia.nocookie.net/minecraft-mob/images/6/6e/Red_Panda.webp/revision/latest?cb=20230223031146" alt="7 Years Experience"/>
-  <img src="" alt="Pronouns"/>
-</p>
+  
 
 I am currently a student and full-stack developer who started coding with Python at nine years old. I build 100% custom websites completely from scratch. Beyond coding, my absolute greatest passion is **Mathematics**. Deep logic fields like calculus, theorems, and probability are my favourite.
 
