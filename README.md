@@ -6,7 +6,7 @@
 
 - 💡 **Passionate about** Probabilities, Cryptography, Feedforward neural networks...
 - 🌱 **Learning** Haskell.
-- ⚡ **Fun Fact:** Python s my favourite coding language.
+- ⚡ **Fun Fact:** Python s my favourite coding language; I like bouldering.
 
 ---
 *   **Questions?** Reach out directly via GitHub.
