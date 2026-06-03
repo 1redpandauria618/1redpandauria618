@@ -5,6 +5,6 @@
   
 
 ![GitHub Streak](https://streak-stats.demolab.com/?user=1redpandauria618&theme=dark)
-![Activity Graph](https://activity-graph.herokuapp.com/graph?username=1redpandauria618&theme=github)
+
 ---
 *   Questions? Reach out directly via GitHub.
