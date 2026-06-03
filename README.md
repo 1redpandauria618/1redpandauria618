@@ -1,7 +1,6 @@
 # Hi there, I'm Red618! 👋
   <img src="https://badges.strrl.dev/years/1redpandauria618?style=flat-square&color=black&logo=github">
-</a>
-<a href="https://github.com/dadwadw233">
+
   <img src="https://badges.strrl.dev/commits/monthly/1redpandauria618?style=flat-square&color=black&logo=github">
 
 <img
