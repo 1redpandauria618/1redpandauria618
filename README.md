@@ -1,5 +1,5 @@
 # Hi there, I'm Red618! 👋
-<a href="https://github.com/dadwadw233">
+<a href="https://github.com/1redpandauria618">
   <img src="https://badges.strrl.dev/years/1redpandauria618?style=flat-square&color=black&logo=github">
 </a>
 <a href="https://github.com/dadwadw233">
