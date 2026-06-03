@@ -5,6 +5,6 @@
   
 
 ![GitHub Streak](https://streak-stats.demolab.com/?user=1redpandauria618&theme=dark)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact)
+![Activity Graph](https://activity-graph.herokuapp.com/graph?username=1redpandauria618&theme=github)
 ---
 *   Questions? Reach out directly via GitHub.
