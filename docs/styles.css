@@ -2564,28 +2564,47 @@ html, body, .navbar, .instagram-link {
 html, body {
   overflow-x: hidden;
 }
-@media screen and (max-width: 768px) {
-  .lang-switch {
-    position: fixed;
-    top: 80px;          /* adjust vertical position */
-    right: 12px;        /* place near burger/instagram */
-    z-index: 999999;    /* stays above EVERYTHING */
+@media (max-width: 700px) {
 
-    display: flex;
-    gap: 6px;
-
-    /* optional glass effect */
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(8px);
-    padding: 4px;
-    border-radius: 999px;
+  /* desktop panel OFF */
+  .photo-panel {
+    display: none !important;
   }
 
-  .lang-switch button {
-    margin: 0 !important;
-    transform: none !important;
-    padding: 4px 8px;
-    font-size: 10px;
+  /* tab must be ABOVE close overlay */
+  .m-photo-tab {
+    z-index: 999999;
+  }
+
+  /* close overlay must be BELOW tab */
+  .m-photo-close {
+    z-index: 999997;
+  }
+
+  /* toggle label must be clickable */
+  .m-photo-toggle {
+    position: relative;
+    z-index: 999999;
+  }
+
+  /* panel appears above button */
+  .m-photo-panel {
+    position: fixed;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 999998;
+  }
+
+  /* open panel */
+  .m-photo-toggle input:checked ~ .m-photo-panel {
+    display: block;
+  }
+
+  /* show close overlay */
+  .m-photo-toggle input:checked ~ .m-photo-close {
+    display: block;
   }
 }
 /* LEFT PHOTO PANEL */
@@ -2645,6 +2664,11 @@ html, body {
   z-index: 8; /* under navbar */
   will-change: transform;
 }
+.photo-strip {
+  overflow-y: auto;      /* allow vertical scrolling */
+  overflow-x: hidden;    /* prevent sideways scroll */
+  -webkit-overflow-scrolling: touch;
+}
 
 /* SHOW ON HOVER */
 .photo-panel:hover .photo-strip {
@@ -2682,32 +2706,3 @@ html, body {
   filter: brightness(1.15) saturate(1.3) hue-rotate(-10deg); /* warm golden tone */
   box-shadow: 0 18px 38px rgba(0,0,0,0.35); /* deeper shadow */
 }
-
-/* MOBILE */
-@media (max-width: 700px) {
-  .photo-panel {
-    top: auto;
-    bottom: 20px;
-    transform: none;
-  }
-
-  .photo-tab {
-    writing-mode: horizontal-tb;
-    border-radius: 10px;
-  }
-
-  .photo-strip {
-    transform: translateX(0) translateY(0);
-    bottom: 60px;
-    top: auto;
-
-    width: 90vw;
-    max-height: 60vh;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .photo-panel:hover .photo-strip {
-    transform: translateX(0) translateY(0);
-  }
-}
-

@@ -26,10 +26,20 @@
     <a href="index.html">Home</a>
   </nav>
 </header>
+
+
 <div class="photo-panel">
   <div class="photo-tab">View Latest Photos</div>
 
   <div class="photo-strip">
+    <img src="images/folder/_28A1887.jpg">
+    <img src="images/folder/_28A1889.jpg">
+    <img src="images/folder/_28A1890.jpg">
+    <img src="images/folder/_28A1893.jpg">
+    <img src="images/folder/_28A1894.jpg">
+    <img src="images/folder/_28A1897.jpg">
+    <img src="images/folder/_28A1898.jpg">
+    <img src="images/folder/_28A1901.jpg">
     <img src="images/folder/_28A1233.jpg">
     <img src="images/folder/_28A1234.jpg">
     <img src="images/folder/_28A1235.jpg">
@@ -38,8 +48,26 @@
     <img src="images/folder/_28A1242.jpg">
     <img src="images/folder/_28A1334.jpg">
     <img src="images/folder/_28A1551.jpg">
+
+
   </div>
 </div>
+
+
+<!-- MOBILE PHOTO PANEL -->
+<label class="m-photo-toggle">
+  <input type="checkbox" id="mPhotoToggle">
+  <div class="m-photo-tab">View Photos</div>
+</label>
+
+<div class="m-photo-panel">
+  <div class="m-photo-strip">
+    <!-- same images as desktop -->
+  </div>
+</div>
+
+<div class="m-photo-close"></div>
+
 
 <main class="about-section">
   <h1 class="hover-green" style="margin:0;">Earth Chambers </h1>
@@ -246,6 +274,26 @@ window.addEventListener("pageshow", (event) => {
   }
 });
 </script>
+<script>
+document.addEventListener("click", (e) => {
+  const toggle = document.querySelector(".m-photo-toggle input");
+  const panel  = document.querySelector(".m-photo-panel");
+  const tab    = document.querySelector(".m-photo-tab");
+
+  if (!toggle || window.innerWidth > 700) return;
+
+  if (!toggle.checked) return;
+
+  if (panel.contains(e.target)) return;
+  if (tab.contains(e.target)) return;
+
+  toggle.checked = false;
+});
+</script>
+
+
+
+
 
 </body>
 </html>

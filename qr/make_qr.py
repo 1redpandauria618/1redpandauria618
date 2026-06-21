@@ -30,5 +30,5 @@ def make_qr(url: str, filename: str = "qrcode.png", box_size: int = 10, border: 
     print(f"Saved QR code to {save_path}")
 
 if __name__ == "__main__":
-    long_link = "https://parlourgardens.nablabcn.com/project9.html"
-    make_qr(long_link, "peter-stutchbury.png")
+    long_link = "https://www.google.com/maps/d/u/0/edit?mid=13nmmigVfMPAL3Xvd18LK9IX4ubFqX2U&usp=sharing"
+    make_qr(long_link, "map.png")
