@@ -53,6 +53,23 @@
 
   </div>
 </div>
+
+
+
+<button class="m-photo-tab" onclick="togglePhotos()">
+  View Photos
+</button>
+
+<div id="mobilePhotosPanel" class="m-photo-panel">
+
+  <img src="images/_28A1499.jpg?v=2">
+  <img src="images/_28A1504.jpg">
+  <img src="images/_28A1507.jpg">
+  <img src="images/_28A1511.jpg">
+  <img src="images/_28A1516.jpg">
+  <img src="images/_28A1518.jpg">
+
+</div>
 <h3 style="font-size: 15px; color:#555; margin:0;">Making of Embedded shIfts</h3>
 <div class="smooth-slider">
   <button class="slider-arrow left">‹</button>
@@ -287,6 +304,17 @@ window.addEventListener("pageshow", (event) => {
     container.classList.add("fade-in");
   }
 });
+</script>
+<script>
+function togglePhotos() {
+  const panel = document.getElementById("mobilePhotosPanel");
+
+  if (panel.style.display === "grid") {
+    panel.style.display = "none";
+  } else {
+    panel.style.display = "grid";
+  }
+}
 </script>
 
 </body>
