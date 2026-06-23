@@ -2607,82 +2607,288 @@ html, body {
     display: block;
   }
 }
-/* LEFT PHOTO PANEL */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===========================
+   HOVER DETECTION ZONE
+=========================== */
+
+.photo-trigger {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 100vh;
+  z-index: 99998;
+}
+
+/* ===========================
+   PANEL
+=========================== */
+
 .photo-panel {
   position: fixed;
-  top: 55%;
+
+  top: 130px;
   left: 0;
-  transform: translateY(-50%);
-  z-index: 10;
-  display: flex;
-  align-items: center;
-}
 
-/* TAB */
-.photo-tab {
-  background: white;
-  padding: 12px 16px;
-  border-radius: 0 10px 10px 0;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
+  width: 450px;
 
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-  transition: background 0.25s ease, box-shadow 0.25s ease;
-}
+  z-index: 99999;
 
-.photo-tab:hover {
-  background: #f3f3f3;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.22);
-}
+  /* folded */
+  transform: translateX(-440px);
 
-/* SLIDING STRIP — CLEANER, TIGHTER */
-.photo-strip {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%) translateX(-100%);
-  padding: 12px;
-  background: white;
-  border-radius: 0 10px 10px 0;
+  border-radius: 28px;
 
-  width: 330px;
-  max-height: 80vh;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.98),
+      rgba(248,248,248,0.97)
+    );
 
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px; /* TIGHTER spacing */
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.05),
+    0 30px 80px rgba(0,0,0,.08),
+    0 60px 150px rgba(0,0,0,.12);
 
-  overflow-y: auto;
-  overflow-x: hidden;
+  padding: 24px;
 
-  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: visible;
+
+  transition:
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+
   will-change: transform;
 }
 
-/* SHOW ON HOVER */
-.photo-panel:hover .photo-strip {
-  transform: translateY(-50%) translateX(60px);
+/* ===========================
+   OPEN STATE
+=========================== */
+
+.photo-trigger:hover .photo-panel,
+.photo-panel:hover {
+  transform: translateX(-120px);
 }
 
-/* IMAGES — ELEGANT, LESS AGGRESSIVE */
+/* ===========================
+   SIDE TAB
+=========================== */
+
+.photo-panel::before {
+  content: "PHOTOS";
+
+  position: absolute;
+
+  right: -72px;
+  top: 60%;
+
+  transform:
+    translateY(-50%)
+    rotate(-90deg);
+
+  background: white;
+
+  padding: 14px 20px;
+
+  border-radius: 14px 14px 0 0;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+
+  color: #666;
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.10);
+
+  pointer-events: none;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.photo-tab {
+  margin-bottom: 20px;
+
+  text-transform: uppercase;
+  letter-spacing: .22em;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  color: #777;
+}
+
+/* ===========================
+   IMAGE COLUMN
+=========================== */
+
+.photo-strip {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ===========================
+   IMAGES
+=========================== */
+
 .photo-strip img {
   width: 100%;
-  height: 150px; /* slightly shorter = more elegant */
-  object-fit: cover;
-  border-radius: 8px;
+  display: block;
 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.05),
+    0 20px 45px rgba(0,0,0,.08),
+    0 40px 100px rgba(0,0,0,.10);
+
   transition:
-    transform 0.3s ease,
-    filter 0.3s ease,
-    box-shadow 0.3s ease;
+    transform .9s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow .9s cubic-bezier(0.16, 1, 0.3, 1);
+
+  cursor: pointer;
 }
 
+/* ===========================
+   IMAGE HOVER
+=========================== */
+
 .photo-strip img:hover {
-  transform: scale(1.10); /* less extreme, more classy */
-  filter: brightness(1.12) saturate(1.15);
-  box-shadow: 0 12px 26px rgba(0,0,0,0.28);
+  transform:
+    translateY(-8px)
+    scale(1.12);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.08),
+    0 35px 80px rgba(0,0,0,.14),
+    0 70px 160px rgba(0,0,0,.18);
+
+  position: relative;
+  z-index: 1000;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 1100px) {
+  .photo-trigger,
+  .photo-panel {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.photo-panel {
+
+  position: absolute !important;
+
+  top: 120px; /* navbar height + spacing */
+  left: 0;
+
+  width: 450px;
+
+  z-index: 100 !important; /* BELOW navbar */
+
+  transform: translateX(-480px);
+
+  transition:
+    transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+
+  overflow: visible;
+}
+.photo-panel::before {
+  content: "NEW! PHOTO GALLERY";
+
+  position: absolute;
+  right: -72px;
+  top: 25px;              /* aligns with top of image stack */
+
+  transform: rotate(-90deg);
+  transform-origin: top right;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+
+  color: #1B5E38;
+}
+@media (max-width: 700px) {
+
+  /* reset desktop slide behavior */
+  .photo-panel {
+    position: relative !important;
+    top: auto !important;
+    width: 100% !important;
+
+    transform: none !important;   /* no hidden/offscreen state */
+    margin-left: 0 !important;
+
+    transition: none !important;  /* disable hover slide on mobile */
+  }
+
+  /* keep images usable on mobile */
+  .photo-strip img {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12) !important;
+  }
+
+  /* OPTIONAL: make it feel interactive via tap instead of hover */
+  .photo-panel:active {
+    transform: scale(0.99) !important;
+  }
+
+  /* label stays readable and not “hover dependent” */
+  .photo-tab::after {
+    display: none !important; /* kill hover hitbox trick on mobile */
+  }
 }
