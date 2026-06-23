@@ -2650,7 +2650,7 @@ html, body {
 
 .photo-panel {
   position: fixed;
-
+  
   top: 130px;
   left: 0;
 
@@ -2659,7 +2659,7 @@ html, body {
   z-index: 99999;
 
   /* folded */
-  transform: translateX(-480px);
+  transform: translateX(-480px) translateY(var(--scroll-offset, 0px));
 
   border-radius: 28px;
 
@@ -2687,9 +2687,10 @@ html, body {
 
 .photo-trigger:hover .photo-panel,
 .photo-panel:hover {
-  transform: translateX(-120px);
+  transform:
+    translateX(-120px)
+    translateY(var(--scroll-offset, 0px));
 }
-
 /* ===========================
    SIDE TAB
 =========================== */
@@ -2876,18 +2877,7 @@ html, body {
     display: none;
   }
 }
-.photo-panel {
-  position: fixed;
-  top: calc(130px + 2vh); /* subtle scroll-linked drift */
 
-  left: 0;
-  width: 450px;
-
-  transform: translateX(-480px);
-
-  transition: transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 99999;
-}
 @media (max-width: 700px) {
 
   /* stays in normal flow under navbar */
@@ -2949,6 +2939,7 @@ html, body {
     pointer-events: none;
   }
 }
+
 @media (max-width: 700px) {
 
   .photo-panel {

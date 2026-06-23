@@ -265,7 +265,14 @@ document.addEventListener("click", (e) => {
   toggle.checked = false;
 });
 </script>
-
+<script>
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-offset",
+    `${window.scrollY * -1.95}px`
+  );
+});
+</script>
 
 
 

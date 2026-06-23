@@ -242,6 +242,14 @@ window.addEventListener("pageshow", (event) => {
   }
 });
 </script>
+<script>
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-offset",
+    `${window.scrollY * -1.95}px`
+  );
+});
+</script>
 
 </body>
 

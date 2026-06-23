@@ -310,7 +310,14 @@ btn.addEventListener("click", () => {
   panel.classList.toggle("open");
 });
 </script>
-
+<script>
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-offset",
+    `${window.scrollY * -1.95}px`
+  );
+});
+</script>
 
 </body>
 </html>
