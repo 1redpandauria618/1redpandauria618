@@ -2711,164 +2711,45 @@ html, body {
   display: none;
 }
 
-@media (max-width:700px) {
+@media (max-width: 768px) {
 
-  .m-photo-toggle {
-    display: block;
-  }
-
-  .m-photo-toggle input {
-    display: none;
-  }
-
-  /* BUTTON */
-  .m-photo-tab {
+  /* The button */
+  #mobilePhotosBtn {
     position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-
+    bottom: 0;
+    left: 0;
+    width: 100%;
     background: white;
-    padding: 12px 22px;
-    border-radius: 999px;
-
-    box-shadow: 0 8px 24px rgba(0,0,0,.18);
-
-    z-index: 999999;
-    cursor: pointer;
+    color: black;
+    text-align: center;
+    padding: 18px 0;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -6px 18px rgba(0,0,0,0.3);
+    z-index: 999999999;
+    border: none;
   }
 
-  /* DARK BACKDROP */
-  .m-photo-close {
-    display: none;
+  /* Panel closed */
+  #mobilePhotosPanel {
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,.45);
-    z-index: 999997;
-  }
-
-  /* PANEL */
-  .m-photo-panel {
-    display: none;
-
-    position: fixed;
-    left: 50%;
-    bottom: 80px;
-
-    transform: translateX(-50%);
-
-    width: 92vw;
-    max-width: 500px;
-    max-height: 70vh;
-
-    overflow-y: auto;
-
+    bottom: -70vh;
+    left: 0;
+    width: 100%;
+    height: 70vh;
     background: white;
-    border-radius: 16px;
-
-    padding: 14px;
-
-    box-shadow: 0 15px 40px rgba(0,0,0,.25);
-
-    z-index: 999998;
-  }
-
-  /* OPEN STATE */
-  #mobilePhotos:checked ~ .m-photo-panel {
-    display: block;
-  }
-
-  #mobilePhotos:checked ~ .m-photo-close {
-    display: block;
-  }
-
-  /* GRID */
-  .m-photo-grid {
+    border-radius: 20px 20px 0 0;
+    overflow-y: scroll;
+    padding: 16px;
+    transition: bottom 0.35s ease;
+    z-index: 999999998;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
     gap: 10px;
   }
 
-  .m-photo-grid img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-}
-
-@media (max-width:700px){
-
-  .m-photo-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-  }
-
-  .m-photo-grid img{
-    display:block;
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    border-radius:10px;
-  }
-
-}
-@media (max-width:700px){
-
-  .m-photo-panel{
-    display:none;
-    position:fixed;
-    bottom:80px;
-    left:50%;
-    transform:translateX(-50%);
-    width:90vw;
-    max-height:70vh;
-    overflow:auto;
-    background:white;
-    padding:10px;
-    z-index:999999;
-  }
-
-  .m-photo-panel.open{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-
-  .m-photo-panel img{
-    width:100%;
-    height:140px;
-    object-fit:cover;
-  }
-}
-.image-protect {
-  display: none !important;
-  pointer-events: none !important;
-}
-@media (max-width:700px){
-
-  .m-photo-panel{
-    display:none;
-    position:fixed;
-    left:50%;
-    bottom:80px;
-    transform:translateX(-50%);
-    width:90vw;
-    max-height:70vh;
-    overflow-y:auto;
-    background:white;
-    padding:10px;
-    border-radius:12px;
-    z-index:999999;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-  }
-
-  .m-photo-panel img{
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    display:block;
+  /* Panel open */
+  #mobilePhotosPanel.open {
+    bottom: 0;
   }
 }

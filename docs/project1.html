@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="images/icons/icon9.png">
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <link rel="stylesheet" href="style.css?v=9999">
+  <script src="script.js?v=9999"></script>
+
 </head>
 
 <body>
@@ -306,16 +309,19 @@ window.addEventListener("pageshow", (event) => {
 });
 </script>
 <script>
-function togglePhotos() {
-  const panel = document.getElementById("mobilePhotosPanel");
+// Create the button
+const btn = document.createElement("button");
+btn.id = "mobilePhotosBtn";
+btn.textContent = "View latest photos";
+document.body.appendChild(btn);
 
-  if (panel.style.display === "grid") {
-    panel.style.display = "none";
-  } else {
-    panel.style.display = "grid";
-  }
-}
+// Toggle the panel
+btn.addEventListener("click", () => {
+  const panel = document.getElementById("mobilePhotosPanel");
+  panel.classList.toggle("open");
+});
 </script>
+
 
 </body>
 </html>
