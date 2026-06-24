@@ -2698,13 +2698,13 @@ html, body {
 .photo-panel::before {
   content: "PHOTOS";
 
-  position: absolute;
+  position: fixed;
 
   right: -75px;   /* pushes it further OUT → more visible yellow */
   top: 5%;
 
   transform:
-    translateY(-50%)
+    translateY(-30%)
     rotate(90deg);
 
   background: #e5f85b;
