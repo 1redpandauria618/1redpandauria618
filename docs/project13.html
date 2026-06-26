@@ -20,6 +20,11 @@
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
   </div>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
 <div class="translate-box">
   <div class="lang-toggle" id="langToggle">
     <span id="langLabel"></span>
@@ -95,13 +100,17 @@
     <h2 class="hover-green" style="margin:0;">Jala Makhzoumi & Abdul-Halim Jabr</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Independent Practice  ·  EGYPT / LEBANON
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Independent Practice  ·  EGYPT / LEBANON"
+      data-es= "Profesional independiente · EGIPTO / LÍBANO"
+      data-ca= "Professional independent · EGIPTE / LÍBAN">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Jala Makhzoumi is a landscape architect and ecologist based in Beirut, known for advocacy of Mediterranean landscape ecology and culturally grounded design across the Arab world. Abdul-Halim Jabr is an Egyptian architect and urban practitioner whose work engages the intersection of built heritage, public space, and community. Together they bring a commitment to landscapes as sites of cultural memory and ecological resilience.
-    </p>
+    <p style="font-size: 15px; color:#555;"
+       data-en= "Jala Makhzoumi is a landscape architect and ecologist based in Beirut, known for advocacy of Mediterranean landscape ecology and culturally grounded design across the Arab world. Abdul-Halim Jabr is an Egyptian architect and urban practitioner whose work engages the intersection of built heritage, public space, and community. Together they bring a commitment to landscapes as sites of cultural memory and ecological resilience."
+       data-es= "Jala Makhzoumi es una arquitecta paisajista y ecóloga con sede en Beirut, conocida por su defensa de la ecología del paisaje mediterráneo y del diseño culturalmente arraigado en el mundo árabe. Abdul-Halim Jabr es un arquitecto egipcio y profesional del urbanismo cuyo trabajo aborda la intersección entre patrimonio construido, espacio público y comunidad. Juntos aportan un compromiso con los paisajes como lugares de memoria cultural y resiliencia ecológica."
+       data-ca= "Jala Makhzoumi és una arquitecta paisatgista i ecòloga amb seu a Beirut, coneguda per la seva defensa de l’ecologia del paisatge mediterrani i del disseny culturalment arrelat al món àrab. Abdul-Halim Jabr és un arquitecte egipci i urbanista el treball del qual aborda la intersecció entre patrimoni construït, espai públic i comunitat. Junts aporten un compromís amb els paisatges com a llocs de memòria cultural i resiliència ecològica.">
+      </p>
   </div>
 
   <a href="https://www.linkedin.com/in/abdul-halim-jabr-a790a85?originalSubdomain=lb" target="_blank">
@@ -234,6 +243,33 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
