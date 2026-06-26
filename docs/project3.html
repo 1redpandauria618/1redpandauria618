@@ -19,6 +19,11 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
@@ -100,13 +105,18 @@ Thanks to its proximity to the sky, our arabesque expresses this paradise by ins
     <h2 class="hover-green" style="margin:0;">Kamel Louafi</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Landscape Artist  ·  ALGERIA / GERMANY
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Landscape Artist  ·  ALGERIA / GERMANY"
+      data-es= "Artista del paisaje · ARGELIA / ALEMANIA"
+      data-ca= "Paisatgista · ALGÈRIA / ALEMANYA">
+    </h2>
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Kamel Louafi was born in Batna, Algeria, and studied landscape planning at the Technical University of West Berlin. He founded his Berlin studio in 1994, having previously managed the gardens of Daniel Libeskind's Jewish Museum. His work brings together arabesque geometry, public space, and sculpture across Germany, Algeria, and the Gulf. He received the Federal Cross of Merit from the President of Germany (2023) and the Grand Prize Le Geste d'Or, Paris (2023).
-  </div>
+    <p style="font-size: 15px; color:#555;"
+      data-en= "Kamel Louafi was born in Batna, Algeria, and studied landscape planning at the Technical University of West Berlin. He founded his Berlin studio in 1994, having previously managed the gardens of Daniel Libeskind's Jewish Museum. His work brings together arabesque geometry, public space, and sculpture across Germany, Algeria, and the Gulf. He received the Federal Cross of Merit from the President of Germany (2023) and the Grand Prize Le Geste d'Or, Paris (2023)."
+      data-es= "Kamel Louafi nació en Batna, Argelia, y estudió planificación del paisaje en la Universidad Técnica de Berlín Occidental. Fundó su estudio en Berlín en 1994, tras haber trabajado en los jardines del Museo Judío de Daniel Libeskind. Su obra reúne geometría arabesca, espacio público y escultura en Alemania, Argelia y el Golfo. Recibió la Cruz Federal al Mérito del Presidente de Alemania (2023) y el Grand Prix Le Geste d'Or, París (2023)."
+      data-ca= "Kamel Louafi va néixer a Batna, Algèria, i va estudiar planificació del paisatge a la Universitat Tècnica de Berlín Occidental. Va fundar el seu estudi a Berlín el 1994, després d’haver treballat en els jardins del Museu Jueu de Daniel Libeskind. La seva obra reuneix geometria arabesca, espai públic i escultura a Alemanya, Algèria i el Golf. Va rebre la Creu Federal al Mèrit del President d’Alemanya (2023) i el Grand Prix Le Geste d'Or, París (2023).">
+    </div>
 
   <a href="http://www.landschaftsarchitektur-louafi.de/8/" target="_blank">
     <img src="images/logo3.png" alt="Logo3" class="banner-logo logo-small">
@@ -225,6 +235,33 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
