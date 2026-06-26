@@ -19,6 +19,11 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
@@ -139,12 +144,16 @@ To a new home in the sun</div>
     <h2 class="hover-green" style="margin:0;">Phil Harris</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Troppo Architects  ·  AUSTRALIA
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Troppo Architects  ·  AUSTRALIA"
+      data-es= "Troppo Architects · AUSTRALIA"
+      data-ca= "Troppo Architects · AUSTRÀLIA">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Phil Harris is a founding director of Troppo Architects, whose practice has operated for over three decades across Australia's most remote landscapes — the Northern Territory, the Kimberley, the APY Lands and Cape York. Harris and co-founder Adrian Welke received the 2014 AIA Gold Medal and the Global Sustainable Architecture Award (Paris, 2010), the only Australian practice to receive that honour. The practice has won over 40 Australian Institute of Architects awards.
+    <p style="font-size: 15px; color:#555;"
+      data-en= "Phil Harris is a founding director of Troppo Architects, whose practice has operated for over three decades across Australia's most remote landscapes — the Northern Territory, the Kimberley, the APY Lands and Cape York. Harris and co-founder Adrian Welke received the 2014 AIA Gold Medal and the Global Sustainable Architecture Award (Paris, 2010), the only Australian practice to receive that honour. The practice has won over 40 Australian Institute of Architects awards."
+      data-es= "Phil Harris es director fundador de Troppo Architects, un estudio que ha trabajado durante más de tres décadas en algunos de los paisajes más remotos de Australia: el Territorio del Norte, Kimberley, APY Lands y Cape York. Harris y su cofundador Adrian Welke recibieron la AIA Gold Medal en 2014 y el Global Sustainable Architecture Award (París, 2010), la única oficina australiana en recibir ese reconocimiento. El estudio ha ganado más de cuarenta premios del Australian Institute of Architects."
+      data-ca= "Phil Harris és director fundador de Troppo Architects, un estudi que ha treballat durant més de tres dècades en alguns dels paisatges més remots d’Austràlia: el Territori del Nord, Kimberley, APY Lands i Cape York. Harris i el seu cofundador Adrian Welke van rebre l’AIA Gold Medal el 2014 i el Global Sustainable Architecture Award (París, 2010), sent l’únic despatx australià que ha rebut aquest reconeixement. L’estudi ha guanyat més de quaranta premis de l’Australian Institute of Architects.">
     </p>
   </div>
 
@@ -277,6 +286,41 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-offset",
+    `${window.scrollY * -1.95}px`
+  );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
