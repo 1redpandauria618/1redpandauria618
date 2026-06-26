@@ -19,6 +19,11 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
@@ -94,12 +99,16 @@
     <h2 class="hover-green" style="margin:0;">Teresa Moller</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Teresa Möller Paisajista  ·  CHILE
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Teresa Möller Paisajista  ·  CHILE"
+      data-es= "Teresa Möller Paisajista · CHILE"
+      data-ca= "Teresa Möller Paisatgista · XILE">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Teresa Moller is a Chilean landscape architect known for her profound observation of nature and respect for the spirit of the place. Through Teresa Moller Landscape Studio, she creates projects that seek a harmonious coexistence between minimal architectural interventions and the existing landscape.
+    <p style="font-size: 15px; color:#555;"
+      data-en= "Teresa Moller is a Chilean landscape architect known for her profound observation of nature and respect for the spirit of the place. Through Teresa Moller Landscape Studio, she creates projects that seek a harmonious coexistence between minimal architectural interventions and the existing landscape."
+      data-es= "Teresa Moller es una arquitecta paisajista chilena conocida por su profunda observación de la naturaleza y su respeto por el espíritu del lugar. A través de Teresa Moller Landscape Studio, crea proyectos que buscan una coexistencia armoniosa entre intervenciones arquitectónicas mínimas y el paisaje existente."
+      data-ca= "Teresa Moller és una arquitecta paisatgista xilena coneguda per la seva profunda observació de la natura i el seu respecte per l’esperit del lloc. A través de Teresa Moller Landscape Studio, crea projectes que busquen una coexistència harmoniosa entre intervencions arquitectòniques mínimes i el paisatge existent.">
   </div>
 
   <a href="https://teresamoller.cl/" target="_blank">
@@ -218,6 +227,33 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
