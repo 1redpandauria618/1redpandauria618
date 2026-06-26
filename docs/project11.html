@@ -19,6 +19,11 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
@@ -122,14 +127,18 @@ the Medina.</p>
     <h2 class="hover-green" style="margin:0;">Gareth Doherty</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      NUS · Critical Landscapes Design Lab  ·  SOUTH AFRICA / SINGAPORE
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "NUS · Critical Landscapes Design Lab  ·  SOUTH AFRICA / SINGAPORE"
+      data-es= "NUS · Critical Landscapes Design Lab · SUDÁFRICA / SINGAPUR"
+      data-ca= "NUS · Critical Landscapes Design Lab · SUD-ÀFRICA / SINGAPUR">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Gareth Doherty is an associate professor in the Department of Architecture at the National
+    <p style="font-size: 15px; color:#555;"
+       data-en= "Gareth Doherty is an associate professor in the Department of Architecture at the National
 University of Singapore and a visiting associate professor at the University of Johannesburg. He
-is the director of the Critical Landscapes Design Lab.
+is the director of the Critical Landscapes Design Lab."
+       data-es= "Gareth Doherty es profesor asociado en el Departamento de Arquitectura de la National University of Singapore y profesor asociado visitante en la University of Johannesburg. Es director del Critical Landscapes Design Lab."
+       data-ca= "Gareth Doherty és professor associat al Departament d’Arquitectura de la National University of Singapore i professor associat visitant a la University of Johannesburg. És director del Critical Landscapes Design Lab.">
 
 
 </div>
@@ -285,6 +294,33 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
