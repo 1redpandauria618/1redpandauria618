@@ -19,6 +19,11 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
@@ -97,12 +102,16 @@
     <h2 class="hover-green" style="margin:0;">Catherine Mosbach</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Mosbach Paysagistes  ·  FRANCE
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Mosbach Paysagistes  ·  FRANCE"
+      data-es= "Mosbach Paysagistes  ·  FRANCIA"
+      data-ca= "Mosbach Paysagistes  ·  FRANÇA">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Mosbach paysagistes has extensive experience in urban landscapes with high heritage & environmental value. Skills of the studio are developed at different scale in order to articulate natural resources with urban & cultural ones. The projects integrate scenography between landscape settlements & didactic approach. Among the most representative are the Botanical Garden of Bordeaux, the Archaeological Park of Solutré, the other side in Quebec City, Shan Shui in Xian & Lost in Transition in Ulsan. Louvre Lens Museum Park, Phase Shifts Park in Taichung and more recently Museum Park of Kistefos. 
+    <p style="font-size: 15px; color:#555;"
+      data-en= "Mosbach paysagistes has extensive experience in urban landscapes with high heritage & environmental value. Skills of the studio are developed at different scale in order to articulate natural resources with urban & cultural ones. The projects integrate scenography between landscape settlements & didactic approach. Among the most representative are the Botanical Garden of Bordeaux, the Archaeological Park of Solutré, the other side in Quebec City, Shan Shui in Xian & Lost in Transition in Ulsan. Louvre Lens Museum Park, Phase Shifts Park in Taichung and more recently Museum Park of Kistefos."
+      data-es= "Mosbach paysagistes cuenta con amplia experiencia en paisajes urbanos de alto valor patrimonial y ambiental. Las obras del estudio se desarrollan a diferentes escalas para articular los recursos naturales con los urbanos y culturales. Sus proyectos integran la escenografía entre asentamientos paisajísticos y un enfoque didáctico. Entre los más representativos se encuentran el Jardín Botánico de Burdeos, el Parque Arqueológico de Solutré, The Other Side en Quebec, Shan Shui en Xi'an y Lost in Transition en Ulsan; el parque del Museo Louvre Lens, Phase Shifts Park en Taichung y, más recientemente, Museum Park de Kistefos."
+      data-ca= "Mosbach paysagistes té una àmplia experiència en paisatges urbans d’alt valor patrimonial i ambiental. Les obres de l’estudi es desenvolupen a diferents escales per articular els recursos naturals amb els urbans i culturals. Els seus projectes integren l’escenografia entre assentaments paisatgístics i un enfocament didàctic. Entre els més representatius hi ha el Jardí Botànic de Bordeus, el Parc Arqueològic de Solutré, The Other Side al Quebec, Shan Shui a Xi'an i Lost in Transition a Ulsan; el parc del Museu Louvre Lens, Phase Shifts Park a Taichung i, més recentment, Museum Park de Kistefos.">
     </p>
   </div>
 
@@ -222,6 +231,33 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
