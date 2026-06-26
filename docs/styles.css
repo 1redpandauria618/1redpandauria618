@@ -2971,4 +2971,38 @@ html, body {
 .photo-panel {
   z-index: 10 !important;
 }
+/* Nuclear fix: stop ANY parent from clipping fixed elements */
+.navbar, header, .header, .topbar, .menu, .nav-wrapper, .site-header {
+  overflow: visible !important;
+}
+
+@media (max-width: 600px) {
+
+  /* Break out of Lenis transform world */
+  .lang-switch {
+    position: fixed;
+    top: 70px;
+    left: 170px;
+    z-index: 999999;
+
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+
+    /* THE REAL MAGIC */
+    position: fixed;
+    will-change: transform;
+    contain: layout style paint;
+    pointer-events: auto;
+
+    /* Force it to be its own world */
+    transform: none !important;
+    -webkit-transform: none !important;
+  }
+
+  .lang-switch button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
 
