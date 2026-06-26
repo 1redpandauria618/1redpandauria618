@@ -2981,8 +2981,8 @@ html, body {
   /* Break out of Lenis transform world */
   .lang-switch {
     position: fixed;
-    top: 70px;
-    left: 170px;
+    top: 60px;
+    left: 190px;
     z-index: 999999;
 
     display: flex;
