@@ -2978,24 +2978,16 @@ html, body {
 
 @media (max-width: 600px) {
 
-  /* Break out of Lenis transform world */
   .lang-switch {
-    position: fixed;
-    top: 60px;
-    left: 190px;
+    position: fixed !important;
+    top: 59px;
+    left: 213px;
     z-index: 999999;
 
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-
-    /* THE REAL MAGIC */
-    position: fixed;
-    will-change: transform;
-    contain: layout style paint;
-    pointer-events: auto;
-
-    /* Force it to be its own world */
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 5px !important; /* ← adjust this */
+    
     transform: none !important;
     -webkit-transform: none !important;
   }
@@ -3003,6 +2995,13 @@ html, body {
   .lang-switch button {
     padding: 8px 12px;
     font-size: 14px;
+    margin: 0 !important; /* ← ensures gap works */
   }
+  
+  .lang-switch button {
+  border: 1px solid #e5f85b !important;
 }
-
+.lang-switch button {
+  border: 4.3px solid #e5f85b !important;
+}
+}
