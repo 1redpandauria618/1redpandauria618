@@ -19,6 +19,11 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
@@ -119,14 +124,18 @@ Information placeholder.
     <h2 class="hover-green" style="margin:0;">Walter Hood</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Creative Director and Founder of Hood Design Studio  ·  USA
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Creative Director and Founder of Hood Design Studio  ·  USA"
+      data-es= "Director creativo y fundador de Hood Design Studio · EE. UU."
+      data-ca= "Director creatiu i fundador de Hood Design Studio · EUA">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Walter J. Hood, a multidisciplinary designer from Charlotte, NC, is globally recognized for his contributions to art, landscape architecture, urbanism, and research. He founded Hood Design Studio in Oakland, CA, in 1992 and now serves as its Creative Director.
+    <p style="font-size: 15px; color:#555;"
+      data-en= "Walter J. Hood, a multidisciplinary designer from Charlotte, NC, is globally recognized for his contributions to art, landscape architecture, urbanism, and research. He founded Hood Design Studio in Oakland, CA, in 1992 and now serves as its Creative Director.
 His passion for landscape and urbanism stems from their broad, democratic scope, offering opportunities for engagement beyond the constraints of architecture. By infusing African American cultural arts into his design philosophy, he has established a distinct voice that reshapes spaces to reflect contemporary needs without erasing their histories.
-A former professor at UC Berkeley and former educator at Harvard, Walter is the author of Black Landscapes Matter. His many accolades include the 2019 MacArthur Fellowship, the 2021 Architectural League President’s Medal, the 2023 WSJ Magazine Innovator in Design Award, and most recently, the 2025 Thomas Jefferson Foundation Medal in Architecture.
+A former professor at UC Berkeley and former educator at Harvard, Walter is the author of Black Landscapes Matter. His many accolades include the 2019 MacArthur Fellowship, the 2021 Architectural League President’s Medal, the 2023 WSJ Magazine Innovator in Design Award, and most recently, the 2025 Thomas Jefferson Foundation Medal in Architecture."
+      data-es= "Walter J. Hood, diseñador multidisciplinar de Charlotte, Carolina del Norte, es reconocido internacionalmente por sus contribuciones al arte, el paisajismo, el urbanismo y la investigación. Fundó Hood Design Studio en Oakland, California, en 1992, y actualmente ejerce como director creativo. Su pasión por el paisaje y el urbanismo surge de su alcance amplio y democrático, que ofrece oportunidades de participación más allá de las limitaciones de la arquitectura. Al incorporar las artes culturales afroamericanas a su filosofía de diseño, ha consolidado una voz distintiva que transforma los espacios para reflejar necesidades contemporáneas sin borrar sus historias. Antiguo profesor de UC Berkeley y antiguo docente en Harvard, Walter es autor de Black Landscapes Matter. Entre sus numerosos reconocimientos se incluyen la MacArthur Fellowship de 2019, la Architectural League President’s Medal de 2021, el WSJ Magazine Innovator in Design Award de 2023 y, más recientemente, la Thomas Jefferson Foundation Medal in Architecture de 2025."
+      data-ca= "Walter J. Hood, dissenyador multidisciplinari de Charlotte, Carolina del Nord, és reconegut internacionalment per les seves contribucions a l’art, el paisatgisme, l’urbanisme i la recerca. Va fundar Hood Design Studio a Oakland, Califòrnia, el 1992, i actualment n’és el director creatiu. La seva passió pel paisatge i l’urbanisme neix del seu abast ampli i democràtic, que ofereix oportunitats de participació més enllà de les limitacions de l’arquitectura. En incorporar les arts culturals afroamericanes a la seva filosofia de disseny, ha consolidat una veu distintiva que transforma els espais per reflectir necessitats contemporànies sense esborrar-ne les històries. Antic professor de la UC Berkeley i antic docent a Harvard, Walter és autor de Black Landscapes Matter. Entre els seus nombrosos reconeixements hi ha la MacArthur Fellowship de 2019, l’Architectural League President’s Medal de 2021, el WSJ Magazine Innovator in Design Award de 2023 i, més recentment, la Thomas Jefferson Foundation Medal in Architecture de 2025.">
   </div>
 
   <a href="https://www.hooddesignstudio.com/" target="_blank">
@@ -245,6 +254,33 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
