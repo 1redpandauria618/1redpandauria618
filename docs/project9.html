@@ -19,6 +19,11 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
@@ -146,15 +151,22 @@ PSA sees buildings as rooms of education – the bridge between walking in the b
     <h2 class="hover-green" style="margin:0;">Peter Stutchbury</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Principal - Peter Stutchbury Architecture
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Principal - Peter Stutchbury Architecture"
+      data-es= "Director - Peter Stutchbury Architecture"
+      data-ca= "Director - Peter Stutchbury Architecture">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      Founder and Principal of award-winning practice Peter Stutchbury Architecture, Peter’s work originates from principles of holistic energy management, logical beauty and connection to place. A formative education in the desert of Western NSW, Papua New Guinea and Africa has nurtured an understanding of land and sky patterns. An AIA Gold Medallist and RIBA fellow, he has taught widely, including longstanding involvement with the Glenn Murcutt Masterclass, Architecture Foundation of Australia, and professorships Internationally, and at universities on all continents. With Fernanda Cabral, he co-founded the PSA Foundation, working in favelas in Salvador, Brazil, and with First Nations communities in Pilbara and Gibson Desert region of WA. Peter sees buildings as rooms of education – the bridge between walking in the bush and wandering through the mind. Ultimately people are the act of integration within a true work of architecture.
+    <p style="font-size: 15px; color:#555;"
+      data-en= "Founder and Principal of award-winning practice Peter Stutchbury Architecture, Peter’s work originates from principles of holistic energy management, logical beauty and connection to place. A formative education in the desert of Western NSW, Papua New Guinea and Africa has nurtured an understanding of land and sky patterns. An AIA Gold Medallist and RIBA fellow, he has taught widely, including longstanding involvement with the Glenn Murcutt Masterclass, Architecture Foundation of Australia, and professorships Internationally, and at universities on all continents. With Fernanda Cabral, he co-founded the PSA Foundation, working in favelas in Salvador, Brazil, and with First Nations communities in Pilbara and Gibson Desert region of WA. Peter sees buildings as rooms of education – the bridge between walking in the bush and wandering through the mind. Ultimately people are the act of integration within a true work of architecture."
+      data-es= "Fundador y director del premiado estudio Peter Stutchbury Architecture, el trabajo de Peter nace de los principios de gestión energética holística, belleza lógica y conexión con el lugar. Una formación temprana en el desierto del oeste de Nueva Gales del Sur, Papúa Nueva Guinea y África ha alimentado su comprensión de los patrones de la tierra y el cielo. Medalla de Oro del AIA y fellow del RIBA, ha enseñado extensamente, con una larga participación en la Glenn Murcutt Masterclass, la Architecture Foundation of Australia y cátedras internacionales en universidades de todos los continentes. Con Fernanda Cabral, cofundó la PSA Foundation, que trabaja en favelas de Salvador, Brasil, y con comunidades de las Primeras Naciones en la región de Pilbara y el desierto de Gibson, en Australia Occidental. Peter entiende los edificios como salas de aprendizaje: el puente entre caminar por el monte y deambular por la mente. En última instancia, las personas son el acto de integración dentro de una verdadera obra de arquitectura"
+      data-ca= "Fundador i director del premiat estudi Peter Stutchbury Architecture, el treball de Peter neix dels principis de gestió energètica holística, bellesa lògica i connexió amb el lloc. Una formació primerenca al desert de l’oest de Nova Gal·les del Sud, Papua Nova Guinea i Àfrica ha alimentat la seva comprensió dels patrons de la terra i el cel. Medalla d’Or de l’AIA i fellow del RIBA, ha ensenyat extensament, amb una llarga participació a la Glenn Murcutt Masterclass, l’Architecture Foundation of Australia i càtedres internacionals en universitats de tots els continents. Amb Fernanda Cabral, va cofundar PSA Foundation, que treballa en faveles de Salvador, Brasil, i amb comunitats de les Primeres Nacions a la regió de Pilbara i el desert de Gibson, a Austràlia Occidental. Peter entén els edificis com a sales d’aprenentatge: el pont entre caminar pel bosc i vagar per la ment. En darrera instància, les persones són l’acte d’integració dins d’una veritable obra arquitectònica.">
+    </p>
 <hr class="tight-hr">
-<p style="font-size: 15px; color:#555;">
-“If a building sits astray of place, it relies only on the architecture. Connectivity breeds responsibility.”
+<p style="font-size: 15px; color:#555;"
+ data-en= "“If a building sits astray of place, it relies only on the architecture. Connectivity breeds responsibility.”"
+ data-es= "«Si un edificio se sitúa de espaldas al lugar, depende únicamente de la arquitectura. La conectividad engendra responsabilidad.»"
+ data-ca= "«Si un edifici se situa d’esquena al lloc, depèn únicament de l’arquitectura. La connectivitat engendra responsabilitat.»">
 <hr class="tight-hr">
 
   </div>
@@ -275,6 +287,33 @@ window.addEventListener("scroll", () => {
     "--scroll-offset",
     `${window.scrollY * -1.95}px`
   );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
 });
 </script>
 
