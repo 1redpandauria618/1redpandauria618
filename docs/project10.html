@@ -19,10 +19,16 @@
     <a href="index.html">
      <img src="images/icon6.png" alt="Icon 6" class="logo-image">
     </a>
+  <div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
   </div>
     <div id="google_translate_element" class="translate-box"></div>
     <meta name="google" content="notranslate">
   <nav>
+
     <a href="index.html">Home</a>
   </nav>
 </header>
@@ -147,13 +153,17 @@
     <h2 class="hover-green" style="margin:0;">James Corner</h2>
 
 
-    <p style="font-size: 15px; color:#555; margin:0;">
-      Founding Partner & CEO of Field Operations – USA
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Founding Partner & CEO of Field Operations – USA"
+      data-es= "Socio fundador y CEO de Field Operations – EE. UU."
+      data-ca= "Soci fundador i CEO de Field Operations – EUA">
     </p>
 
-    <p style="font-size: 15px; color:#555;">
-      James Corner is founder and director of Field Operations and Professor Emeritus at the University of Pennsylvania. His seminal writings and projects – including the High Line in New York, Freshkills Park in Staten Island, and the Presidio Tunneltops in San Francisco – have redefined the role of landscape architecture in urban regeneration. He is the recipient of the prestigious IFLA Sir Geoffrey Jellicoe Award (2024), the ASLA Design Award (2022), the Cooper Hewitt National Design Award (2010), and honorary doctorates from the Technical University of Munich (2018), Manchester Metropolitan University (2020), and the University of Pennsylvania (2026). He is an elected member of the American Academy of Arts & Letters, and a board member of the Urban Design Forum.
-
+    <p style="font-size: 15px; color:#555;"
+      data-en= "James Corner is founder and director of Field Operations and Professor Emeritus at the University of Pennsylvania. His seminal writings and projects – including the High Line in New York, Freshkills Park in Staten Island, and the Presidio Tunneltops in San Francisco – have redefined the role of landscape architecture in urban regeneration. He is the recipient of the prestigious IFLA Sir Geoffrey Jellicoe Award (2024), the ASLA Design Award (2022), the Cooper Hewitt National Design Award (2010), and honorary doctorates from the Technical University of Munich (2018), Manchester Metropolitan University (2020), and the University of Pennsylvania (2026). He is an elected member of the American Academy of Arts & Letters, and a board member of the Urban Design Forum."
+      data-es= "James Corner es fundador y director de Field Operations y profesor emérito de la Universidad de Pensilvania. Sus escritos y proyectos fundamentales —incluidos High Line en Nueva York, Freshkills Park en Staten Island y Presidio Tunneltops en San Francisco— han redefinido el papel del paisajismo en la regeneración urbana. Ha recibido el prestigioso IFLA Sir Geoffrey Jellicoe Award (2024), el ASLA Design Award (2022), el Cooper Hewitt National Design Award (2010) y doctorados honoris causa por la Universidad Técnica de Múnich (2018), Manchester Metropolitan University (2020) y la Universidad de Pensilvania (2026). Es miembro electo de la American Academy of Arts & Letters y miembro del consejo del Urban Design Forum."
+      data-ca= "James Corner és fundador i director de Field Operations i professor emèrit de la University of Pennsylvania. Els seus escrits i projectes fonamentals —incloent-hi el High Line a Nova York, Freshkills Park a Staten Island i Presidio Tunneltops a San Francisco— han redefinit el paper paisatgisme en la regeneració urbana. Ha rebut el prestigiós IFLA Sir Geoffrey Jellicoe Award (2024), l’ASLA Design Award (2022), el Cooper Hewitt National Design Award (2010) i doctorats honoris causa per la Technical University of Munich (2018), Manchester Metropolitan University (2020) i la University of Pennsylvania (2026). És membre electe de l’American Academy of Arts & Letters i membre del consell de l’Urban Design Forum.">
+    </p>
 
 </div>
 <a href="https://www.fieldoperations.net/" target="_blank">
@@ -281,7 +291,33 @@ window.addEventListener("scroll", () => {
   );
 });
 </script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
 
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
+});
+</script>
 
 
 
