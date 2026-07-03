@@ -4,10 +4,10 @@ import os
 # Folder containing your images
 folder = "images/folder"
 
-# Max width/height (optional)
+# Max width/height
 MAX_SIZE = 1600  # pixels
 
-# JPEG quality (70–85 is ideal)
+# JPEG quality
 QUALITY = 75
 
 for filename in os.listdir(folder):
