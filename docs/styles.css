@@ -3005,3 +3005,63 @@ html, body {
   border: 4.3px solid #e5f85b !important;
 }
 }
+
+
+
+
+
+
+
+
+
+
+/* REGION CARD — AUTO-SHRINKING TWO-PER-ROW */
+.region-card2 {
+  background: white !important;
+  border: 5px solid #fbf80b !important;
+  border-radius: 12px !important;
+
+  /* THE MAGIC: auto-shrink until two fit */
+  flex: 1 1 300px !important;   /* can grow, can shrink, prefers 300px */
+  min-width: 250px !important;  /* smallest allowed */
+  max-width: 100% !important;
+
+  padding: 18px 22px !important;
+  margin: 12px !important;
+  box-sizing: border-box !important;
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important;
+  transition: transform .25s ease, box-shadow .25s ease !important;
+}
+
+
+.cool-gallery {
+  width: 100%;
+  overflow-x: auto;
+  padding: 40px 0;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.tilt-img {
+  width: 500px !important;
+  max-width: none !important;
+  flex-shrink: 0 !important;
+}
+
+
+.tilt-img {
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.tilt-img:hover {
+  transform: perspective(600px) rotateY(12deg) rotateX(6deg) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}

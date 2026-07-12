@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Walks&Talks</title>
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/icons/icon9.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  <style>
+    /* === MINIMALIST WHITE + YELLOW (#FBF80B) ONLY === */
+    .wt-page {
+      --yellow: #FBF80B;
+      --yellow-glow: rgba(251, 248, 11, 0.3);
+      --text-dark: #ffffff;
+      --text-light: #fff;
+      --bg: #fff;
+      --glass-border: rgba(200, 200, 200, 0.3);
+      --transition: all 0.5s cubic-bezier(0.2, 0.8, 0.4, 1);
+    }
+
+    /* Base Reset */
+    .wt-page {
+      margin: 0;
+      padding: 0;
+      font-family: 'Monogeist', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    .wt-page .fade-container {
+      opacity: 0;
+      transition: opacity 1s var(--transition);
+    }
+    .wt-page .fade-container.fade-in {
+      opacity: 1;
+    }
+    .wt-page .fade-container.fade-out {
+      opacity: 0;
+    }
+
+    /* Navbar */
+    .wt-page .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #fff;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .wt-page .logo-image {
+      height: 32px;
+      filter: drop-shadow(0 0 6px var(--yellow-glow));
+    }
+    .wt-page .lang-switch button {
+      background: transparent;
+      border: 1px solid var(--yellow);
+      color: var(--yellow);
+      padding: 0.4rem 0.8rem;
+      margin: 0 0.2rem;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-size: 0.85rem;
+    }
+    .wt-page .lang-switch button:hover {
+      background: var(--yellow);
+      color: var(--text-dark);
+      box-shadow: 0 0 12px var(--yellow-glow);
+    }
+    .wt-page .instagram-icon {
+      height: 22px;
+    }
+    .wt-page .hamburgertwo {
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--yellow);
+    }
+    .wt-page .nav-menutwo {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      max-width: 300px;
+      height: 100vh;
+      background: var(--bg);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: right 0.6s var(--transition);
+      z-index: 2000;
+      border-left: 1px solid var(--glass-border);
+      box-shadow: -10px 0 30px rgb(255, 255, 255);
+    }
+    .wt-page .nav-menutwo.open-two {
+      right: 0;
+    }
+    .wt-page .nav-menutwo a {
+      color: var(--text-dark);
+      text-decoration: none;
+      margin: 1.2rem 0;
+      font-size: 1.1rem;
+      transition: var(--transition);
+    }
+    .wt-page .nav-menutwo a:hover {
+      color: var(--yellow);
+      transform: translateX(10px);
+    }
+
+    /* Main Content */
+    .wt-page main {
+      padding: 7rem 1.5rem 3rem;
+      min-height: 100vh;
+    }
+    .wt-page .about-section {
+      text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .wt-page .hover-green {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin: 0;
+      color: var(--yellow);
+      letter-spacing: -1px;
+      animation: shimmer 3s infinite alternate;
+    }
+    @keyframes shimmer {
+      0% { filter: drop-shadow(0 0 4px var(--yellow-glow)); }
+      100% { filter: drop-shadow(0 0 12px var(--yellow-glow)); }
+    }
+    .wt-page h3 {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: #888;
+      margin: 0.5rem 0 3rem;
+      font-weight: 400;
+    }
+
+    /* WT Wrapper */
+    .wt-page .wt-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .wt-page .wt-column {
+      position: relative;
+    }
+    .wt-page .wt-title {
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      color: var(--yellow);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 8px var(--yellow-glow);
+    }
+    .wt-page .wt-stack {
+      display: grid;
+      gap: 1rem;
+    }
+    .wt-page .tilt-img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgb(255, 255, 255);
+      cursor: pointer;
+      background: #fafafa;
+    }
+    .wt-page .tilt-img:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 30px rgb(251, 247, 11);
+      z-index: 10;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .wt-page .wt-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .wt-page .navbar {
+        padding: 0.8rem 1rem;
+      }
+      .wt-page .lang-switch button {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .wt-page main {
+        padding: 6rem 1rem 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="wt-page">
+  <div class="fade-container">
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+        </a>
+      </div>
+      <div class="translate-box placeholder-box"></div>
+      <div class="translate-box placeholder-box"></div>
+      <div class="lang-switch">
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('ca')">CA</button>
+        <button onclick="setLang('es')">ES</button>
+      </div>
+      <a href="https://www.instagram.com/parlour.gardens" target="_blank" class="instagram-link">
+        <img src="images/instagram.jpg" alt="Instagram" class="instagram-icon">
+      </a>
+      <div class="hamburgertwo" id="hamburgertwo">☰</div>
+      <nav id="nav-menutwo" class="nav-menutwo">
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="concept.html">Concept</a>
+        <a href="exhibition.html">Exhibition</a>
+        <a href="curators.html">Curators</a>
+        <a href="dreamers.html">Dreamers</a>
+        <a href="craftsmanship.html">Craftsmanship</a>
+      </nav>
+    </header>
+
+    <main class="about-section">
+      <h1 class="hover-green"
+          data-en="Walks&Talks"
+          data-es="Walks&Talks"
+          data-ca="Walks&Talks">
+        Walks&Talks
+      </h1>
+      <h3 data-en="14 Participating Studios"
+          data-es="Estudios participantes · 14 países"
+          data-ca="Estudis participants · 14 països">
+        14 Participating Studios
+      </h3>
+
+      <div class="wt-wrapper">
+        <div class="wt-column">
+          <h1 class="wt-title">Walks</h1>
+          <div class="wt-stack">
+            <img src="images/28A1352.jpg" class="tilt-img">
+            <img src="images/28A1477.jpg" class="tilt-img">
+            <img src="images/28A1938.jpg" class="tilt-img">
+          </div>
+        </div>
+        <div class="wt-column">
+          <h1 class="wt-title">Talks</h1>
+          <div class="wt-stack">
+            <img src="images/28A1954.jpg" class="tilt-img">
+            <img src="images/28A1623.jpg" class="tilt-img">
+            <img src="images/28A1625.jpg" class="tilt-img">
+            <img src="images/28A1627.jpg" class="tilt-img">
+            <img src="images/28A1629.jpg" class="tilt-img">
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smooth: true
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.querySelector(".fade-container");
+      container.classList.add("fade-in");
+      document.querySelectorAll("a[href]").forEach(link => {
+        link.addEventListener("click", e => {
+          const url = link.getAttribute("href");
+          if (url.startsWith("http")) return;
+          e.preventDefault();
+          container.classList.add("fade-out");
+          setTimeout(() => { window.location = url; }, 500);
+        });
+      });
+    });
+  </script>
+  <script>
+    document.getElementById("hamburgertwo").addEventListener("click", () => {
+      document.getElementById("nav-menutwo").classList.toggle("open-two");
+    });
+  </script>
+  <script>
+    window.addEventListener("pageshow", (event) => {
+      if (event.persisted) {
+        const container = document.querySelector(".fade-container");
+        container.classList.remove("fade-out");
+        container.classList.add("fade-in");
+      }
+    });
+  </script>
+  <script>
+    function applyLang(lang) {
+      document.querySelectorAll("[data-en]").forEach(el => {
+        const value = el.getAttribute(`data-${lang}`);
+        if (value) { el.innerHTML = value; }
+      });
+    }
+    function setLang(lang) {
+      applyLang(lang);
+      localStorage.setItem("lang", lang);
+    }
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedLang = localStorage.getItem("lang");
+      applyLang("en");
+      if (savedLang && savedLang !== "en") { applyLang(savedLang); }
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.tilt-img').forEach(img => {
+      img.addEventListener('mousemove', (e) => {
+        const rect = img.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateY = ((x - centerX) / centerX) * 6;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        img.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.02)`;
+      });
+      img.addEventListener('mouseleave', () => {
+        img.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale(1)';
+      });
+    });
+  </script>
+</body>
+</html>
