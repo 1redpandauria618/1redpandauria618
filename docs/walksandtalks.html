@@ -197,6 +197,27 @@
         padding: 6rem 1rem 2rem;
       }
     }
+    .new-ribbon {
+    position: fixed;
+    top: 120px;          /* Adjust height */
+    right: -20px;        /* Push it against the edge */
+    transform: rotate(35deg);
+
+    background: #FBF80B;
+    color: white;
+    padding: 6px 30px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    border-radius: 6px;
+
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none; /* Optional */
+}
   </style>
 </head>
 
@@ -242,6 +263,12 @@
           data-ca="Estudis participants · 14 països">
         14 Participating Studios
       </h3>
+      <h3 class="new-ribbon"
+    data-en="NEW!"
+    data-es="¡NUEVO!"
+    data-ca="NOU!">
+    NEW!
+    </h3>
 
       <div class="wt-wrapper">
         <div class="wt-column">
@@ -358,8 +385,8 @@
         const y = e.clientY - rect.top;
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
-        const rotateY = ((x - centerX) / centerX) * 27;
-        const rotateX = ((y - centerY) / centerY) * -27;
+        const rotateY = ((x - centerX) / centerX) * 57;
+        const rotateX = ((y - centerY) / centerY) * -57;
         img.style.transform = `perspective(1000px) rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.02)`;
       });
       img.addEventListener('mouseleave', () => {
