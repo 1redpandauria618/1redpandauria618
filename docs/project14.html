@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Stratum</title>
+
+  <link href="https://fonts.cdnfonts.com/css/monogeist" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="images/icons/icon9.png">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+</head>
+
+<body>
+  <div class="fade-container">
+
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+     <img src="images/icon6.png" alt="Icon 6" class="logo-image">
+    </a>
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('ca')">CA</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
+  </div>
+    <div id="google_translate_element" class="translate-box"></div>
+    <meta name="google" content="notranslate">
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+
+<main class="about-section">
+  <h1 class="hover-green" style="margin:0;">Stratum</h1>
+
+
+  <h3 style="font-size: 15px; color:#555; margin:0;">Stratum – Agence ter
+  <p style="font-size: 15px"
+  data-en="placeholder- more coming soon; stay tuned!"
+</p>
+
+
+
+
+<h3 style="font-size: 15px; color:#555; margin:0;">Making of Stratum</h3>
+<div class="smooth-slider">
+  <button class="slider-arrow left">‹</button>
+  <div class="image-protect"></div>
+  <div class="smooth-slider-track">
+    <img src="images/slide177.jpg">
+
+    <!-- duplicate for infinite loop -->
+    <img src="images/slide177.jpg">
+
+
+  </div>
+  <button class="slider-arrow right">›</button>
+</div>
+<div class="full-banner">
+
+  <div class="banner-photo-block">
+  <a href="https://agenceter.com/" target="_blank">
+    <img src="images/henri.jpg" alt="Henri Bava" class="banner-photo">
+  </a>
+
+</div>
+
+</a>
+
+
+  <div class="banner-text">
+    <h2 class="hover-green" style="margin:0;">Henri Bava</h2>
+
+
+    <p style="font-size: 15px; color:#555; margin:0;"
+      data-en= "Founder - Henri Bava"
+      data-es= "Fundador - Henri Bava"
+      data-ca= "Fundador - Henri Bava">
+    </p>
+
+    <p style="font-size: 15px; color:#555;"
+      data-en= "Born in Tunisia in 1957. In 1979, he earned a degree in plant biology from the University of Paris-Orsay. From 1970 to 1980, he studied scenography at the École Jacques Lecoq, a theater school in Paris. From 1980 to 1984, he studied at the École Nationale Supérieure du Paysage de Versailles, where he graduated as a landscape architect (DPLG). In 1986, he founded Agence Ter, a landscape architecture firm, with two partners: Michel Hoessler and Olivier Philippe. From 1987 to 1998, he taught at ENSP. From 1993 to 1997, he worked as a landscape architect advisor for the Eure Council in France. From 1996 to 1998, he served as president of the French Federation of Landscape Architects (FFP). Since 1998, he has been a professor at the University of Karlsruhe, Germany, at the Institute of Landscape in the Faculty of Architecture (Institut für Landschaft und Garten). In 2001, a new office of Agence Ter was opened in Karlsruhe."
+      data-es= "Nacido en Túnez en 1957. En 1979 se licencia en biología vegetal, Univer­sidad de París-Orsay. De 1970 a 1980, estudios de escenografía en la École Jacques Lecoq, escuela de teatro situada en París. De 1980 a 1984, estudios en la École Nationale Supérieure du Paysage de Versalles, en donde se gradúa como arquitecto paisajista (DPLG). En 1986 funda la Agence Ter, empresa de arquitectura del paisaje, con dos socios: Michel Hoessler y Olivier Philippe. De 1987 a 1998 da clases en la ENSP. De 1993 a 1997 ejerce como arqui­tecto paisajista asesor del Consejo del Eure, en Francia. De 1996 a 1998 es presidente de la Federación Francesa de Arquitectos Paisajistas (FFP).  Desde 1998 es profesor en la Universidad de Karlsruhe, Alemania, en el Ins­tituto del Paisaje de la Facultad de Arquitectura (Institut für Landschaft und Garten). En 2001 se inauguró una nueva oficina de la Agence Ter en Karlsruhe."
+      data-ca= "Nascut a Tunísia el 1957. El 1979 es gradua en biologia vegetal a la Universitat de París-Orsay. De 1970 a 1980, estudia escenografia a l'École Jacques Lecoq, escola de teatre situada a París. De 1980 a 1984, estudia a l'École Nationale Supérieure du Paysage de Versailles, on es gradua com a arquitecte del paisatge (DPLG). El 1986 funda l'Agence Ter, empresa d'arquitectura del paisatge, amb dos socis: Michel Hoessler i Olivier Philippe. De 1987 a 1998 dona classes a l'ENSP. De 1993 a 1997 treballa com a arquitecte del paisatge assessor del Consell de l'Eure, a França. De 1996 a 1998 és president de la Federació Francesa d'Arquitectes del Paisatge (FFP). Des del 1998 és professor a la Universitat de Karlsruhe, Alemanya, a l'Institut del Paisatge de la Facultat d'Arquitectura (Institut für Landschaft und Garten). El 2001 es va inaugurar una nova oficina de l'Agence Ter a Karlsruhe.">
+    </p>
+
+
+  </div>
+
+  <a href="https://agenceter.com/" target="_blank">
+    <img src="images/logo27.png" alt="Logo27" class="banner-logo">
+  </a>
+</div>
+<script>
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+</script>
+<script>
+const track = document.querySelector('.smooth-slider-track');
+const leftBtn = document.querySelector('.slider-arrow.left');
+const rightBtn = document.querySelector('.slider-arrow.right');
+
+let x = 0;                 // current horizontal position
+let speed = 0.5;           // auto-scroll speed
+let paused = false;
+let resumeTimer;
+
+// AUTO SCROLL LOOP
+function autoScroll() {
+  if (!paused) {
+    x -= speed;
+    track.style.transform = `translateX(${x}px)`;
+
+    // LOOPING LOGIC
+    const halfWidth = track.scrollWidth / 2;
+    if (Math.abs(x) >= halfWidth) {
+      x = 0; // reset to start
+      track.style.transform = `translateX(0)`;
+    }
+  }
+
+  requestAnimationFrame(autoScroll);
+}
+autoScroll();
+
+// PAUSE AUTO SCROLL
+function pauseAuto() {
+  paused = true;
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    paused = false;
+  }, 2000);
+}
+
+// BUTTON: MOVE LEFT
+leftBtn.addEventListener('click', () => {
+  pauseAuto();
+  x += 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+
+// BUTTON: MOVE RIGHT
+rightBtn.addEventListener('click', () => {
+  pauseAuto();
+  x -= 200;
+  track.style.transform = `translateX(${x}px)`;
+});
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<script>
+// protect against image downloads
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".fade-container");
+    container.classList.add("fade-in");
+
+    // Fade out on link click
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        const url = link.getAttribute("href");
+
+        // Ignore external links
+        if (url.startsWith("http")) return;
+
+        e.preventDefault();
+        container.classList.add("fade-out");
+
+        setTimeout(() => {
+          window.location = url;
+        }, 500); // match CSS transition
+      });
+    });
+  });
+</script>
+<script>
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const container = document.querySelector(".fade-container");
+    container.classList.remove("fade-out");
+    container.classList.add("fade-in");
+  }
+});
+</script>
+<script>
+window.addEventListener("scroll", () => {
+  document.documentElement.style.setProperty(
+    "--scroll-offset",
+    `${window.scrollY * -1.95}px`
+  );
+});
+</script>
+<script>
+function applyLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    const value = el.getAttribute(`data-${lang}`);
+    if (value) {
+      el.innerHTML = value;
+    }
+  });
+}
+
+function setLang(lang) {
+  applyLang(lang);
+  localStorage.setItem("lang", lang);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang");
+
+  // ALWAYS default to English first
+  applyLang("en");
+
+  // then override if user previously chose something else
+  if (savedLang && savedLang !== "en") {
+    applyLang(savedLang);
+  }
+});
+</script>
+
+</body>
+</html>
